@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watt Guide — Electricity Costs, Wattage & Energy Savings 2026</title>
+  <meta name="description" content="Calculate the electricity cost of any appliance, compare wattages, and learn how to cut your energy bill. Independent guides for US, UK, and Europe.">
+  <link rel="canonical" href="https://watt-guide.com/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Watt Guide — Electricity Costs & Wattage Reference">
+  <meta property="og:description" content="Free calculator + guides to understand exactly what you pay for electricity.">
+  <meta property="og:url" content="https://watt-guide.com/">
+  <meta property="og:site_name" content="Watt Guide">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Watt Guide",
+    "url": "https://watt-guide.com",
+    "description": "Electricity cost calculator and wattage reference for households in the US, UK, and Europe.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://watt-guide.com/guides/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Watt Guide",
+    "url": "https://watt-guide.com",
+    "logo": "https://watt-guide.com/assets/og-image-v2.jpg",
+    "sameAs": []
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:locale" content="en_US">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/#tools">Tools</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/calculator/">Calculator</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/#tools">Free tools →</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">2026 Edition · Updated monthly</span>
+          <h1>
+            <span class="line">Know exactly</span>
+            <span class="line">what <span class="grad-text">electricity</span></span>
+            <span class="line">really costs you.</span>
+          </h1>
+          <p class="hero-sub">Free calculator, wattage database of 300+ appliances, and no-nonsense guides to cut your bill in the US, UK, and Europe.</p>
+          <div class="hero-cta-row">
+            <a class="btn btn-primary" href="/calculator/">
+              Open calculator
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="/guides/how-to-reduce-electricity-bill-2026.html">Read the guide</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="hero-metric"><span class="num">300+</span><span class="lbl">Appliances</span></div>
+            <div class="hero-metric"><span class="num">5</span><span class="lbl">Countries</span></div>
+            <div class="hero-metric"><span class="num">$0</span><span class="lbl">Free, always</span></div>
+          </div>
+        </div>
+
+        <!-- Mini calculator -->
+        <div class="calc-preview reveal">
+          <h3>Quick cost check</h3>
+          <p class="lbl-muted">Change any value to recalculate.</p>
+          <div class="calc-row">
+            <div>
+              <label for="watts">Device wattage</label>
+              <input id="watts" type="number" value="1500" min="0" data-calc-watts>
+            </div>
+            <div>
+              <label for="hours">Hours/day</label>
+              <input id="hours" type="number" value="3" min="0" step="0.5" data-calc-hours>
+            </div>
+          </div>
+          <div class="calc-row">
+            <div>
+              <label for="rate">Rate per kWh</label>
+              <input id="rate" type="number" value="0.17" min="0" step="0.01" data-calc-rate>
+            </div>
+            <div>
+              <label for="currency">Currency</label>
+              <select id="currency" data-calc-currency>
+                <option value="USD">USD $</option>
+                <option value="GBP">GBP £</option>
+                <option value="EUR">EUR €</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-result">
+            <span class="amount" data-calc-result>$22.95/mo</span>
+            <span class="desc">Estimated monthly cost at 30 days of use</span>
+          </div>
+          <div style="text-align:center; margin-top:14px;">
+            <a href="/calculator/" style="font-size:0.88rem; color:var(--accent); font-weight:500;">Open the full calculator →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <aside class="promo-slot" aria-label="Guides">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Featured guides</span>
+        <h3 class="promo-slot__title">Independent deep-dives on what really moves your bill</h3>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/guides/solar-panel-cost-california-2026.html"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">California solar 2026</span><span>Real $/W, NEM 3.0 impact, county-by-county payback.</span><span class="promo-slot__card-arrow">Read →</span></a>
+        <a class="promo-slot__card" href="/guides/heat-pump-vs-gas-furnace-2026.html"><span class="promo-slot__card-icon">🔥</span><span class="promo-slot__card-title">Heat pump vs gas</span><span>Real ROI in 4 climates. When gas still wins.</span><span class="promo-slot__card-arrow">Read →</span></a>
+        <a class="promo-slot__card" href="/guides/ev-charging-cost-home-2026.html"><span class="promo-slot__card-icon">🚗</span><span class="promo-slot__card-title">EV charging cost</span><span>15 EVs. Home vs Supercharger. Real per-mile.</span><span class="promo-slot__card-arrow">Read →</span></a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- CALCULATOR SUITE -->
+  <section id="tools" style="padding:80px 0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Free tools</span>
+        <h2>The whole-home <span class="grad-text">calculator suite</span></h2>
+        <p>Five purpose-built tools for every electrification decision. Numbers from EIA, NREL and Energy Star. No installer upsell, no email gate.</p>
+      </div>
+
+      <div class="bento reveal" style="margin-top:30px;">
+        <a href="/calculator/" class="bento-cell feature span-6" style="display:block; cursor:pointer; transition:.3s;">
+          <span style="font-size:1.8rem;">⚡</span>
+          <h3 style="margin-top:8px;">Electricity cost calculator</h3>
+          <p>Any appliance, any country. Daily, monthly, yearly cost in USD / GBP / EUR.</p>
+          <span style="color:var(--accent); font-weight:600; font-size:0.9rem;">Open →</span>
+        </a>
+        <a href="/calculator/solar/" class="bento-cell" style="display:block; cursor:pointer;">
+          <span style="font-size:1.8rem;">☀️</span>
+          <h3 style="margin-top:8px;">Solar ROI</h3>
+          <p>State-by-state payback, with or without the federal tax credit.</p>
+          <span style="color:var(--accent); font-weight:600; font-size:0.9rem;">Open →</span>
+        </a>
+        <a href="/calculator/heat-pump/" class="bento-cell" style="display:block; cursor:pointer;">
+          <span style="font-size:1.8rem;">🔥</span>
+          <h3 style="margin-top:8px;">Heat pump vs gas</h3>
+          <p>4 climate zones × 4 fuels × HSPF rating. Real annual cost side-by-side.</p>
+          <span style="color:var(--accent); font-weight:600; font-size:0.9rem;">Open →</span>
+        </a>
+        <a href="/calculator/ev-charging/" class="bento-cell span-6" style="display:block; cursor:pointer;">
+          <span style="font-size:1.8rem;">🚗</span>
+          <h3 style="margin-top:8px;">EV charging cost</h3>
+          <p>Real per-mile and per-year cost. Tesla, Ford, Hyundai, GM, Rivian. Home vs DC fast vs Supercharger.</p>
+          <span style="color:var(--accent); font-weight:600; font-size:0.9rem;">Open →</span>
+        </a>
+        <a href="/calculator/payback/" class="bento-cell" style="display:block; cursor:pointer;">
+          <span style="font-size:1.8rem;">📊</span>
+          <h3 style="margin-top:8px;">Whole-home payback</h3>
+          <p>Solar + heat pump + EV in one cash-flow model. Single break-even year.</p>
+          <span style="color:var(--accent); font-weight:600; font-size:0.9rem;">Open →</span>
+        </a>
+        <a href="/guides/" class="bento-cell feature" style="display:block; cursor:pointer;">
+          <span style="font-size:1.8rem;">📚</span>
+          <h3 style="margin-top:8px;">All 20 guides</h3>
+          <p>Honest deep-dives sourced from EIA, NREL and DSIRE — solar, EV, heat pump, appliances and savings.</p>
+          <span style="color:var(--accent); font-weight:600; font-size:0.9rem;">Browse the library →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <aside class="promo-slot" aria-label="More tools">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Try a tool</span>
+        <h3 class="promo-slot__title">Pick the right calculator for your decision</h3>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/calculator/payback/"><span class="promo-slot__card-icon">📊</span><span class="promo-slot__card-title">Whole-home payback</span><span>Solar + heat pump + EV in one model. Single break-even year.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/calculator/solar/"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">Solar ROI</span><span>State-by-state, with or without federal tax credit.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/calculator/ev-charging/"><span class="promo-slot__card-icon">🚗</span><span class="promo-slot__card-title">EV charging</span><span>15 EVs, home vs DC fast, TOU rates.</span><span class="promo-slot__card-arrow">Open →</span></a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- APPLIANCES -->
+  <section id="appliances">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Wattage reference</span>
+        <h2>How many watts does a <span class="grad-text">common appliance</span> use?</h2>
+        <p>Typical power draw and monthly cost at the US average rate (17¢/kWh, 3 hours/day).</p>
+      </div>
+
+      <div class="appliance-grid reveal">
+        <div class="app-card"><span class="app-icon">❄️</span><h3>Refrigerator</h3><span class="watts">150 W</span><span class="cost">~$22 / month</span></div>
+        <div class="app-card"><span class="app-icon">🌬️</span><h3>AC (window)</h3><span class="watts">1,000 W</span><span class="cost">~$153 / month</span></div>
+        <div class="app-card"><span class="app-icon">🔥</span><h3>Space heater</h3><span class="watts">1,500 W</span><span class="cost">~$230 / month</span></div>
+        <div class="app-card"><span class="app-icon">💧</span><h3>Water heater</h3><span class="watts">4,000 W</span><span class="cost">~$612 / month</span></div>
+        <div class="app-card"><span class="app-icon">📺</span><h3>TV (55&quot; LED)</h3><span class="watts">100 W</span><span class="cost">~$15 / month</span></div>
+        <div class="app-card"><span class="app-icon">🎮</span><h3>Gaming PC</h3><span class="watts">400 W</span><span class="cost">~$61 / month</span></div>
+        <div class="app-card"><span class="app-icon">💻</span><h3>Laptop</h3><span class="watts">60 W</span><span class="cost">~$9 / month</span></div>
+        <div class="app-card"><span class="app-icon">🔌</span><h3>EV charger (L2)</h3><span class="watts">7,200 W</span><span class="cost">~$110 / session</span></div>
+        <div class="app-card"><span class="app-icon">🧺</span><h3>Washing machine</h3><span class="watts">500 W</span><span class="cost">~$8 / month</span></div>
+        <div class="app-card"><span class="app-icon">🍽️</span><h3>Dishwasher</h3><span class="watts">1,800 W</span><span class="cost">~$28 / month</span></div>
+        <div class="app-card"><span class="app-icon">🍞</span><h3>Oven</h3><span class="watts">2,400 W</span><span class="cost">~$37 / month</span></div>
+        <div class="app-card"><span class="app-icon">💡</span><h3>LED bulb</h3><span class="watts">10 W</span><span class="cost">~$0.15 / month</span></div>
+      </div>
+
+      <div class="text-center mt-40">
+        <a class="btn btn-ghost" href="/guides/">Browse all appliance guides →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO: WHY WATT GUIDE -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Watt Guide</span>
+        <h2>Built for <span class="grad-text">real households</span>, not spreadsheets</h2>
+      </div>
+
+      <div class="bento reveal">
+        <div class="bento-cell feature span-6">
+          <h3>Multi-country, multi-currency</h3>
+          <p>US, UK, Ireland, Canada, Australia. Pick your country — we load a realistic 2026 rate automatically and convert every calculation.</p>
+        </div>
+        <div class="bento-cell">
+          <h3>No tracking, no spam</h3>
+          <p>No signups. No email gates. Calculator works offline once loaded.</p>
+        </div>
+        <div class="bento-cell">
+          <h3>Always free</h3>
+          <p>Funded by unobtrusive ads. No paywalls, no affiliate pressure on our recommendations.</p>
+        </div>
+        <div class="bento-cell span-6">
+          <h3>Updated for 2026 rates</h3>
+          <p>We refresh country-average tariffs every quarter using EIA (US), Ofgem (UK), Eurostat and CRU (Ireland) public data.</p>
+        </div>
+        <div class="bento-cell">
+          <h3>Works on any device</h3>
+          <p>Mobile-first. The whole site loads in under 1 second on a 4G connection.</p>
+        </div>
+        <div class="bento-cell">
+          <h3>Public-data sourced</h3>
+          <p>Every number tied to EIA, NREL, DSIRE, Ofgem or a manufacturer spec sheet. If we can't source it, we don't print it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <aside class="promo-slot" aria-label="Read next">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Read next</span>
+        <h3 class="promo-slot__title">Companion deep-dives</h3>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/guides/how-to-reduce-electricity-bill-2026.html"><span class="promo-slot__card-icon">📉</span><span class="promo-slot__card-title">Cut your bill in 2026</span><span>26 tactics ranked by real dollar impact.</span><span class="promo-slot__card-arrow">Read →</span></a>
+        <a class="promo-slot__card" href="/guides/air-conditioner-wattage-cost-2026.html"><span class="promo-slot__card-icon">🌬️</span><span class="promo-slot__card-title">AC wattage by BTU</span><span>Window, portable, central — real cost per hour.</span><span class="promo-slot__card-arrow">Read →</span></a>
+        <a class="promo-slot__card" href="/guides/refrigerator-electricity-cost-2026.html"><span class="promo-slot__card-icon">❄️</span><span class="promo-slot__card-title">Refrigerator cost</span><span>Old vs new — when replacing pays back.</span><span class="promo-slot__card-arrow">Read →</span></a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- GUIDES -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Latest guides</span>
+        <h2>Read before you <span class="grad-text">pay your next bill</span></h2>
+      </div>
+
+      <div class="guides-grid reveal">
+        <article class="guide-card">
+          <span class="guide-tag">Savings · Pillar</span>
+          <h3><a href="/guides/how-to-reduce-electricity-bill-2026.html">How to reduce your electricity bill in 2026</a></h3>
+          <p>26 tactics that actually move the needle, ranked by dollar impact. Every number sourced from EIA and utility audits.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">18 min read · Updated April 2026</div>
+        </article>
+        <article class="guide-card">
+          <span class="guide-tag">Reference</span>
+          <h3>How many watts does an air conditioner use?</h3>
+          <p>Window, portable, central, mini-split — real wattage numbers by BTU rating and what they cost per hour.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">Coming soon</div>
+        </article>
+        <article class="guide-card">
+          <span class="guide-tag">EV</span>
+          <h3>Cost to charge an EV at home vs public stations</h3>
+          <p>Level 1 vs Level 2 vs DC fast charging. Real kWh math for Tesla, Mach-E, Ioniq and Leaf.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">Coming soon</div>
+        </article>
+        <article class="guide-card">
+          <span class="guide-tag">Solar</span>
+          <h3>What size solar system do I actually need?</h3>
+          <p>Sizing formula based on your last 12 months of kWh usage. Panel count, inverter size and break-even period.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">Coming soon</div>
+        </article>
+        <article class="guide-card">
+          <span class="guide-tag">Heating</span>
+          <h3>Heat pump vs gas furnace vs electric: true operating cost</h3>
+          <p>Monthly heating cost for a 2,000 sq ft home in cold, mild and warm climates.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">Coming soon</div>
+        </article>
+        <article class="guide-card">
+          <span class="guide-tag">Standby</span>
+          <h3>Phantom load: how much do &quot;off&quot; devices really cost?</h3>
+          <p>We measured 40 plugged-in devices. Some cost more off than on. Here&apos;s what to unplug first.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">Coming soon</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to cut your bill?</h2>
+      <p>Plug your main appliances into the calculator and see where the real money goes. It takes 60 seconds.</p>
+      <a class="btn btn-primary" href="/calculator/">
+        Open calculator
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+        <p>Independent electricity cost calculator and energy guides.</p>
+      </div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Calculator</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#appliances">Appliances</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/cookies.html">Cookies</a></li><li><a href="/about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact.html">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year></span> Watt Guide</div>
+      <div>Made for people who read their bills</div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+  <script src="/assets/cookie-consent.js" defer></script>
+  <!-- Cloudflare Web Analytics (privacy-friendly, no cookie consent required). Replace TOKEN or delete this block after launch. -->
+  <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_ME"}'></script> -->
+</body>
+</html>

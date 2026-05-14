@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e1a"/>
+      <stop offset="1" stop-color="#0f1729"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.15" cy="0.25" r="0.55">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.85" r="0.45">
+      <stop offset="0" stop-color="#10b981" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <!-- Rayos decorativos -->
+  <g opacity="0.25" stroke="#fbbf24" stroke-width="1" fill="none">
+    <circle cx="1000" cy="315" r="200"/>
+    <circle cx="1000" cy="315" r="150"/>
+    <circle cx="1000" cy="315" r="100"/>
+  </g>
+  <path d="M1050 200 L980 310 L1030 310 L995 430 L1075 310 L1020 310 L1055 200 Z" fill="url(#bolt)" opacity="0.9"/>
+  <!-- Logo -->
+  <path d="M120 95 L92 140 L112 140 L104 175 L132 130 L112 130 L120 95 Z" fill="#fbbf24"/>
+  <text x="148" y="135" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">
+    Watt<tspan fill="#fbbf24">Guide</tspan>
+  </text>
+  <!-- Titular -->
+  <text x="100" y="290" font-family="'Space Grotesk', Inter, Arial, sans-serif" font-size="76" font-weight="700" fill="#ffffff">Know exactly what</text>
+  <text x="100" y="378" font-family="'Space Grotesk', Inter, Arial, sans-serif" font-size="76" font-weight="700" fill="url(#txt)">electricity costs.</text>
+  <!-- Subtítulo -->
+  <text x="100" y="448" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#94a3b8">Free calculator · 300+ appliances · 5 countries</text>
+  <!-- Píldora -->
+  <rect x="100" y="500" width="260" height="50" rx="25" fill="#fbbf24"/>
+  <text x="230" y="533" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="600" fill="#1a1400">watt-guide.com →</text>
+</svg>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Energy &amp; Electricity Guides | Watt Guide</title>
+  <meta name="description" content="All our guides about electricity cost, appliance wattage, solar, EVs, heat pumps and home energy savings. Independent and updated for 2026.">
+  <link rel="canonical" href="https://watt-guide.com/guides/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Energy &amp; Electricity Guides — Watt Guide">
+  <meta property="og:description" content="Our full library of electricity cost and energy savings guides.">
+  <meta property="og:url" content="https://watt-guide.com/guides/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Energy & Electricity Guides",
+    "url": "https://watt-guide.com/guides/",
+    "publisher": { "@type": "Organization", "name": "Watt Guide", "url": "https://watt-guide.com" }
+  }
+  </script>
+
+  <style>
+    .hub-hero {
+      padding: 140px 0 50px; text-align: center;
+      background: radial-gradient(ellipse at top, rgba(251,191,36,0.08), transparent 60%);
+    }
+    .hub-hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 14px; }
+    .hub-hero p { max-width: 640px; margin: 0 auto; color: var(--text-muted); font-size: 1.1rem; }
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+      margin: 36px auto 0; max-width: 800px;
+    }
+    .filter-chip {
+      padding: 9px 18px; border-radius: 999px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text-muted); font-size: 0.9rem; font-weight: 500;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-chip:hover { border-color: var(--border-strong); color: var(--text); }
+    .filter-chip.is-active { background: var(--accent); color: #1a1400; border-color: var(--accent); }
+    .guide-item.is-hidden { display: none; }
+    .coming-soon {
+      display: inline-block; padding: 3px 10px; border-radius: 6px;
+      background: rgba(16,185,129,0.15); color: var(--accent-2);
+      font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .guide-card.is-soon { opacity: 0.6; pointer-events: none; }
+  </style>
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:locale" content="en_US">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://watt-guide.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://watt-guide.com/guides/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/calculator/">Calculator</a></li>
+      <li><a href="/guides/" aria-current="page">Guides</a></li>
+      <li><a href="/#appliances">Appliances</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/calculator/">Open calculator →</a>
+  </div>
+</header>
+
+<main>
+  <section class="hub-hero">
+    <div class="container">
+      <span class="eyebrow">Library</span>
+      <h1>All <span class="grad-text">energy guides</span></h1>
+      <p>Real numbers from public datasets. No filler. Updated every quarter.</p>
+      <div class="filter-bar">
+        <button class="filter-chip is-active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="savings">Savings</button>
+        <button class="filter-chip" data-filter="appliances">Appliances</button>
+        <button class="filter-chip" data-filter="ev">EVs</button>
+        <button class="filter-chip" data-filter="solar">Solar</button>
+        <button class="filter-chip" data-filter="heating">Heating</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <aside class="promo-slot" aria-label="Tools">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Try the tool</span>
+        <h3 class="promo-slot__title">Run your own numbers in our calculators</h3>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/calculator/solar/"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">Solar ROI</span><span>State-by-state payback, with or without the federal credit.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/calculator/heat-pump/"><span class="promo-slot__card-icon">🔥</span><span class="promo-slot__card-title">Heat pump vs gas</span><span>Climate zone × fuel × HSPF, side-by-side annual cost.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/calculator/ev-charging/"><span class="promo-slot__card-icon">🚗</span><span class="promo-slot__card-title">EV charging cost</span><span>15 EV models, home vs DC fast, real per-mile cost.</span><span class="promo-slot__card-arrow">Open →</span></a>
+      </div>
+    </aside>
+  </div>
+
+  <section style="padding:40px 0 100px">
+    <div class="container">
+      <div class="guides-grid" id="guidesGrid">
+
+        <article class="guide-card guide-item" data-cat="savings">
+          <span class="guide-tag">Savings · Pillar</span>
+          <h3><a href="/guides/how-to-reduce-electricity-bill-2026.html">How to reduce your electricity bill in 2026</a></h3>
+          <p>26 real tactics ranked by dollar impact. Sourced from EIA, Ofgem and metered utility audits.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">18 min · Updated April 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="solar">
+          <span class="guide-tag">Solar · Pillar</span>
+          <h3><a href="/guides/solar-panel-cost-california-2026.html">Solar panel cost in California 2026 — real numbers, real payback</a></h3>
+          <p>Post-tax-credit, post-NEM-3.0 honest math. $/W by installer tier, county payback, financing trade-offs.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">16 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="heating">
+          <span class="guide-tag">Heating · Pillar</span>
+          <h3><a href="/guides/heat-pump-vs-gas-furnace-2026.html">Heat pump vs gas furnace 2026: real ROI in 4 climates</a></h3>
+          <p>Atlanta, Sacramento, Boston, Minneapolis side-by-side. When gas still wins. ccASHP at 0 °F.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">15 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="ev">
+          <span class="guide-tag">EV · Pillar</span>
+          <h3><a href="/guides/ev-charging-cost-home-2026.html">Cost to charge an EV at home in 2026 — full kWh math</a></h3>
+          <p>Tesla, Ford, Hyundai, GM. Home vs Tesla Supercharger vs Electrify America. Real per-mile cost.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">14 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="appliances">
+          <span class="guide-tag">Appliances</span>
+          <h3><a href="/guides/air-conditioner-wattage-cost-2026.html">How many watts does an air conditioner use?</a></h3>
+          <p>Window, portable, central, mini-split. Real wattage by BTU rating and cost per hour.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">7 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="appliances">
+          <span class="guide-tag">Appliances</span>
+          <h3><a href="/guides/refrigerator-electricity-cost-2026.html">Refrigerator electricity cost: what you actually pay</a></h3>
+          <p>Old vs new, side-by-side vs French door. Why Energy Star matters on a 24/7 appliance.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">7 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="solar">
+          <span class="guide-tag">Solar · Pillar</span>
+          <h3><a href="/guides/best-states-solar-payback-2026.html">Best US states for solar payback 2026 — post tax credit ranking</a></h3>
+          <p>50-state ranking with NREL production and EIA rates. Hawaii 5.8 yr, California 7.4, Idaho 22.4. No federal credit.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">15 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="heating">
+          <span class="guide-tag">Heating · Pillar</span>
+          <h3><a href="/guides/heat-pump-tax-credit-replacements-by-state-2026.html">Heat pump tax credit replacements by state 2026</a></h3>
+          <p>Where rebates still exist after Section 25C was eliminated. Mass Save $10k, Maine $8k, NY Clean Heat $4-8k, and 15 more.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">14 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="ev">
+          <span class="guide-tag">EV · Pillar</span>
+          <h3><a href="/guides/ev-charging-cost-by-state-2026.html">EV charging cost by state — CA · TX · NY · FL compared</a></h3>
+          <p>Same Model Y, 4 states, charging from $155/yr (Con Ed TOU NYC) to $1,580 (PG&E peak SF). Utility-by-utility breakdown.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">13 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="ev">
+          <span class="guide-tag">EV · Pillar</span>
+          <h3><a href="/guides/time-of-use-ev-plans-2026.html">Time-of-use EV plans — when they save and when they backfire</a></h3>
+          <p>The 4-step test to know if TOU works for your household. 4 winning + 5 backfire scenarios with real math.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">12 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="solar">
+          <span class="guide-tag">Solar</span>
+          <h3><a href="/guides/what-size-solar-system-do-i-need-2026.html">What size solar system do I actually need? 5-minute sizing method</a></h3>
+          <p>NREL formula + state factors + worked examples for SF, Atlanta, Boston and San Diego.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">12 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="solar">
+          <span class="guide-tag">Solar · Pillar</span>
+          <h3><a href="/guides/solar-battery-storage-payback-2026.html">Solar + battery storage payback in 2026</a></h3>
+          <p>Powerwall 3 math by utility regime. When it pays back (CA NEM 3.0, Hawaii) and when it doesn't.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">13 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="ev">
+          <span class="guide-tag">EV · Pillar</span>
+          <h3><a href="/guides/ev-vs-gas-tco-5-year-2026.html">EV vs gas TCO over 5 years — real math</a></h3>
+          <p>Model Y vs RAV4 and F-150 Lightning vs F-150 EcoBoost. Every line item shown.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">14 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="savings">
+          <span class="guide-tag">Whole-home · Pillar</span>
+          <h3><a href="/guides/whole-home-electrification-order-2026.html">Whole-home electrification: order of operations</a></h3>
+          <p>The 6-step sequence. Why "solar first" costs you $8-15k.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">11 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="savings">
+          <span class="guide-tag">Savings</span>
+          <h3><a href="/guides/phantom-load-standby-power-2026.html">Phantom load: what 40 plugged-in devices really cost</a></h3>
+          <p>Metered 40 devices. Big offenders, not-worth-bothering list, and the $25 fix.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">9 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="appliances">
+          <span class="guide-tag">Appliances · Pillar</span>
+          <h3><a href="/guides/water-heater-tank-vs-tankless-vs-heat-pump-2026.html">Water heater 2026: tank vs tankless vs heat pump</a></h3>
+          <p>Real annual cost, install cost, payback, lifespan compared.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">10 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="appliances">
+          <span class="guide-tag">Appliances</span>
+          <h3><a href="/guides/clothes-dryer-electricity-cost-2026.html">Clothes dryer cost: electric vs gas vs heat pump</a></h3>
+          <p>Per-cycle cost, annual total, when the upgrade pays back.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">8 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="appliances">
+          <span class="guide-tag">Appliances</span>
+          <h3><a href="/guides/pool-pump-electricity-cost-2026.html">Pool pump cost: single vs variable speed</a></h3>
+          <p>Why VS pumps cut 70% — affinity-law math + rebate map.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">8 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="appliances">
+          <span class="guide-tag">Appliances</span>
+          <h3><a href="/guides/space-heater-electricity-cost-2026.html">Space heater cost: what 1,500 W really costs</a></h3>
+          <p>Ceramic vs oil-filled myth, real cost-per-hour, when a mini-split wins.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">7 min · Updated May 2026</div>
+        </article>
+
+        <article class="guide-card guide-item" data-cat="heating">
+          <span class="guide-tag">Heating</span>
+          <h3><a href="/guides/mini-split-heat-pump-apartments-2026.html">Mini-split heat pumps for apartments and condos</a></h3>
+          <p>Window units, DIY kits, pro install. The 3 paths for renters and condo owners.</p>
+          <div style="font-size:0.84rem; color:var(--text-dim);">9 min · Updated May 2026</div>
+        </article>
+
+        
+
+        
+
+        
+
+      </div>
+
+      <aside class="promo-slot" aria-label="Tools">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Companion tool</span>
+        <h3 class="promo-slot__title">Plug your numbers into the calculator</h3>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/calculator/payback/"><span class="promo-slot__card-icon">📊</span><span class="promo-slot__card-title">Whole-home payback</span><span>Solar + heat pump + EV in one cash-flow model.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/calculator/"><span class="promo-slot__card-icon">⚡</span><span class="promo-slot__card-title">Electricity cost</span><span>Any appliance, any country. Daily/monthly/yearly.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/guides/"><span class="promo-slot__card-icon">📚</span><span class="promo-slot__card-title">All energy guides</span><span>Solar, EV, heat pump, appliances — full library.</span><span class="promo-slot__card-arrow">Browse →</span></a>
+      </div>
+    </aside>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Missing a topic?</h2>
+      <p>Tell us what appliance or scenario you want us to measure next. We prioritize topics readers request.</p>
+      <a class="btn btn-primary" href="/contact.html">Suggest a guide</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+        <p>Independent electricity cost calculator and energy guides.</p>
+      </div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Calculator</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#appliances">Appliances</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/cookies.html">Cookies</a></li><li><a href="/about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact.html">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© <span data-year></span> Watt Guide</div><div>Made for people who read their bills</div></div>
+  </div>
+</footer>
+
+<script src="../assets/main.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const chips = document.querySelectorAll('.filter-chip');
+    const items = document.querySelectorAll('.guide-item');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        const f = chip.dataset.filter;
+        items.forEach(i => i.classList.toggle('is-hidden', !(f === 'all' || i.dataset.cat === f)));
+      });
+    });
+  });
+</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+  <!-- Cloudflare Web Analytics (privacy-friendly, no cookie consent required). Replace TOKEN or delete this block after launch. -->
+  <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_ME"}'></script> -->
+</body>
+</html>

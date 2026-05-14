@@ -1,0 +1,48 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+
+# Logs
+*.log
+
+# Local environment / secrets — NEVER commit
+.env
+.env.local
+.env.*.local
+secrets/
+*.pem
+*.key
+
+# Build artifacts (este sitio es estático, no debería haber, pero por si acaso)
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Python (por si se usa inject_adsense.py local)
+__pycache__/
+*.pyc
+*.pyo
+
+# Temp
+tmp/
+temp/
+
+# Documentos personales / no relacionados con el sitio
+*.docx
+*.doc
+*.odt
+*.xlsx
+*.xls
+*.pdf

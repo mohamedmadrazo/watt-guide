@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time-of-Use EV Plans 2026: When It Works and When It Backfires | Watt Guide</title>
+  <meta name="description" content="Time-of-use EV electricity plans compared. When they save real money, when the day surcharge cancels the savings, and how to break even.">
+  <link rel="canonical" href="https://watt-guide.com/guides/time-of-use-ev-plans-2026.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Time-of-Use EV Plans 2026 — Watt Guide">
+  <meta property="og:description" content="When TOU saves you money on EV charging and when it backfires. The math.">
+  <meta property="og:url" content="https://watt-guide.com/guides/time-of-use-ev-plans-2026.html">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-12T10:00:00Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Time-of-Use EV Plans 2026: When It Works and When It Backfires","image":"https://watt-guide.com/assets/og-image-v2.jpg","datePublished":"2026-05-12","dateModified":"2026-05-12","author":{"@type":"Person","name":"Watt Guide Editorial"},"publisher":{"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v2.jpg"}},"mainEntityOfPage":"https://watt-guide.com/guides/time-of-use-ev-plans-2026.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://watt-guide.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://watt-guide.com/guides/"},{"@type":"ListItem","position":3,"name":"TOU EV plans 2026","item":"https://watt-guide.com/guides/time-of-use-ev-plans-2026.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is a time-of-use (TOU) electricity plan?","acceptedAnswer":{"@type":"Answer","text":"A residential plan where the rate per kWh varies by time of day. Typical structure: high peak rate ($0.30-0.55/kWh, usually 4-9 PM), medium off-peak ($0.15-0.25/kWh), low super-off-peak ($0.04-0.17/kWh, overnight). Designed to incentivize moving electricity use to low-demand hours."}},
+    {"@type":"Question","name":"When does TOU save EV owners money?","acceptedAnswer":{"@type":"Answer","text":"When ≥80% of total household electricity can be shifted to off-peak hours, AND the savings on the EV-charging kWh exceed the surcharge applied to peak hours for the rest of the home. Typically saves $300-900/yr for a Model Y on 12,500 mi/yr in a TOU-aware utility."}},
+    {"@type":"Question","name":"When does TOU backfire on EV owners?","acceptedAnswer":{"@type":"Answer","text":"In four scenarios: (1) AC-heavy summer cooling load during peak hours that can't be shifted, (2) home occupied during the day with high daytime usage (work-from-home), (3) electric resistance heat or pool pump running during peak, (4) utility's day rate surcharge over standard is higher than EV savings."}}
+  ]}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/#tools">Tools</a></li>
+      <li><a href="/guides/" aria-current="page">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/calculator/ev-charging/">Open EV charging calc →</a>
+  </div>
+</header>
+
+<main class="container" style="padding-top:120px; padding-bottom:80px; max-width:840px;">
+  <nav class="crumbs" aria-label="Breadcrumb" style="margin-bottom:18px; font-size:0.85rem; color:var(--text-dim);">
+    <a href="/" style="color:var(--text-dim);">Home</a> ›
+    <a href="/guides/" style="color:var(--text-dim);">Guides</a> ›
+    <span style="color:var(--text-muted);">TOU EV plans 2026</span>
+  </nav>
+
+  <article>
+    <span class="eyebrow">EV · Pillar · Updated May 2026</span>
+    <h1>Time-of-use EV plans: <span class="grad-text">when they save and when they backfire.</span></h1>
+    <p style="font-size:1.1rem; color:var(--text-muted); margin-top:16px; line-height:1.65;">Every EV-friendly utility page tells you to switch to a time-of-use plan. About 30 % of EV owners who do end up paying <strong>more</strong> than on the standard rate. Here is the math behind both outcomes — and the 4-step test to know which side of the line your household falls on.</p>
+
+    <figure class="hero-illustration" aria-hidden="true" style="margin-top:32px;">
+      <img src="/assets/hero-tou-ev.webp" alt="" loading="eager" decoding="async">
+      <figcaption class="hero-illustration__badge">Off-peak vs peak · the clock decides</figcaption>
+    </figure>
+
+    <div style="margin:32px 0; padding:18px 22px; background:var(--bg-1); border-left:4px solid var(--accent); border-radius:var(--r-md);">
+      <strong style="color:var(--text);">TL;DR:</strong> <span style="color:var(--text-muted);">TOU only wins if you can shift <strong style="color:var(--text);">≥ 70 %</strong> of your household kWh to off-peak. That's easy if you're a low-load EV-only household; very hard if you have central AC, electric resistance heat, a pool pump or you work from home. Always run the math on 12 months of your actual usage, not the utility's marketing example.</span>
+    </div>
+
+    <aside class="promo-slot" aria-label="Tools">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Try the tool</span>
+        <h3 class="promo-slot__title">Model both rates side by side</h3>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/calculator/ev-charging/"><span class="promo-slot__card-icon">🚗</span><span class="promo-slot__card-title">EV charging calc</span><span>Override home rate to simulate off-peak. Compare scenarios.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/calculator/"><span class="promo-slot__card-icon">⚡</span><span class="promo-slot__card-title">Electricity cost calc</span><span>Quick what-if for any appliance run at off-peak.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/calculator/solar/"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">Solar ROI calc</span><span>Solar makes the TOU math nearly irrelevant.</span><span class="promo-slot__card-arrow">Open →</span></a>
+      </div>
+    </aside>
+
+    <h2 id="anatomy">Anatomy of a TOU plan</h2>
+    <p>The structure varies but most TOU plans break the day into three bands:</p>
+    <table style="width:100%; margin-top:14px; border-collapse:collapse; font-size:0.92rem;">
+      <thead><tr style="background:var(--bg-1);">
+        <th style="text-align:left; padding:10px; border-bottom:1px solid var(--border);">Band</th>
+        <th style="text-align:left; padding:10px; border-bottom:1px solid var(--border);">Typical hours</th>
+        <th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">Typical ¢/kWh</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);"><strong style="color:var(--text);">Peak</strong></td><td style="padding:10px; border-bottom:1px solid var(--border); color:var(--text-muted);">4 PM–9 PM weekdays (summer); 5–9 PM weekdays (winter)</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--danger);">$0.35–$0.55</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);"><strong style="color:var(--text);">Off-peak</strong></td><td style="padding:10px; border-bottom:1px solid var(--border); color:var(--text-muted);">9 AM–4 PM weekdays, 9 PM–midnight</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$0.18–$0.28</td></tr>
+        <tr><td style="padding:10px;"><strong style="color:var(--text);">Super-off-peak</strong></td><td style="padding:10px; color:var(--text-muted);">Midnight–6 AM, often plus midday weekends</td><td style="text-align:right; padding:10px; color:var(--accent-2);">$0.04–$0.17</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px;">The savings opportunity is in the <strong>super-off-peak</strong> band — that's where Level 2 home charging belongs. The risk is the <strong>peak</strong> band, where running cooling/heating/cooking adds up fast.</p>
+
+    <h2 id="when-it-works">When TOU works (4 scenarios)</h2>
+    <ol style="margin:14px 0 22px 24px; color:var(--text-muted); line-height:1.8;">
+      <li><strong style="color:var(--text);">Low-load EV household.</strong> Single or couple, ~600 kWh/month, EV does 60 % of usage. Shifting that EV usage to super-off-peak slashes 40-60 % of the bill.</li>
+      <li><strong style="color:var(--text);">Solar + EV pairing.</strong> Solar covers your daytime peak/off-peak baseline; the only meaningful kWh you import from the utility is overnight Level 2 charging at super-off-peak. Best-case economics.</li>
+      <li><strong style="color:var(--text);">Heat pump + EV in NEM 3.0 California.</strong> Run the heat pump during super-off-peak (or solar production hours) and the EV at super-off-peak; the heat pump uses 4× less electricity than gas resistance heating at the same time. Compounds the TOU advantage.</li>
+      <li><strong style="color:var(--text);">"Free nights" plans in Texas.</strong> Deregulated retail providers offering $0.00/kWh from 8 PM-6 AM. Even if the day rate is ~25 % higher than standard, the math works as long as ≥50 % of your usage is overnight.</li>
+    </ol>
+
+    <h2 id="when-it-backfires">When TOU backfires (5 scenarios)</h2>
+    <ol style="margin:14px 0 22px 24px; color:var(--text-muted); line-height:1.8;">
+      <li><strong style="color:var(--text);">Summer AC during peak hours.</strong> Central AC in Phoenix runs 6-10 hours/day, much of it during the 4-9 PM peak window. The peak surcharge can be $400/season — eating most of the EV savings.</li>
+      <li><strong style="color:var(--text);">Electric resistance heat (baseboard or whole-house).</strong> Heat can't be shifted to overnight. Peak heating hours match peak utility hours. Don't enroll in TOU until you switch to a heat pump.</li>
+      <li><strong style="color:var(--text);">Work-from-home household.</strong> Cooking, laptops, lighting and HVAC running during the day = high off-peak and peak usage. The savings on EV charging get cancelled by the surcharge on everything else.</li>
+      <li><strong style="color:var(--text);">Pool pump.</strong> Most pool pumps default to running 8 hours/day, often spanning peak hours. Reschedule to overnight before enrolling in TOU.</li>
+      <li><strong style="color:var(--text);">Day-rate surcharge > EV savings.</strong> Some utilities (e.g. SCE TOU-D vs standard) charge ~$0.04/kWh more on peak hours than the standard rate would charge for the same kWh. If you can't shift enough load, you're paying more, not less.</li>
+    </ol>
+
+    <h2 id="four-step-test">The 4-step test to know your answer in 7 minutes</h2>
+    <ol style="margin:14px 0 22px 24px; color:var(--text-muted); line-height:1.8;">
+      <li><strong style="color:var(--text);">Download 12 months of hourly kWh data</strong> from your utility (PG&E "Download My Data", Con Ed "Green Button", FPL "Energy Dashboard"). Most US utilities offer it as CSV.</li>
+      <li><strong style="color:var(--text);">Bucket each hour into peak / off-peak / super-off-peak</strong> using the TOU plan's schedule. A simple spreadsheet pivot does it.</li>
+      <li><strong style="color:var(--text);">Calculate "annual bill under each plan"</strong>: sum(kWh × rate) for each band on the new plan; sum(kWh × $standard_rate) for the standard plan.</li>
+      <li><strong style="color:var(--text);">Add your projected EV charging</strong> entirely in super-off-peak (assuming you'll use Level 2 scheduling). Compare totals.</li>
+    </ol>
+    <p>If TOU wins by &lt;5 %, the gains are within noise and not worth the rate-change hassle. If it wins by &gt;10 %, switch immediately. Most utilities let you switch back once per 12 months without penalty.</p>
+
+    <h2 id="scheduling">Level 2 home charging: scheduling matters more than the plan</h2>
+    <p>If your Level 2 charger has scheduling built in (most do — Tesla Wall Connector, Wallbox Pulsar Plus, ChargePoint Home Flex, Emporia EV), the savings come automatically. If it doesn't, every modern EV (Model 3/Y/3-Performance, Mach-E, Ioniq 5/6, Bolt, F-150 Lightning) has scheduling in the dashboard. Set the start time to <strong>30 minutes after super-off-peak begins</strong> (gives the utility a buffer for slightly off-clock meters) and the stop time as <strong>30 minutes before super-off-peak ends</strong>.</p>
+
+    <aside class="promo-slot" aria-label="Read next">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Read next</span>
+        <h3 class="promo-slot__title">Companion deep-dives</h3>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/guides/ev-charging-cost-home-2026.html"><span class="promo-slot__card-icon">🚗</span><span class="promo-slot__card-title">EV charging cost — full kWh math</span><span>15 EVs compared. Home vs Supercharger.</span><span class="promo-slot__card-arrow">Read →</span></a>
+        <a class="promo-slot__card" href="/guides/ev-charging-cost-by-state-2026.html"><span class="promo-slot__card-icon">🗺️</span><span class="promo-slot__card-title">EV cost by state — CA TX NY FL</span><span>Utility-by-utility breakdown.</span><span class="promo-slot__card-arrow">Read →</span></a>
+        <a class="promo-slot__card" href="/guides/best-states-solar-payback-2026.html"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">Best states for solar 2026</span><span>50-state ranking, post-OBBBA.</span><span class="promo-slot__card-arrow">Read →</span></a>
+      </div>
+    </aside>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>What is a time-of-use (TOU) electricity plan?</h3>
+      <p>A residential rate where the price per kWh varies by time of day. Typical: high peak ($0.30-0.55/kWh, 4-9 PM), medium off-peak ($0.15-0.25/kWh), low super-off-peak ($0.04-0.17/kWh overnight). Designed to incentivize moving usage off-peak.</p>
+    </div>
+    <div class="faq-item">
+      <h3>When does TOU save EV owners money?</h3>
+      <p>When ≥70-80% of total household kWh shifts to off-peak, and the savings on EV charging exceed any peak surcharge on the rest of the home. Typically saves $300-900/yr for a Model Y on 12,500 mi/yr.</p>
+    </div>
+    <div class="faq-item">
+      <h3>When does TOU backfire on EV owners?</h3>
+      <p>(1) AC-heavy summer cooling on peak, (2) electric resistance heat, (3) work-from-home with high daytime usage, (4) pool pump scheduled during peak, (5) utility's day-rate surcharge exceeds the EV-charging savings.</p>
+    </div>
+
+    <p style="margin-top:40px; font-size:0.86rem; color:var(--text-dim);">
+      <strong>Sources:</strong> PG&E, SCE, SDG&E, Con Edison, Eversource, Duke Energy, TXU, Reliant rate cards (Q1 2026), EPA fueleconomy.gov for EV efficiency, EIA national price index May 2026. Last reviewed May 12, 2026.
+    </p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a><p>Independent electricity cost calculator and energy guides.</p></div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Electricity</a></li><li><a href="/calculator/solar/">Solar ROI</a></li><li><a href="/calculator/heat-pump/">Heat pump</a></li><li><a href="/calculator/ev-charging/">EV charging</a></li><li><a href="/calculator/payback/">Payback</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/cookies.html">Cookies</a></li><li><a href="/about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact.html">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© <span data-year></span> Watt Guide</div><div>Made for people who read their bills</div></div>
+  </div>
+</footer>
+<script src="/assets/main.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solar Panel ROI Calculator 2026 — State-by-State Payback | Watt Guide</title>
+  <meta name="description" content="Free solar panel ROI calculator. Pick your US state, system size and electricity rate to see real payback, lifetime savings and ROI — with or without federal tax credit.">
+  <link rel="canonical" href="https://watt-guide.com/calculator/solar/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solar Panel ROI Calculator — Watt Guide">
+  <meta property="og:description" content="State-by-state payback math for residential solar in 2026. Honest numbers, no installer upsell.">
+  <meta property="og:url" content="https://watt-guide.com/calculator/solar/">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Solar Panel ROI Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://watt-guide.com/calculator/solar/",
+    "description": "Estimate payback period, 25-year savings and break-even point for a residential solar PV system in any US state.",
+    "offers": { "@type": "Offer", "price": "0" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://watt-guide.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculator", "item": "https://watt-guide.com/calculator/" },
+      { "@type": "ListItem", "position": 3, "name": "Solar ROI", "item": "https://watt-guide.com/calculator/solar/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is the 30% federal solar tax credit still available in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 30% federal Residential Clean Energy Credit was eliminated in July 2025 by the One Big Beautiful Bill Act. State-level incentives, net metering and SREC programs still exist in many states. The calculator toggle lets you compare both scenarios."}},
+      {"@type":"Question","name":"How is payback period calculated?","acceptedAnswer":{"@type":"Answer","text":"Payback = net system cost ÷ first-year savings, adjusted for an annual utility rate increase. Net cost = gross cost minus any incentives. First-year savings = annual kWh produced × your electricity rate. We assume a 0.5% annual panel degradation and a 3.5% utility rate inflation."}},
+      {"@type":"Question","name":"What kWh production per kW should I expect?","acceptedAnswer":{"@type":"Answer","text":"Annual production per kW of installed solar varies from ~1,100 kWh in cloudy Pacific Northwest to ~1,700 kWh in the Southwest. The calculator uses NREL PVWatts national averages by state and applies a 0.5% annual degradation factor."}},
+      {"@type":"Question","name":"Should I include battery storage in the cost?","acceptedAnswer":{"@type":"Answer","text":"A 10 kWh home battery adds $8,000–$15,000 installed and rarely shortens payback in net-metered states. It does help in states without net metering (Hawaii, parts of Texas, California NEM 3.0). This calculator focuses on grid-tied PV only."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/calculator/">Calculator</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/#appliances">Appliances</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/guides/">Guides →</a>
+  </div>
+</header>
+
+<main class="calc-wrap container">
+  <nav class="crumbs" aria-label="Breadcrumb" style="margin-bottom:18px; font-size:0.85rem; color:var(--text-dim);">
+    <a href="/" style="color:var(--text-dim);">Home</a> ›
+    <a href="/calculator/" style="color:var(--text-dim);">Calculator</a> ›
+    <span style="color:var(--text-muted);">Solar ROI</span>
+  </nav>
+
+  <div style="text-align:center; margin-bottom:32px;">
+    <span class="eyebrow">Free tool · 2026 post-tax-credit edition</span>
+    <h1>Solar panel <span class="grad-text">ROI calculator</span></h1>
+    <p style="max-width:680px; margin:12px auto 0;">Pick your state, system size and electricity rate. See real payback period, 25-year savings and break-even point — with or without the federal tax credit. Numbers sourced from NREL PVWatts and EIA state averages.</p>
+  </div>
+
+  <figure class="hero-illustration" aria-hidden="true">
+    <img src="/assets/hero-solar.webp" alt="" loading="eager" decoding="async" onerror="this.style.display='none';this.parentElement.style.aspectRatio='auto';this.parentElement.style.minHeight='180px';">
+    <figcaption class="hero-illustration__badge">Solar PV · 2026 model</figcaption>
+  </figure>
+
+  <div class="calc-layout">
+
+    <!-- INPUTS -->
+    <section class="calc-panel" aria-label="Inputs">
+      <h2>Your situation</h2>
+      <p class="lbl-muted" style="margin-bottom:24px;">All fields prefilled with state averages. Override anything you know better.</p>
+
+      <div class="calc-field">
+        <label for="state">US State</label>
+        <select id="state"></select>
+      </div>
+
+      <div class="calc-field">
+        <label for="size">System size (kW DC)</label>
+        <input type="number" id="size" min="1" max="40" step="0.5" value="8">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Typical US home: 5–10 kW. Average 2026 install: 8.6 kW.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="cost-per-watt">Installed cost ($/W DC)</label>
+        <input type="number" id="cost-per-watt" min="1" max="6" step="0.05" value="2.85">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Pre-incentive. EnergySage 2026 national median: $2.85/W.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="rate">Electricity rate (¢/kWh)</label>
+        <input type="number" id="rate" min="5" max="60" step="0.5" value="17.5">
+      </div>
+
+      <div class="calc-field">
+        <label for="production">Annual production per kW (kWh/kW/yr)</label>
+        <input type="number" id="production" min="800" max="2000" step="10" value="1400">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">NREL PVWatts average for the selected state.</small>
+      </div>
+
+      <div class="calc-field" style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); border:1px solid var(--border);">
+        <label style="display:flex; justify-content:space-between; align-items:center; cursor:pointer; margin-bottom:0;">
+          <span style="color:var(--text); font-weight:500;">Apply 30% federal tax credit</span>
+          <input type="checkbox" id="tax-credit" style="width:auto; transform:scale(1.4); accent-color:var(--accent);">
+        </label>
+        <small style="color:var(--text-dim); display:block; margin-top:8px;">Eliminated July 2025 by OBBBA. Check this only if you're modelling a pre-July-2025 install or a hypothetical "what-if".</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="state-incentive">State / utility rebate ($)</label>
+        <input type="number" id="state-incentive" min="0" max="20000" step="100" value="0">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Some states (NY, MA, NJ) still offer 5–15% rebates. Set 0 if you don't qualify.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="rate-inflation">Annual utility rate increase (%)</label>
+        <input type="number" id="rate-inflation" min="0" max="10" step="0.1" value="3.5">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">US average 2010–2024: 3.4%. Aggressive: 5%. Conservative: 2%.</small>
+      </div>
+    </section>
+
+    <!-- PREVIEW -->
+    <section class="calc-preview" aria-label="Results">
+      <h3 id="result-headline">Your solar payback</h3>
+      <p class="lbl-muted" id="result-sub">Real numbers, after incentives.</p>
+
+      <div class="calc-result" style="margin-top:18px;">
+        <div class="amount" id="payback-years">—</div>
+        <div class="desc">Years to break even</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:18px;">
+        <div class="calc-result" style="padding:16px;">
+          <div class="amount" id="lifetime-savings" style="font-size:1.6rem;">—</div>
+          <div class="desc">25-year savings</div>
+        </div>
+        <div class="calc-result" style="padding:16px;">
+          <div class="amount" id="roi-pct" style="font-size:1.6rem;">—</div>
+          <div class="desc">Total ROI</div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; padding:18px; background:var(--bg-0); border-radius:var(--r-md); border:1px solid var(--border);">
+        <h4 style="font-size:0.95rem; margin-bottom:14px; color:var(--text);">Breakdown</h4>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Gross system cost</span>
+          <span id="gross-cost" style="color:var(--text); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Federal tax credit</span>
+          <span id="fed-credit" style="color:var(--accent); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">State/utility rebate</span>
+          <span id="state-rebate" style="color:var(--accent); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.95rem;">
+          <span style="color:var(--text);">Net cost</span>
+          <span id="net-cost" style="color:var(--text); font-weight:700;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Year-1 production</span>
+          <span id="year1-kwh" style="color:var(--text); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Year-1 savings</span>
+          <span id="year1-savings" style="color:var(--accent-2); font-weight:600;">—</span>
+        </div>
+      </div>
+
+      <div style="margin-top:18px; padding:14px; background:var(--bg-1); border:1px solid var(--border); border-radius:var(--r-md); font-size:0.86rem; color:var(--text-muted);">
+        <strong style="color:var(--text);">Assumptions:</strong> 25-year panel life, 0.5%/yr degradation, no inverter replacement priced in. Real-world payback can vary ±20% depending on shading, roof orientation and utility net-metering policy.
+      </div>
+    </section>
+  </div>
+
+  <aside class="promo-slot" aria-label="Related tools">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Pair this with</span>
+      <h3 class="promo-slot__title">Solar pairs best with electrification — run the combined math</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/calculator/heat-pump/">
+        <span class="promo-slot__card-icon">🔥</span>
+        <span class="promo-slot__card-title">Heat pump vs gas</span>
+        <span>Solar makes heat pumps free to run. Run the math.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/ev-charging/">
+        <span class="promo-slot__card-icon">🚗</span>
+        <span class="promo-slot__card-title">EV charging cost</span>
+        <span>Pair the panels with home charging — best self-consumption.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/payback/">
+        <span class="promo-slot__card-icon">📊</span>
+        <span class="promo-slot__card-title">Whole-home payback</span>
+        <span>Combine solar + heat pump + EV in one model.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- CONTEXT -->
+  <section style="margin-top:60px; max-width:780px; margin-left:auto; margin-right:auto;">
+    <h2 style="text-align:center;">How the math works</h2>
+    <p style="margin-top:14px;">A 25-year cash-flow simulation. Each year your panels produce slightly less (0.5% degradation), but the utility raises rates (your inflation %), so the dollar value of what you generate keeps growing. We sum every year's saving, subtract the net up-front cost, and report when the cumulative line crosses zero.</p>
+    <p style="margin-top:14px;">The formula in plain terms:</p>
+    <pre style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); overflow-x:auto; color:var(--accent); font-family:monospace; font-size:0.88rem; margin-top:10px;">net_cost = (size × $/W × 1000) − federal_credit − state_rebate
+year_savings[y] = production × (1 − 0.005)^y × rate × (1 + inflation)^y
+payback = min y where Σ year_savings[0..y] ≥ net_cost</pre>
+
+    <h2 style="text-align:center; margin-top:50px;">Frequently asked questions</h2>
+    <div class="faq-item" style="margin-top:18px;">
+      <h3>Is the 30% federal tax credit still available in 2026?</h3>
+      <p>The 30% Residential Clean Energy Credit was eliminated in July 2025 by the One Big Beautiful Bill Act. State-level incentives, net metering and SREC programs still exist in many states. The calculator's toggle lets you compare both scenarios for context.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is payback period calculated?</h3>
+      <p>Payback equals net system cost divided by cumulative annual savings, with rates inflating ~3.5%/yr and panels degrading ~0.5%/yr. Most US households today see 9–14 years post-credit-cut, vs 7–10 years when the 30% was active.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What kWh production per kW should I expect?</h3>
+      <p>From ~1,100 kWh/kW in the cloudy Pacific Northwest to ~1,700 kWh/kW in the Southwest. The calculator preloads NREL PVWatts state averages — override if you know your roof's specific yield.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Should I include battery storage in the cost?</h3>
+      <p>A 10 kWh home battery adds $8,000–$15,000 installed and rarely shortens payback in net-metered states. It does help in California NEM 3.0, Hawaii and parts of Texas. This tool focuses on grid-tied PV only — for battery economics see our dedicated guide.</p>
+    </div>
+  </section>
+
+  <aside class="promo-slot" aria-label="Read next">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Read next</span>
+      <h3 class="promo-slot__title">Deep-dive guides that go with this calculator</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/guides/solar-panel-cost-california-2026.html">
+        <span class="promo-slot__card-icon">☀️</span>
+        <span class="promo-slot__card-title">California solar cost 2026</span>
+        <span>Real $/W by tier, NEM 3.0 impact, county-by-county payback.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/how-to-reduce-electricity-bill-2026.html">
+        <span class="promo-slot__card-icon">📉</span>
+        <span class="promo-slot__card-title">Cut your electricity bill</span>
+        <span>26 tactics ranked by real dollar impact, sourced from EIA + Ofgem.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/">
+        <span class="promo-slot__card-icon">📚</span>
+        <span class="promo-slot__card-title">All energy guides</span>
+        <span>The whole library — solar, heat pump, EV, appliances.</span>
+        <span class="promo-slot__card-arrow">Browse →</span>
+      </a>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+        <p>Independent electricity cost calculator and energy guides.</p>
+      </div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Electricity</a></li><li><a href="/calculator/solar/">Solar ROI</a></li><li><a href="/calculator/heat-pump/">Heat pump</a></li><li><a href="/calculator/ev-charging/">EV charging</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/cookies.html">Cookies</a></li><li><a href="/about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact.html">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year></span> Watt Guide</div>
+      <div>Made for people who read their bills</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============ STATE DATA (NREL PVWatts annual prod + EIA rates, 2024 baseline) ============
+const STATES = [
+  // [name, kWh/kW/yr (PVWatts national average), avg residential rate ¢/kWh (EIA 2024)]
+  ['AL','Alabama',1380,15.7],['AK','Alaska',1100,24.4],['AZ','Arizona',1680,14.3],
+  ['AR','Arkansas',1370,12.4],['CA','California',1490,32.0],['CO','Colorado',1520,15.3],
+  ['CT','Connecticut',1280,32.4],['DE','Delaware',1290,14.2],['FL','Florida',1430,15.0],
+  ['GA','Georgia',1380,14.2],['HI','Hawaii',1480,42.4],['ID','Idaho',1360,11.4],
+  ['IL','Illinois',1280,17.5],['IN','Indiana',1290,16.5],['IA','Iowa',1310,14.0],
+  ['KS','Kansas',1430,14.6],['KY','Kentucky',1290,12.7],['LA','Louisiana',1380,12.7],
+  ['ME','Maine',1240,25.2],['MD','Maryland',1320,17.6],['MA','Massachusetts',1280,33.4],
+  ['MI','Michigan',1230,19.8],['MN','Minnesota',1280,15.2],['MS','Mississippi',1380,14.1],
+  ['MO','Missouri',1330,12.8],['MT','Montana',1310,12.4],['NE','Nebraska',1380,11.4],
+  ['NV','Nevada',1680,14.7],['NH','New Hampshire',1240,28.0],['NJ','New Jersey',1280,18.0],
+  ['NM','New Mexico',1670,14.2],['NY','New York',1230,24.7],['NC','North Carolina',1370,13.0],
+  ['ND','North Dakota',1320,11.5],['OH','Ohio',1230,14.7],['OK','Oklahoma',1450,13.5],
+  ['OR','Oregon',1180,12.6],['PA','Pennsylvania',1240,18.2],['RI','Rhode Island',1280,28.3],
+  ['SC','South Carolina',1370,14.2],['SD','South Dakota',1340,12.5],['TN','Tennessee',1290,12.8],
+  ['TX','Texas',1530,15.1],['UT','Utah',1560,11.2],['VT','Vermont',1230,21.7],
+  ['VA','Virginia',1330,13.7],['WA','Washington',1140,11.2],['WV','West Virginia',1240,14.4],
+  ['WI','Wisconsin',1240,17.2],['WY','Wyoming',1490,11.6]
+];
+
+const $ = (id) => document.getElementById(id);
+const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
+const fmtUSD0 = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+// Populate state dropdown
+const sel = $('state');
+STATES.forEach(([code,name,prod,rate]) => {
+  const opt = document.createElement('option');
+  opt.value = code;
+  opt.textContent = name;
+  opt.dataset.prod = prod;
+  opt.dataset.rate = rate;
+  sel.appendChild(opt);
+});
+sel.value = 'CA';
+
+function applyStateDefaults() {
+  const opt = sel.options[sel.selectedIndex];
+  $('production').value = opt.dataset.prod;
+  $('rate').value = opt.dataset.rate;
+  compute();
+}
+sel.addEventListener('change', applyStateDefaults);
+
+function compute() {
+  const size = parseFloat($('size').value) || 0;
+  const costPerW = parseFloat($('cost-per-watt').value) || 0;
+  const rate = (parseFloat($('rate').value) || 0) / 100; // ¢ → $
+  const prod = parseFloat($('production').value) || 0;
+  const useTaxCredit = $('tax-credit').checked;
+  const stateIncentive = parseFloat($('state-incentive').value) || 0;
+  const inflation = (parseFloat($('rate-inflation').value) || 0) / 100;
+
+  const gross = size * 1000 * costPerW;
+  const fedCredit = useTaxCredit ? gross * 0.30 : 0;
+  const net = Math.max(0, gross - fedCredit - stateIncentive);
+
+  // Year-by-year cash flow
+  const DEGRADATION = 0.005;
+  let cumulative = 0;
+  let paybackYear = null;
+  let total25 = 0;
+  for (let y = 0; y < 25; y++) {
+    const annualKwh = size * prod * Math.pow(1 - DEGRADATION, y);
+    const annualRate = rate * Math.pow(1 + inflation, y);
+    const annualSavings = annualKwh * annualRate;
+    cumulative += annualSavings;
+    total25 += annualSavings;
+    if (paybackYear === null && cumulative >= net) {
+      // Fractional year for precision
+      const overshoot = cumulative - net;
+      paybackYear = (y + 1) - (overshoot / annualSavings);
+    }
+  }
+
+  const year1Kwh = size * prod;
+  const year1Savings = year1Kwh * rate;
+  const lifetimeNet = total25 - net;
+  const roiPct = net > 0 ? (lifetimeNet / net) * 100 : 0;
+
+  const anim = window.animateNumber || ((el,v,o)=>{el.textContent=(o&&o.prefix||'')+Math.round(v)+(o&&o.suffix||'');});
+  if (paybackYear !== null) anim($('payback-years'), paybackYear, {suffix:' yr', decimals:1, duration:750});
+  else $('payback-years').textContent = '> 25 yr';
+  anim($('lifetime-savings'), lifetimeNet, {prefix:'$', decimals:0, duration:750});
+  anim($('roi-pct'), roiPct, {suffix:'%', decimals:0, duration:750});
+  anim($('gross-cost'), gross, {prefix:'$', decimals:0, duration:600});
+  anim($('fed-credit'), fedCredit, {prefix:'−$', decimals:0, duration:600});
+  anim($('state-rebate'), stateIncentive, {prefix:'−$', decimals:0, duration:600});
+  anim($('net-cost'), net, {prefix:'$', decimals:0, duration:600});
+  anim($('year1-kwh'), year1Kwh, {suffix:' kWh', decimals:0, duration:600});
+  anim($('year1-savings'), year1Savings, {prefix:'$', suffix:'/yr', decimals:0, duration:600});
+}
+
+['size','cost-per-watt','rate','production','tax-credit','state-incentive','rate-inflation']
+  .forEach(id => $(id).addEventListener('input', compute));
+
+applyStateDefaults();
+</script>
+
+<script src="/assets/main.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

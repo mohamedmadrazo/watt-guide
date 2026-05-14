@@ -1,0 +1,39 @@
+/* Cookie Consent — Watt Guide (amber #fbbf24) */
+.wg-cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:980px;margin-inline:auto;background:rgba(10,14,26,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(251,191,36,.25);border-radius:18px;box-shadow:0 24px 64px -20px rgba(0,0,0,.6);color:#e2e8f0;font-family:Inter,system-ui,sans-serif;opacity:0;transform:translateY(18px);transition:opacity .28s ease,transform .28s ease}
+.wg-cc.is-open{opacity:1;transform:translateY(0)}
+.wg-cc__inner{display:flex;flex-direction:column;gap:16px;padding:20px 22px}
+.wg-cc__body strong{display:block;color:#fff;font-size:15px;margin-bottom:4px}
+.wg-cc__body p{margin:0;font-size:13.5px;line-height:1.55;color:#94a3b8}
+.wg-cc__body a{color:#fde68a;text-decoration:underline;text-underline-offset:2px}
+.wg-cc__actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.wg-cc__btn{appearance:none;border:0;cursor:pointer;font:600 13.5px/1 Inter,sans-serif;padding:11px 18px;border-radius:10px;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.wg-cc__btn:hover{transform:translateY(-1px)}
+.wg-cc__btn--primary{background:#fbbf24;color:#1a1400}
+.wg-cc__btn--primary:hover{background:#fde68a}
+.wg-cc__btn--ghost{background:transparent;color:#e2e8f0;border:1px solid rgba(148,163,184,.3)}
+.wg-cc__btn--ghost:hover{border-color:rgba(251,191,36,.5);color:#fff}
+@media (min-width:720px){.wg-cc__inner{flex-direction:row;align-items:center;justify-content:space-between;gap:28px}.wg-cc__body{flex:1;min-width:0}.wg-cc__actions{flex-shrink:0}}
+
+/* Modal */
+.wg-cm{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .22s ease}
+.wg-cm.is-open{opacity:1;pointer-events:auto}
+.wg-cm__scrim{position:absolute;inset:0;background:rgba(10,14,26,.7);backdrop-filter:blur(4px)}
+.wg-cm__card{position:relative;width:100%;max-width:520px;max-height:90vh;overflow:auto;background:#0f1729;border:1px solid rgba(251,191,36,.22);border-radius:18px;color:#e2e8f0;font-family:Inter,sans-serif;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);transform:scale(.96);transition:transform .22s ease}
+.wg-cm.is-open .wg-cm__card{transform:scale(1)}
+.wg-cm__head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid rgba(148,163,184,.12)}
+.wg-cm__head h2{margin:0;font:700 18px/1 'Space Grotesk',Inter,sans-serif;color:#fff}
+.wg-cm__x{appearance:none;border:0;background:transparent;color:#94a3b8;font-size:26px;line-height:1;cursor:pointer;padding:4px 8px;border-radius:8px}
+.wg-cm__x:hover{color:#fff;background:rgba(148,163,184,.12)}
+.wg-cm__body{padding:8px 22px}
+.wg-cm__row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;border-bottom:1px solid rgba(148,163,184,.08)}
+.wg-cm__row:last-child{border-bottom:0}
+.wg-cm__row strong{display:block;color:#fff;font-size:14px;margin-bottom:3px}
+.wg-cm__row p{margin:0;font-size:12.5px;color:#94a3b8;line-height:1.5}
+.wg-cm__tag{font-size:11px;color:#fbbf24;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);padding:6px 12px;border-radius:999px;white-space:nowrap}
+.wg-cm__row input[type=checkbox]{appearance:none;width:44px;height:24px;background:rgba(148,163,184,.25);border-radius:99px;position:relative;cursor:pointer;flex-shrink:0;transition:background .2s ease}
+.wg-cm__row input[type=checkbox]::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s ease}
+.wg-cm__row input[type=checkbox]:checked{background:#fbbf24}
+.wg-cm__row input[type=checkbox]:checked::after{transform:translateX(20px)}
+.wg-cm__foot{display:flex;justify-content:flex-end;gap:10px;padding:18px 22px;border-top:1px solid rgba(148,163,184,.12)}
+@media (max-width:480px){.wg-cc__actions .wg-cc__btn{flex:1 1 auto}.wg-cm__foot{flex-direction:column-reverse}.wg-cm__foot .wg-cc__btn{width:100%}}
+@media (prefers-reduced-motion:reduce){.wg-cc,.wg-cm,.wg-cm__card{transition:none !important}}

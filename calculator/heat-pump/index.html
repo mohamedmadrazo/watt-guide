@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heat Pump vs Gas / Oil / Electric Calculator 2026 | Watt Guide</title>
+  <meta name="description" content="Free heat pump cost calculator. Compare annual heating cost of an air-source heat pump vs gas furnace, oil boiler or electric resistance — by climate zone and fuel price.">
+  <link rel="canonical" href="https://watt-guide.com/calculator/heat-pump/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Heat Pump vs Gas Calculator — Watt Guide">
+  <meta property="og:description" content="Real annual heating cost: heat pump vs gas, oil and electric resistance. Honest math, no installer upsell.">
+  <meta property="og:url" content="https://watt-guide.com/calculator/heat-pump/">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Heat Pump vs Gas Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://watt-guide.com/calculator/heat-pump/",
+    "description": "Compare yearly heating cost between an air-source heat pump and gas, oil or electric resistance for any climate zone.",
+    "offers": { "@type": "Offer", "price": "0" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://watt-guide.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculator", "item": "https://watt-guide.com/calculator/" },
+      { "@type": "ListItem", "position": 3, "name": "Heat Pump", "item": "https://watt-guide.com/calculator/heat-pump/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is COP and HSPF and why do they matter?","acceptedAnswer":{"@type":"Answer","text":"COP (Coefficient of Performance) is the ratio of heat delivered to electricity consumed. A COP of 3 means 1 kWh of electricity moves 3 kWh of heat. HSPF (Heating Seasonal Performance Factor) is the season-weighted equivalent for US ratings — divide HSPF by 3.412 to approximate a season-average COP."}},
+      {"@type":"Question","name":"Do heat pumps work in cold climates?","acceptedAnswer":{"@type":"Answer","text":"Cold-climate (ccASHP) models from Mitsubishi, Daikin and LG operate down to −13°F / −25°C with COP near 2. They are now common in Maine, Vermont, Minnesota. Below that, a supplemental electric or gas backup is typically wired in."}},
+      {"@type":"Question","name":"Is the heat pump tax credit still 30% in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Section 25C Energy Efficient Home Improvement Credit (up to $2,000 for heat pumps) was eliminated alongside the solar credit in July 2025. Some state rebates and utility programs still apply — check DSIRE for your state."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/calculator/">Calculator</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/#appliances">Appliances</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/guides/">Guides →</a>
+  </div>
+</header>
+
+<main class="calc-wrap container">
+  <nav class="crumbs" aria-label="Breadcrumb" style="margin-bottom:18px; font-size:0.85rem; color:var(--text-dim);">
+    <a href="/" style="color:var(--text-dim);">Home</a> ›
+    <a href="/calculator/" style="color:var(--text-dim);">Calculator</a> ›
+    <span style="color:var(--text-muted);">Heat Pump</span>
+  </nav>
+
+  <div style="text-align:center; margin-bottom:32px;">
+    <span class="eyebrow">Free tool · 2026 fuel prices</span>
+    <h1>Heat pump <span class="grad-text">vs gas, oil &amp; electric</span></h1>
+    <p style="max-width:680px; margin:12px auto 0;">Pick your climate zone and current heating fuel. The calculator runs the real math: BTU demand, equipment efficiency (HSPF/AFUE), fuel price and gives you yearly running cost side-by-side.</p>
+  </div>
+
+  <figure class="hero-illustration" aria-hidden="true">
+    <img src="/assets/hero-heat-pump.webp" alt="" loading="eager" decoding="async" onerror="this.style.display='none';this.parentElement.style.aspectRatio='auto';this.parentElement.style.minHeight='180px';">
+    <figcaption class="hero-illustration__badge">Air-source heat pump · ccASHP</figcaption>
+  </figure>
+
+  <div class="calc-layout">
+
+    <!-- INPUTS -->
+    <section class="calc-panel" aria-label="Inputs">
+      <h2>Your home</h2>
+      <p class="lbl-muted" style="margin-bottom:24px;">Defaults reflect a typical 2,000 ft² US home in each climate zone.</p>
+
+      <div class="calc-field">
+        <label for="climate">Climate zone</label>
+        <select id="climate">
+          <option value="hot" data-htg="35">1 — Hot (Miami, Phoenix, LA) — 35 MMBTU/yr</option>
+          <option value="mild" data-htg="55">2-3 — Mild (Atlanta, Charlotte, Dallas) — 55 MMBTU/yr</option>
+          <option value="mixed" data-htg="80" selected>4 — Mixed (DC, Kansas City, Sacramento) — 80 MMBTU/yr</option>
+          <option value="cool" data-htg="105">5 — Cool (NYC, Chicago, Denver) — 105 MMBTU/yr</option>
+          <option value="cold" data-htg="130">6 — Cold (Boston, Minneapolis) — 130 MMBTU/yr</option>
+          <option value="very-cold" data-htg="160">7-8 — Very cold (Maine, Anchorage) — 160 MMBTU/yr</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <label for="demand">Annual heat demand (MMBTU/yr)</label>
+        <input type="number" id="demand" min="10" max="300" step="1" value="80">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Find on your gas bill (Therms × 0.1) or oil bill (Gallons × 0.139).</small>
+      </div>
+
+      <div style="border-top:1px solid var(--border); margin:24px 0; padding-top:18px;">
+        <h3 style="font-size:1rem; margin-bottom:14px;">Current heating system</h3>
+      </div>
+
+      <div class="calc-field">
+        <label for="current-fuel">Current fuel</label>
+        <select id="current-fuel">
+          <option value="gas" selected>Natural gas</option>
+          <option value="propane">Propane</option>
+          <option value="oil">Heating oil</option>
+          <option value="electric-resistance">Electric resistance / baseboard</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <label for="afue">Existing system efficiency (AFUE %)</label>
+        <input type="number" id="afue" min="55" max="99" step="1" value="80">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Gas: 80% standard, 95%+ condensing. Oil: 80–87%. Electric resistance: 100%.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="fuel-price">Fuel price</label>
+        <input type="number" id="fuel-price" min="0.1" max="10" step="0.01" value="1.30">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;" id="fuel-unit">USD per therm (1 therm = 100,000 BTU).</small>
+      </div>
+
+      <div style="border-top:1px solid var(--border); margin:24px 0; padding-top:18px;">
+        <h3 style="font-size:1rem; margin-bottom:14px;">Heat pump option</h3>
+      </div>
+
+      <div class="calc-field">
+        <label for="hspf">HSPF (heating efficiency)</label>
+        <input type="number" id="hspf" min="7" max="14" step="0.1" value="10">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Federal minimum: 8.8. Mid-tier: 10–11. Cold-climate top-tier: 12–14.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="elec-rate">Electricity rate (¢/kWh)</label>
+        <input type="number" id="elec-rate" min="5" max="60" step="0.5" value="17.5">
+      </div>
+    </section>
+
+    <!-- PREVIEW -->
+    <section class="calc-preview" aria-label="Results">
+      <h3 id="result-headline">Annual heating cost</h3>
+      <p class="lbl-muted" id="result-sub">Side-by-side, same comfort delivered.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px;">
+        <div class="calc-result" style="padding:18px;">
+          <div class="amount" id="current-cost" style="font-size:1.7rem;">—</div>
+          <div class="desc" id="current-label">Current system</div>
+        </div>
+        <div class="calc-result" style="padding:18px; border-color:rgba(16,185,129,0.4);">
+          <div class="amount" id="hp-cost" style="font-size:1.7rem; color:var(--accent-2);">—</div>
+          <div class="desc">Air-source heat pump</div>
+        </div>
+      </div>
+
+      <div class="calc-result" style="margin-top:14px; padding:22px;">
+        <div class="amount" id="savings" style="color:var(--accent);">—</div>
+        <div class="desc" id="savings-label">Annual savings with the heat pump</div>
+      </div>
+
+      <div style="margin-top:24px; padding:18px; background:var(--bg-0); border-radius:var(--r-md); border:1px solid var(--border);">
+        <h4 style="font-size:0.95rem; margin-bottom:14px; color:var(--text);">10-year forecast</h4>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Cumulative savings (10 yr)</span>
+          <span id="cum-savings" style="color:var(--accent-2); font-weight:700;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Heat pump install (typical)</span>
+          <span style="color:var(--text); font-weight:600;">$14,000–$18,000</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Estimated payback</span>
+          <span id="payback" style="color:var(--text); font-weight:700;">—</span>
+        </div>
+      </div>
+
+      <div style="margin-top:18px; padding:14px; background:var(--bg-1); border:1px solid var(--border); border-radius:var(--r-md); font-size:0.86rem; color:var(--text-muted);">
+        <strong style="color:var(--text);">Note:</strong> assumes a like-for-like replacement and that the heat pump handles the full heat load. In Zone 6+ a supplemental coil may be needed (~5% additional electricity).
+      </div>
+    </section>
+  </div>
+
+  <aside class="promo-slot" aria-label="Related tools">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Pair this with</span>
+      <h3 class="promo-slot__title">Heat pump math gets even better with solar — try both together</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/calculator/solar/">
+        <span class="promo-slot__card-icon">☀️</span>
+        <span class="promo-slot__card-title">Solar ROI</span>
+        <span>Self-consume your panels' kWh to heat the home for free.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/payback/">
+        <span class="promo-slot__card-icon">📊</span>
+        <span class="promo-slot__card-title">Whole-home payback</span>
+        <span>Combine solar + heat pump + EV into one cash-flow model.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/">
+        <span class="promo-slot__card-icon">⚡</span>
+        <span class="promo-slot__card-title">Electricity cost</span>
+        <span>The base tool — daily/monthly cost for any appliance.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+    </div>
+  </aside>
+
+  <section style="margin-top:60px; max-width:780px; margin-left:auto; margin-right:auto;">
+    <h2 style="text-align:center;">The physics in one line</h2>
+    <p style="margin-top:14px;">A 90 % AFUE furnace turns 1 unit of fuel energy into 0.9 units of heat. A modern heat pump moves <strong>3 units of heat using only 1 unit of electricity</strong> — because it's not generating heat, it's pumping it from outside (yes, even at 0°F).</p>
+    <pre style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); overflow-x:auto; color:var(--accent); font-family:monospace; font-size:0.88rem; margin-top:14px;">cost_current = (annual_BTU ÷ fuel_BTU_per_unit ÷ AFUE) × fuel_price
+cost_heat_pump = (annual_BTU ÷ 3412 ÷ (HSPF ÷ 3.412)) × elec_rate
+                = annual_kWh × elec_rate</pre>
+
+    <h2 style="text-align:center; margin-top:50px;">Frequently asked questions</h2>
+    <div class="faq-item" style="margin-top:18px;">
+      <h3>What is COP and HSPF and why do they matter?</h3>
+      <p>COP is heat delivered / electricity consumed. A COP of 3 means a kWh of electricity moves 3 kWh of heat into your home. HSPF is the US season-weighted equivalent — divide by 3.412 for an approximate season-average COP.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do heat pumps work in cold climates?</h3>
+      <p>Modern cold-climate (ccASHP) models operate down to −13°F / −25°C with COP near 2. Common in Maine, Vermont, Minnesota. Below that, an electric or gas backup is wired in.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the heat pump tax credit still 30 % in 2026?</h3>
+      <p>The Section 25C federal credit (up to $2,000) was eliminated in July 2025. State rebates may still apply — check DSIRE for your state.</p>
+    </div>
+  </section>
+
+  <aside class="promo-slot" aria-label="Read next">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Read next</span>
+      <h3 class="promo-slot__title">Go deeper on heat pumps</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/guides/heat-pump-vs-gas-furnace-2026.html">
+        <span class="promo-slot__card-icon">🔥</span>
+        <span class="promo-slot__card-title">Heat pump vs gas — full guide</span>
+        <span>Real ROI in Atlanta, Sacramento, Boston, Minneapolis. When gas still wins.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/how-to-reduce-electricity-bill-2026.html">
+        <span class="promo-slot__card-icon">📉</span>
+        <span class="promo-slot__card-title">Cut your electricity bill</span>
+        <span>26 tactics ranked by dollar impact. EIA + Ofgem sourced.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/">
+        <span class="promo-slot__card-icon">📚</span>
+        <span class="promo-slot__card-title">All energy guides</span>
+        <span>Solar, EV, heat pump, appliances — the full library.</span>
+        <span class="promo-slot__card-arrow">Browse →</span>
+      </a>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+        <p>Independent electricity cost calculator and energy guides.</p>
+      </div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Electricity</a></li><li><a href="/calculator/solar/">Solar ROI</a></li><li><a href="/calculator/heat-pump/">Heat pump</a></li><li><a href="/calculator/ev-charging/">EV charging</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/cookies.html">Cookies</a></li><li><a href="/about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact.html">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year></span> Watt Guide</div>
+      <div>Made for people who read their bills</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+// Fuel parameters
+const FUEL = {
+  // [BTU per unit, default price USD per unit, unit label]
+  gas: [100000, 1.30, 'USD per therm (1 therm = 100,000 BTU)'],
+  propane: [91500, 2.80, 'USD per gallon (1 gal propane ≈ 91,500 BTU)'],
+  oil: [138500, 3.60, 'USD per gallon (1 gal #2 oil ≈ 138,500 BTU)'],
+  'electric-resistance': [3412, 0.175, 'USD per kWh (1 kWh = 3,412 BTU)']
+};
+
+$('climate').addEventListener('change', () => {
+  $('demand').value = $('climate').selectedOptions[0].dataset.htg;
+  compute();
+});
+
+$('current-fuel').addEventListener('change', () => {
+  const fuel = $('current-fuel').value;
+  const [_, defPrice, unitLabel] = FUEL[fuel];
+  $('fuel-price').value = defPrice;
+  $('fuel-unit').textContent = unitLabel;
+  if (fuel === 'electric-resistance') {
+    $('afue').value = 100;
+    $('afue').disabled = true;
+  } else {
+    $('afue').disabled = false;
+    $('afue').value = fuel === 'gas' ? 80 : (fuel === 'oil' ? 82 : 85);
+  }
+  compute();
+});
+
+function compute() {
+  const demandMMBTU = parseFloat($('demand').value) || 0;
+  const demandBTU = demandMMBTU * 1_000_000;
+  const fuel = $('current-fuel').value;
+  const [btuPerUnit] = FUEL[fuel];
+  const afue = (parseFloat($('afue').value) || 0) / 100;
+  const fuelPrice = parseFloat($('fuel-price').value) || 0;
+  const hspf = parseFloat($('hspf').value) || 1;
+  const elecRate = (parseFloat($('elec-rate').value) || 0) / 100;
+
+  // Current system
+  let currentCost;
+  if (fuel === 'electric-resistance') {
+    currentCost = (demandBTU / 3412) * elecRate; // raw kWh × rate
+  } else {
+    const unitsNeeded = demandBTU / btuPerUnit / afue;
+    currentCost = unitsNeeded * fuelPrice;
+  }
+
+  // Heat pump
+  // HSPF = BTU output ÷ Wh input. So kWh needed = demandBTU ÷ HSPF ÷ 1000
+  const hpKwh = demandBTU / hspf / 1000;
+  const hpCost = hpKwh * elecRate;
+
+  const savings = currentCost - hpCost;
+  const cumSavings = savings * 10; // simple 10-yr, no inflation for clarity
+  const installCost = 16000; // midpoint of $14k–$18k
+  const payback = savings > 0 ? (installCost / savings).toFixed(1) + ' yr' : 'No payback';
+
+  const anim = window.animateNumber || ((el,v,o)=>{el.textContent=(o&&o.prefix||'')+Math.round(v)+(o&&o.suffix||'');});
+  anim($('current-cost'), currentCost, {prefix:'$', suffix:'/yr', decimals:0, duration:700});
+  anim($('hp-cost'), hpCost, {prefix:'$', suffix:'/yr', decimals:0, duration:700});
+  $('current-label').textContent = fuel.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+  if (savings >= 0) {
+    anim($('savings'), savings, {prefix:'$', suffix:'/yr', decimals:0, duration:750});
+    $('savings').style.color = 'var(--accent)';
+    $('savings-label').textContent = 'Annual savings with the heat pump';
+  } else {
+    anim($('savings'), -savings, {prefix:'$', suffix:'/yr more', decimals:0, duration:750});
+    $('savings').style.color = 'var(--danger)';
+    $('savings-label').textContent = 'Heat pump costs more — not worth switching at these prices';
+  }
+
+  anim($('cum-savings'), cumSavings, {prefix:'$', decimals:0, duration:700});
+  $('payback').textContent = payback;
+}
+
+['climate','demand','current-fuel','afue','fuel-price','hspf','elec-rate']
+  .forEach(id => $(id).addEventListener('input', compute));
+
+compute();
+</script>
+
+<script src="/assets/main.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

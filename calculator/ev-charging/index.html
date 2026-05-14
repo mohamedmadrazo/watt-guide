@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EV Charging Cost Calculator 2026 — Home vs Public DC Fast | Watt Guide</title>
+  <meta name="description" content="Free EV charging cost calculator. Compare home Level 2 vs public DC fast for Tesla, F-150 Lightning, Ioniq 5, Mach-E, Leaf and Bolt. Real kWh math.">
+  <link rel="canonical" href="https://watt-guide.com/calculator/ev-charging/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EV Charging Cost Calculator — Watt Guide">
+  <meta property="og:description" content="Cost to charge any EV: home vs DC fast vs Tesla Supercharger. Real numbers.">
+  <meta property="og:url" content="https://watt-guide.com/calculator/ev-charging/">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EV Charging Cost Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://watt-guide.com/calculator/ev-charging/",
+    "description": "Calculate the real cost to charge any EV at home, on public DC fast or at a Tesla Supercharger.",
+    "offers": { "@type": "Offer", "price": "0" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://watt-guide.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculator", "item": "https://watt-guide.com/calculator/" },
+      { "@type": "ListItem", "position": 3, "name": "EV Charging", "item": "https://watt-guide.com/calculator/ev-charging/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is it cheaper to charge at home or at a public DC fast station?","acceptedAnswer":{"@type":"Answer","text":"Home Level 2 charging is typically 3–5× cheaper per kWh than public DC fast. National 2026 averages: home $0.17/kWh, public DC fast $0.45–0.60/kWh. The only exceptions are TOU off-peak rates and free workplace charging."}},
+      {"@type":"Question","name":"How many kWh per mile does an EV use?","acceptedAnswer":{"@type":"Answer","text":"Efficient sedans (Model 3, Ioniq 6): 0.24–0.28 kWh/mi. Midsize SUVs (Model Y, Mach-E): 0.30–0.34 kWh/mi. Pickup trucks (F-150 Lightning, Silverado EV): 0.42–0.50 kWh/mi. Cold weather adds 15–35%."}},
+      {"@type":"Question","name":"Should I install Level 2 charging at home?","acceptedAnswer":{"@type":"Answer","text":"Level 2 (240V, 30–48A) is recommended if you drive over 30 miles/day. Hardware costs $400–$700, installation $800–$2,500. The 30% Section 30D credit was eliminated July 2025; some utilities still offer rebates."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/calculator/">Calculator</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/#appliances">Appliances</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/guides/">Guides →</a>
+  </div>
+</header>
+
+<main class="calc-wrap container">
+  <nav class="crumbs" aria-label="Breadcrumb" style="margin-bottom:18px; font-size:0.85rem; color:var(--text-dim);">
+    <a href="/" style="color:var(--text-dim);">Home</a> ›
+    <a href="/calculator/" style="color:var(--text-dim);">Calculator</a> ›
+    <span style="color:var(--text-muted);">EV Charging</span>
+  </nav>
+
+  <div style="text-align:center; margin-bottom:32px;">
+    <span class="eyebrow">Free tool · 2026 rates</span>
+    <h1>EV charging cost <span class="grad-text">calculator</span></h1>
+    <p style="max-width:680px; margin:12px auto 0;">Pick your EV, your annual miles and your home rate. See the real cost to charge — at home, at a public DC fast station, or a Tesla Supercharger.</p>
+  </div>
+
+  <figure class="hero-illustration" aria-hidden="true">
+    <img src="/assets/hero-ev.webp" alt="" loading="eager" decoding="async" onerror="this.style.display='none';this.parentElement.style.aspectRatio='auto';this.parentElement.style.minHeight='180px';">
+    <figcaption class="hero-illustration__badge">Home Level 2 vs DC fast</figcaption>
+  </figure>
+
+  <div class="calc-layout">
+
+    <!-- INPUTS -->
+    <section class="calc-panel" aria-label="Inputs">
+      <h2>Your driving</h2>
+      <p class="lbl-muted" style="margin-bottom:24px;">Defaults reflect a typical US driver (~12,500 mi/yr) on a Model Y.</p>
+
+      <div class="calc-field">
+        <label for="ev">EV model</label>
+        <select id="ev"></select>
+      </div>
+
+      <div class="calc-field">
+        <label for="kwh-per-mile">Efficiency (kWh per mile)</label>
+        <input type="number" id="kwh-per-mile" min="0.15" max="0.7" step="0.01" value="0.30">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">EPA combined rating, real-world tends to be ~10% higher.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="annual-miles">Annual miles driven</label>
+        <input type="number" id="annual-miles" min="1000" max="50000" step="500" value="12500">
+      </div>
+
+      <div style="border-top:1px solid var(--border); margin:24px 0; padding-top:18px;">
+        <h3 style="font-size:1rem; margin-bottom:14px;">Rates &amp; mix</h3>
+      </div>
+
+      <div class="calc-field">
+        <label for="home-rate">Home electricity (¢/kWh)</label>
+        <input type="number" id="home-rate" min="5" max="60" step="0.5" value="17.5">
+      </div>
+
+      <div class="calc-field">
+        <label for="dcfc-rate">Public DC fast (¢/kWh)</label>
+        <input type="number" id="dcfc-rate" min="20" max="80" step="0.5" value="48">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">EVgo / Electrify America 2026 average. Tesla Supercharger 36–55¢ depending on station.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="home-pct">% charged at home</label>
+        <input type="range" id="home-pct" min="0" max="100" step="5" value="85" style="width:100%; accent-color:var(--accent);">
+        <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-muted); margin-top:6px;">
+          <span>0%</span><span id="home-pct-display" style="color:var(--accent); font-weight:600;">85%</span><span>100%</span>
+        </div>
+      </div>
+
+      <div class="calc-field">
+        <label for="charging-loss">Charging losses (%)</label>
+        <input type="number" id="charging-loss" min="5" max="20" step="0.5" value="10">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Energy paid for ≠ energy stored. Level 2: ~10%. DC fast: ~5–8%.</small>
+      </div>
+    </section>
+
+    <!-- PREVIEW -->
+    <section class="calc-preview" aria-label="Results">
+      <h3>Total charging cost</h3>
+      <p class="lbl-muted">Blended home + public rate.</p>
+
+      <div class="calc-result" style="margin-top:18px;">
+        <div class="amount" id="annual-cost">—</div>
+        <div class="desc">Yearly cost to charge this EV</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:18px;">
+        <div class="calc-result" style="padding:16px;">
+          <div class="amount" id="cost-per-mile" style="font-size:1.6rem;">—</div>
+          <div class="desc">Cost per mile</div>
+        </div>
+        <div class="calc-result" style="padding:16px;">
+          <div class="amount" id="gas-equivalent" style="font-size:1.6rem;">—</div>
+          <div class="desc">Equivalent gas MPG to match</div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; padding:18px; background:var(--bg-0); border-radius:var(--r-md); border:1px solid var(--border);">
+        <h4 style="font-size:0.95rem; margin-bottom:14px; color:var(--text);">Breakdown</h4>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Total kWh purchased (incl. losses)</span>
+          <span id="total-kwh" style="color:var(--text); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Cost at home</span>
+          <span id="home-cost" style="color:var(--text); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Cost at public DC fast</span>
+          <span id="dcfc-cost" style="color:var(--text); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:0.95rem;">
+          <span style="color:var(--text);">Vs. comparable gasoline car</span>
+          <span id="gas-savings" style="color:var(--accent-2); font-weight:700;">—</span>
+        </div>
+      </div>
+
+      <div style="margin-top:18px; padding:14px; background:var(--bg-1); border:1px solid var(--border); border-radius:var(--r-md); font-size:0.86rem; color:var(--text-muted);">
+        <strong style="color:var(--text);">Gas comparison:</strong> assumes a 32 MPG gas equivalent at $3.45/gal national average (May 2026 EIA). Adjust the figures in the JS if your gas price differs significantly.
+      </div>
+    </section>
+  </div>
+
+  <aside class="promo-slot" aria-label="Related tools">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Pair this with</span>
+      <h3 class="promo-slot__title">Drop EV charging cost to nearly zero — pair with solar</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/calculator/solar/">
+        <span class="promo-slot__card-icon">☀️</span>
+        <span class="promo-slot__card-title">Solar ROI</span>
+        <span>Charge during the day from your own panels — gas-equivalent &gt;500 MPG.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/heat-pump/">
+        <span class="promo-slot__card-icon">🔥</span>
+        <span class="promo-slot__card-title">Heat pump vs gas</span>
+        <span>Electrify heating + transport with the same panels.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/payback/">
+        <span class="promo-slot__card-icon">📊</span>
+        <span class="promo-slot__card-title">Whole-home payback</span>
+        <span>One break-even year for the whole stack.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+    </div>
+  </aside>
+
+  <section style="margin-top:60px; max-width:780px; margin-left:auto; margin-right:auto;">
+    <h2 style="text-align:center;">EV efficiency reference (2026 models)</h2>
+    <table style="width:100%; margin-top:18px; border-collapse:collapse; font-size:0.92rem;">
+      <thead><tr style="background:var(--bg-1);"><th style="text-align:left; padding:10px; border-bottom:1px solid var(--border);">Model</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">kWh / mile</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">Battery (kWh)</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">EPA range</th></tr></thead>
+      <tbody id="ev-table"></tbody>
+    </table>
+
+    <h2 style="text-align:center; margin-top:50px;">Frequently asked questions</h2>
+    <div class="faq-item" style="margin-top:18px;">
+      <h3>Is it cheaper to charge at home or DC fast?</h3>
+      <p>Home Level 2 is 3–5× cheaper per kWh than public DC fast on national 2026 averages (home $0.175, DC fast $0.48). Exceptions: TOU off-peak (some utilities $0.04–0.08/kWh between 11 PM and 6 AM) and free workplace charging.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How many kWh per mile does an EV use?</h3>
+      <p>Sedans 0.24–0.28, midsize SUVs 0.30–0.34, pickups 0.42–0.50. Cold weather adds 15–35 % to consumption.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Should I install Level 2 charging at home?</h3>
+      <p>Yes if you drive over 30 mi/day. Hardware $400–$700, install $800–$2,500. Federal 30 % credit (Section 30C) was eliminated in July 2025; some utilities still rebate.</p>
+    </div>
+  </section>
+
+  <aside class="promo-slot" aria-label="Read next">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Read next</span>
+      <h3 class="promo-slot__title">Go deeper on EV charging economics</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/guides/ev-charging-cost-home-2026.html">
+        <span class="promo-slot__card-icon">🚗</span>
+        <span class="promo-slot__card-title">EV charging cost 2026 — full guide</span>
+        <span>15 models compared. Home vs Supercharger vs Electrify America.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/how-to-reduce-electricity-bill-2026.html">
+        <span class="promo-slot__card-icon">📉</span>
+        <span class="promo-slot__card-title">Cut your electricity bill</span>
+        <span>26 tactics — including the TOU EV plan trick.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/">
+        <span class="promo-slot__card-icon">📚</span>
+        <span class="promo-slot__card-title">All energy guides</span>
+        <span>Solar, EV, heat pump, appliances — full library.</span>
+        <span class="promo-slot__card-arrow">Browse →</span>
+      </a>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+        <p>Independent electricity cost calculator and energy guides.</p>
+      </div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Electricity</a></li><li><a href="/calculator/solar/">Solar ROI</a></li><li><a href="/calculator/heat-pump/">Heat pump</a></li><li><a href="/calculator/ev-charging/">EV charging</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/cookies.html">Cookies</a></li><li><a href="/about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact.html">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year></span> Watt Guide</div>
+      <div>Made for people who read their bills</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+// EV efficiency reference (EPA combined, 2026 models)
+const EVS = [
+  // [name, kWh/mi, batteryKwh, epaRange]
+  ['Tesla Model 3 (Long Range AWD)', 0.26, 79, 333],
+  ['Tesla Model Y (Long Range AWD)', 0.28, 79, 320],
+  ['Hyundai Ioniq 5 (RWD)', 0.30, 77, 303],
+  ['Hyundai Ioniq 6 (Long Range RWD)', 0.24, 77, 361],
+  ['Kia EV6 (Long Range RWD)', 0.29, 77, 310],
+  ['Ford Mustang Mach-E (Extended RWD)', 0.33, 91, 320],
+  ['Chevrolet Equinox EV (1LT FWD)', 0.32, 85, 319],
+  ['Chevrolet Bolt EUV', 0.28, 65, 247],
+  ['Volkswagen ID.4 (Pro RWD)', 0.32, 82, 291],
+  ['Nissan Leaf SV Plus', 0.30, 60, 212],
+  ['Rivian R1S (Dual-Motor Large)', 0.43, 135, 321],
+  ['Ford F-150 Lightning (Extended)', 0.48, 131, 320],
+  ['Chevrolet Silverado EV (RST)', 0.50, 200, 440],
+  ['Lucid Air Touring', 0.25, 88, 384],
+  ['Cadillac Lyriq (Luxury RWD)', 0.36, 102, 314]
+];
+
+const sel = $('ev');
+EVS.forEach((ev,i) => {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.textContent = ev[0];
+  opt.dataset.kwhpm = ev[1];
+  sel.appendChild(opt);
+});
+sel.value = 1; // Model Y default
+
+// Populate reference table
+const tbody = $('ev-table');
+EVS.forEach(([name,kpm,batt,range]) => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td style="padding:10px; border-bottom:1px solid var(--border);">${name}</td>
+    <td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent);">${kpm.toFixed(2)}</td>
+    <td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">${batt}</td>
+    <td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">${range} mi</td>`;
+  tbody.appendChild(tr);
+});
+
+sel.addEventListener('change', () => {
+  $('kwh-per-mile').value = sel.selectedOptions[0].dataset.kwhpm;
+  compute();
+});
+
+$('home-pct').addEventListener('input', () => {
+  $('home-pct-display').textContent = $('home-pct').value + '%';
+  compute();
+});
+
+// Reference gas car constants
+const GAS_MPG = 32;
+const GAS_PRICE = 3.45;
+
+function compute() {
+  const kwhPerMile = parseFloat($('kwh-per-mile').value) || 0;
+  const miles = parseFloat($('annual-miles').value) || 0;
+  const homeRate = (parseFloat($('home-rate').value) || 0) / 100;
+  const dcRate = (parseFloat($('dcfc-rate').value) || 0) / 100;
+  const homePct = (parseFloat($('home-pct').value) || 0) / 100;
+  const loss = (parseFloat($('charging-loss').value) || 0) / 100;
+
+  // Energy stored vs purchased
+  const kwhUsed = miles * kwhPerMile;
+  const kwhPurchased = kwhUsed / (1 - loss);
+
+  const homeKwh = kwhPurchased * homePct;
+  const dcKwh = kwhPurchased * (1 - homePct);
+  const homeCost = homeKwh * homeRate;
+  const dcCost = dcKwh * dcRate;
+  const totalCost = homeCost + dcCost;
+
+  const costPerMile = miles > 0 ? totalCost / miles : 0;
+
+  // Gas comparison
+  const gasCost = (miles / GAS_MPG) * GAS_PRICE;
+  const savings = gasCost - totalCost;
+  const equivalentMpg = costPerMile > 0 ? (GAS_PRICE / costPerMile) : 0;
+
+  const anim = window.animateNumber || ((el,v,o)=>{el.textContent=(o&&o.prefix||'')+Math.round(v)+(o&&o.suffix||'');});
+  anim($('annual-cost'), totalCost, {prefix:'$', suffix:'/yr', decimals:0, duration:750});
+  anim($('cost-per-mile'), costPerMile, {prefix:'$', suffix:'/mi', decimals:2, duration:700});
+  anim($('gas-equivalent'), equivalentMpg, {suffix:' MPG', decimals:0, duration:700});
+  anim($('total-kwh'), kwhPurchased, {suffix:' kWh', decimals:0, duration:700});
+  anim($('home-cost'), homeCost, {prefix:'$', decimals:0, duration:600});
+  anim($('dcfc-cost'), dcCost, {prefix:'$', decimals:0, duration:600});
+  if (savings >= 0) anim($('gas-savings'), savings, {prefix:'+$', suffix:' saved', decimals:0, duration:700});
+  else anim($('gas-savings'), -savings, {prefix:'$', suffix:' more', decimals:0, duration:700});
+}
+
+['kwh-per-mile','annual-miles','home-rate','dcfc-rate','home-pct','charging-loss']
+  .forEach(id => $(id).addEventListener('input', compute));
+
+compute();
+</script>
+
+<script src="/assets/main.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# www → apex (301)
+https://www.watt-guide.com/*   https://watt-guide.com/:splat   301!
+
+# Legacy / alt paths
+/guide/*        /guides/:splat       301
+/blog/*         /guides/:splat       301
+/calc           /calculator/         301
+/calc/*         /calculator/:splat   301

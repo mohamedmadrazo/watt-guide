@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electricity Cost Calculator (Free, 2026) — Watt Guide</title>
+  <meta name="description" content="Free electricity cost calculator. Pick an appliance or enter watts, hours and your rate to see daily, monthly and yearly cost in USD, GBP or EUR.">
+  <link rel="canonical" href="https://watt-guide.com/calculator/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Electricity Cost Calculator — Watt Guide">
+  <meta property="og:description" content="Calculate daily, monthly and yearly electricity cost for any device.">
+  <meta property="og:url" content="https://watt-guide.com/calculator/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Electricity Cost Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0" },
+    "url": "https://watt-guide.com/calculator/"
+  }
+  </script>
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:locale" content="en_US">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://watt-guide.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculator", "item": "https://watt-guide.com/calculator/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/calculator/" aria-current="page">Calculator</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/#appliances">Appliances</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/guides/">Guides →</a>
+  </div>
+</header>
+
+<main class="calc-wrap container">
+  <div style="text-align:center; margin-bottom:40px;">
+    <span class="eyebrow">Free tool · 2026 rates</span>
+    <h1>Electricity cost calculator</h1>
+    <p style="max-width:640px; margin:12px auto 0;">Pick a country, choose an appliance (or enter custom watts), and see exactly what it costs to run — daily, monthly, yearly.</p>
+  </div>
+
+  <aside class="promo-slot" aria-label="Other calculators">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Specialized tools</span>
+      <h3 class="promo-slot__title">Need solar, heat-pump or EV math? Skip to the dedicated tool</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/calculator/solar/">
+        <span class="promo-slot__card-icon">☀️</span>
+        <span class="promo-slot__card-title">Solar ROI</span>
+        <span>State-by-state payback, 25-year cash flow.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/heat-pump/">
+        <span class="promo-slot__card-icon">🔥</span>
+        <span class="promo-slot__card-title">Heat pump vs gas</span>
+        <span>Climate zone × fuel × HSPF — side-by-side.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+      <a class="promo-slot__card" href="/calculator/ev-charging/">
+        <span class="promo-slot__card-icon">🚗</span>
+        <span class="promo-slot__card-title">EV charging cost</span>
+        <span>15 EV models. Home vs public DC fast.</span>
+        <span class="promo-slot__card-arrow">Open →</span>
+      </a>
+    </div>
+  </aside>
+
+  <div class="calc-layout">
+    <form id="full-calc" class="calc-panel" onsubmit="return false;">
+      <h2>Your inputs</h2>
+      <p style="color:var(--text-muted); margin-bottom:22px; font-size:0.94rem;">All fields update results in real time.</p>
+
+      <div class="calc-field">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="US" selected>United States — avg $0.17/kWh</option>
+          <option value="UK">United Kingdom — avg £0.28/kWh</option>
+          <option value="IE">Ireland — avg €0.35/kWh</option>
+          <option value="CA">Canada — avg $0.13/kWh</option>
+          <option value="AU">Australia — avg $0.30/kWh</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <label for="device">Device preset</label>
+        <select id="device" name="device">
+          <option value="">— Custom watts —</option>
+          <optgroup label="Heating & Cooling">
+            <option value="ac-window">AC, window unit</option>
+            <option value="ac-central">AC, central system</option>
+            <option value="heater-space">Space heater</option>
+            <option value="water-heater">Electric water heater</option>
+          </optgroup>
+          <optgroup label="Kitchen">
+            <option value="refrigerator">Refrigerator</option>
+            <option value="oven">Oven</option>
+            <option value="microwave">Microwave</option>
+            <option value="dishwasher">Dishwasher</option>
+          </optgroup>
+          <optgroup label="Laundry">
+            <option value="washing-machine">Washing machine</option>
+            <option value="dryer">Clothes dryer</option>
+          </optgroup>
+          <optgroup label="Electronics">
+            <option value="tv-55">TV 55&quot; LED</option>
+            <option value="gaming-pc">Gaming PC</option>
+            <option value="laptop">Laptop</option>
+            <option value="led-bulb">LED bulb</option>
+          </optgroup>
+          <optgroup label="EV / Other">
+            <option value="ev-charger-l2">EV charger (Level 2)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <label for="watts">Wattage (W)</label>
+        <input id="watts" name="watts" type="number" value="1500" min="0">
+      </div>
+
+      <div class="calc-field">
+        <label for="hours">Hours of use per day</label>
+        <input id="hours" name="hours" type="number" value="3" min="0" step="0.25">
+      </div>
+
+      <div class="calc-field">
+        <label for="rate">Rate per kWh (change if different)</label>
+        <input id="rate" name="rate" type="number" value="0.17" min="0" step="0.001">
+      </div>
+
+      <div class="calc-field">
+        <label for="currency">Currency</label>
+        <select id="currency" name="currency">
+          <option value="USD">USD $</option>
+          <option value="GBP">GBP £</option>
+          <option value="EUR">EUR €</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="calc-panel">
+      <h2>Your results</h2>
+      <p style="color:var(--text-muted); margin-bottom:22px; font-size:0.94rem;">Based on the inputs on the left.</p>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <span class="lbl">Per day</span>
+          <span class="val" data-out-daily>$0.00</span>
+          <span class="sub">Running cost</span>
+        </div>
+        <div class="result-card">
+          <span class="lbl">Per month</span>
+          <span class="val" data-out-monthly>$0.00</span>
+          <span class="sub">30-day estimate</span>
+        </div>
+        <div class="result-card">
+          <span class="lbl">Per year</span>
+          <span class="val" data-out-yearly>$0.00</span>
+          <span class="sub">If usage is constant</span>
+        </div>
+        <div class="result-card">
+          <span class="lbl">Energy / day</span>
+          <span class="val" data-out-kwh>0 kWh</span>
+          <span class="sub">Physical consumption</span>
+        </div>
+      </div>
+
+      <div style="margin-top:28px; padding:18px; background:var(--bg-0); border-radius:var(--r-md); font-size:0.88rem; color:var(--text-muted);">
+        <strong style="color:var(--text);">How the math works:</strong>
+        <code style="display:block; margin-top:8px; padding:10px; background:var(--bg-1); border-radius:6px; font-family:monospace; color:var(--accent);">
+          cost = (watts ÷ 1000) × hours × rate
+        </code>
+        <p style="margin-top:10px;">1 kWh means using 1,000 watts for one hour. If your device is 1,500 W and runs 2 hours, that's 3 kWh — multiply by your rate to get the cost.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="promo-slot" aria-label="Read next">
+    <div class="promo-slot__head">
+      <span class="promo-slot__tag">Read next</span>
+      <h3 class="promo-slot__title">The companion guides to this calculator</h3>
+    </div>
+    <div class="promo-slot__grid">
+      <a class="promo-slot__card" href="/guides/how-to-reduce-electricity-bill-2026.html">
+        <span class="promo-slot__card-icon">📉</span>
+        <span class="promo-slot__card-title">Cut your electricity bill in 2026</span>
+        <span>26 tactics ranked by real dollar impact.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/air-conditioner-wattage-cost-2026.html">
+        <span class="promo-slot__card-icon">🌬️</span>
+        <span class="promo-slot__card-title">AC wattage by BTU</span>
+        <span>Window, portable, central — real cost per hour.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+      <a class="promo-slot__card" href="/guides/refrigerator-electricity-cost-2026.html">
+        <span class="promo-slot__card-icon">❄️</span>
+        <span class="promo-slot__card-title">Refrigerator cost</span>
+        <span>Old vs new — when replacing pays back.</span>
+        <span class="promo-slot__card-arrow">Read →</span>
+      </a>
+    </div>
+  </aside>
+
+  <section style="margin-top:60px;">
+    <h2 style="text-align:center; margin-bottom:30px;">Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>Where do the country-average rates come from?</h3>
+      <p>We use public data from the US EIA, UK Ofgem, Eurostat, Ireland's CRU, and the Australian AER. Rates are refreshed quarterly. Your actual tariff may vary — always override the kWh field with your own bill's number for the most accurate result.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why is the yearly cost so high?</h3>
+      <p>The yearly estimate assumes the device runs the same hours every day year-round. That's rarely true — an AC runs 4 months a year, a heater 5 months. Multiply the monthly figure by the months you actually use it for a realistic number.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does the calculator handle time-of-use rates?</h3>
+      <p>Not yet — it uses a flat rate per kWh. If you have a TOU plan (off-peak/on-peak), split your usage: run the calculator once with off-peak hours and again with on-peak, then add both.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do EVs and heat pumps have different formulas?</h3>
+      <p>The physics is the same: watts × hours ÷ 1000 = kWh. But their effective wattage varies by temperature (heat pumps) or charging speed (EVs). Our dedicated guides cover those edge cases.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+        <p>Independent electricity cost calculator and energy guides.</p>
+      </div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Calculator</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#appliances">Appliances</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/cookies.html">Cookies</a></li><li><a href="/about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact.html">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year></span> Watt Guide</div>
+      <div>Made for people who read their bills</div>
+    </div>
+  </div>
+</footer>
+<script src="../assets/main.js" defer></script>
+  <script src="/assets/cookie-consent.js" defer></script>
+  <!-- Cloudflare Web Analytics (privacy-friendly, no cookie consent required). Replace TOKEN or delete this block after launch. -->
+  <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_ME"}'></script> -->
+</body>
+</html>
