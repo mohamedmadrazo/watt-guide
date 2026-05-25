@@ -322,157 +322,53 @@ document.addEventListener('DOMContentLoaded', () => {
     recalc();
   }
 
-  // --- Three.js hero: enhanced electric field ---
-  const canvas = document.getElementById('hero-canvas');
-  if (canvas && window.THREE && !reduced) {
-    try { initLightning(canvas, isCoarse); }
-    catch (err) { console.warn('Hero canvas disabled:', err); }
+  // --- Hero video loop fallback (Safari iOS autoplay + prefers-reduced-motion) ---
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    if (reduced) {
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.pause();
+    } else {
+      const tryPlay = () => heroVideo.play().catch(() => {});
+      tryPlay();
+      document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+      document.addEventListener('click', tryPlay, { once: true });
+    }
+  }
+
+  // --- Reveal on scroll (sections fade-in) ---
+  if ('IntersectionObserver' in window) {
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+    // Stagger child reveals (.reveal-stagger > *)
+    document.querySelectorAll('.reveal-stagger').forEach((grid) => {
+      const children = grid.children;
+      const stagIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            Array.from(children).forEach((child, i) => {
+              child.style.opacity = '0';
+              child.style.transform = 'translateY(30px)';
+              child.style.transition = 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)';
+              setTimeout(() => { child.style.opacity = '1'; child.style.transform = 'translateY(0)'; }, i * 60);
+            });
+            stagIO.unobserve(grid);
+          }
+        });
+      }, { threshold: 0.05 });
+      stagIO.observe(grid);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 });
 
 /* =========================================
-   Three.js — Electric grid of particles + lines (enhanced)
+   v2 update 2026-05-26 · Three.js initLightning eliminada.
+   El hero ahora usa <video> loop (assets/hero-loop.mp4 generado con
+   Higgsfield Cinema Studio 3.0). Animación de partículas se reemplazó
+   por video MP4 de 800 KB para reducir 600 KB de JS + WebGL.
    ========================================= */
-function initLightning(canvas, isCoarse) {
-  const scene = new THREE.Scene();
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  const setSize = () => {
-    const w = canvas.clientWidth;
-    const h = canvas.clientHeight;
-    renderer.setSize(w, h, false);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-  };
-
-  const camera = new THREE.PerspectiveCamera(55, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-  camera.position.set(0, 0, 8);
-  setSize();
-
-  // Electron particles — mix of amber + green for richer palette
-  const count = isCoarse ? 140 : 240;
-  const positions = new Float32Array(count * 3);
-  const colors = new Float32Array(count * 3);
-  const amber = new THREE.Color(0xfbbf24);
-  const green = new THREE.Color(0x10b981);
-  for (let i = 0; i < count; i++) {
-    positions[i * 3]     = (Math.random() - 0.5) * 14;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 8;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 6;
-    const c = amber.clone().lerp(green, Math.random() * 0.35);
-    colors[i * 3]     = c.r;
-    colors[i * 3 + 1] = c.g;
-    colors[i * 3 + 2] = c.b;
-  }
-  const pGeom = new THREE.BufferGeometry();
-  pGeom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  pGeom.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-  const pMat = new THREE.PointsMaterial({
-    size: 0.08, sizeAttenuation: true, vertexColors: true,
-    transparent: true, opacity: 0.95,
-  });
-  const points = new THREE.Points(pGeom, pMat);
-  scene.add(points);
-
-  // Glow rings
-  const ring1 = new THREE.Mesh(
-    new THREE.TorusGeometry(3, 0.035, 16, 100),
-    new THREE.MeshBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.45 })
-  );
-  ring1.rotation.x = Math.PI / 2.6;
-  scene.add(ring1);
-
-  const ring2 = new THREE.Mesh(
-    new THREE.TorusGeometry(4.2, 0.022, 16, 100),
-    new THREE.MeshBasicMaterial({ color: 0x10b981, transparent: true, opacity: 0.35 })
-  );
-  ring2.rotation.x = Math.PI / 2.2;
-  ring2.rotation.y = Math.PI / 8;
-  scene.add(ring2);
-
-  const ring3 = new THREE.Mesh(
-    new THREE.TorusGeometry(2.1, 0.015, 16, 80),
-    new THREE.MeshBasicMaterial({ color: 0xfde68a, transparent: true, opacity: 0.3 })
-  );
-  ring3.rotation.x = Math.PI / 3;
-  ring3.rotation.z = Math.PI / 4;
-  scene.add(ring3);
-
-  // Connecting lines (electric)
-  const lineMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.18 });
-  const maxLineVerts = isCoarse ? 400 : 800;
-  const lineGeom = new THREE.BufferGeometry();
-  const linePos = new Float32Array(maxLineVerts * 3);
-  lineGeom.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
-  const linesMesh = new THREE.LineSegments(lineGeom, lineMat);
-  scene.add(linesMesh);
-
-  let mouseX = 0, mouseY = 0;
-  window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-    mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-  }, { passive: true });
-
-  window.addEventListener('resize', setSize);
-
-  // Pause when offscreen or tab hidden
-  let playing = true;
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(([entry]) => { playing = entry.isIntersecting; });
-    io.observe(canvas);
-  }
-  document.addEventListener('visibilitychange', () => { playing = !document.hidden && playing; });
-
-  const clock = new THREE.Clock();
-  const maxDist = 1.3;
-  const animate = () => {
-    requestAnimationFrame(animate);
-    if (!playing) return;
-    const t = clock.getElapsedTime();
-    const pos = pGeom.attributes.position.array;
-
-    for (let i = 0; i < count; i++) {
-      pos[i * 3 + 1] += Math.sin(t + i) * 0.003;
-      pos[i * 3]     += Math.cos(t * 0.5 + i) * 0.002;
-    }
-    pGeom.attributes.position.needsUpdate = true;
-
-    // Rebuild lines between close particles
-    let idx = 0;
-    for (let i = 0; i < count && idx < maxLineVerts - 2; i++) {
-      for (let j = i + 1; j < count && idx < maxLineVerts - 2; j++) {
-        const dx = pos[i*3]   - pos[j*3];
-        const dy = pos[i*3+1] - pos[j*3+1];
-        const dz = pos[i*3+2] - pos[j*3+2];
-        const d = Math.sqrt(dx*dx + dy*dy + dz*dz);
-        if (d < maxDist) {
-          linePos[idx*3]   = pos[i*3];   linePos[idx*3+1] = pos[i*3+1]; linePos[idx*3+2] = pos[i*3+2]; idx++;
-          linePos[idx*3]   = pos[j*3];   linePos[idx*3+1] = pos[j*3+1]; linePos[idx*3+2] = pos[j*3+2]; idx++;
-        }
-      }
-    }
-    for (let k = idx; k < maxLineVerts; k++) {
-      linePos[k*3] = 0; linePos[k*3+1] = 0; linePos[k*3+2] = 0;
-    }
-    lineGeom.attributes.position.needsUpdate = true;
-    lineGeom.setDrawRange(0, idx);
-
-    ring1.rotation.z = t * 0.1;
-    ring2.rotation.z = -t * 0.15;
-    ring3.rotation.z = t * 0.2;
-
-    // Pulse on rings
-    const pulse = 1 + Math.sin(t * 1.2) * 0.03;
-    ring1.scale.setScalar(pulse);
-    ring2.scale.setScalar(1 + Math.sin(t * 0.9 + 1) * 0.025);
-    ring3.scale.setScalar(1 + Math.sin(t * 1.5 + 2) * 0.04);
-
-    // Camera orbit from mouse
-    camera.position.x += (mouseX * 0.8 - camera.position.x) * 0.03;
-    camera.position.y += (mouseY * 0.4 - camera.position.y) * 0.03;
-    camera.lookAt(0, 0, 0);
-
-    renderer.render(scene, camera);
-  };
-  animate();
-}
