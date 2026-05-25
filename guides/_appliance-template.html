@@ -61,6 +61,19 @@
     ]
   }
   </script>
+
+  <!-- AdSense preconnects (perf optimization) -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+  <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+
+  <!-- AdSense ownership verification -->
+  <meta name="google-adsense-account" content="ca-{{ADSENSE_CLIENT}}">
+
+  <!-- Google AdSense (async + crossorigin). Replace {{ADSENSE_CLIENT}} after approval. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{{ADSENSE_CLIENT}}"
+          crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">

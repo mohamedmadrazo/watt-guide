@@ -83,15 +83,28 @@
     ]
   }
   </script>
-  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v2.jpg">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.png">
   <meta property="og:locale" content="en_US">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0a0e1a">
   <link rel="stylesheet" href="/assets/cookie-consent.css">
+
+  <!-- AdSense preconnects (perf optimization) -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+  <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+
+  <!-- AdSense ownership verification -->
+  <meta name="google-adsense-account" content="ca-{{ADSENSE_CLIENT}}">
+
+  <!-- Google AdSense (async + crossorigin). Replace {{ADSENSE_CLIENT}} after approval. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{{ADSENSE_CLIENT}}"
+          crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
