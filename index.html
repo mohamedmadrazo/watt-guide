@@ -115,7 +115,7 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Are the IRA tax credits still in effect for 2026?","acceptedAnswer":{"@type":"Answer","text":"Most are. The 30% federal solar tax credit (ITC) and the 30% heat pump credit (capped at $2,000) under the IRA survived the One Big Beautiful Bill Act (OBBBA) and remain available through at least 2032. HEEHRA point-of-sale rebates depend on your state — DOE's tracker shows 19 states actively deploying funds as of May 2026. Check DSIRE for your zip code monthly, the program list changes."}},
+      {"@type":"Question","name":"Are the IRA tax credits still in effect for 2026?","acceptedAnswer":{"@type":"Answer","text":"No for the big federal ones. The One Big Beautiful Bill Act (OBBBA), signed July 2025, eliminated the 30% residential solar tax credit (Section 25D) and the $2,000 heat pump credit (Section 25C) for systems installed after that date. State-level rebates (HEEHRA where deployed) and utility incentives are now the main path to offset costs — DOE's tracker shows 19 states actively deploying HEEHRA funds as of May 2026. Check DSIRE for your zip code monthly, the program list changes. Our state-by-state guides cover what survived and what replaced the federal credits."}},
       {"@type":"Question","name":"How accurate is your electricity calculator?","acceptedAnswer":{"@type":"Answer","text":"Our calculator uses your local kWh rate (EIA state averages as default, or your bill rate as override) multiplied by appliance wattage and usage hours. Accuracy is ±5% for steady-state appliances (fridge, heater, AC running). Less accurate for variable-load devices (gaming PCs, induction cooktops) where actual draw fluctuates. For TOU plans we estimate weighted average — exact dollar calculation requires your specific utility's hourly schedule which we link to in the TOU EV guide."}},
       {"@type":"Question","name":"Why don't you recommend specific solar installers or heat pump brands?","acceptedAnswer":{"@type":"Answer","text":"Because installer pricing and equipment availability vary wildly by zip code, and our recommendations would be obsolete within months. We tell you what to ask for (HSPF ≥ 9 for cold climates, NEM 3.0 awareness in California, ccASHP certification if claiming cold-climate IRA credits) and where to verify (NEEP product list, NREL PVWatts, DSIRE). The actual purchase decision belongs to a local quote you control."}},
       {"@type":"Question","name":"Is your data really updated monthly?","acceptedAnswer":{"@type":"Answer","text":"State average electricity rates: refreshed quarterly from EIA. Tax credit and rebate tables: refreshed monthly from DSIRE (Database of State Incentives for Renewables & Efficiency). Heat pump model certifications: checked monthly against NEEP ccASHP list. Each pillar guide carries a 'Last updated' date in the byline so you can verify currency."}},
@@ -125,11 +125,12 @@
   </script>
 
   <!-- AdSense ownership verification -->
-  <meta name="google-adsense-account" content="ca-{{ADSENSE_CLIENT}}">
+  <!-- AdSense ownership meta — DISABLED until real publisher ID is set. Re-enable and replace {{ADSENSE_CLIENT}} after AdSense approval. -->
+  <!-- <meta name="google-adsense-account" content="ca-{{ADSENSE_CLIENT}}"> -->
 
   <!-- Google AdSense (async + crossorigin). Replace {{ADSENSE_CLIENT}} after approval. -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{{ADSENSE_CLIENT}}"
-          crossorigin="anonymous"></script>
+  <!-- AdSense JS — DISABLED until real publisher ID is set. Without this script, <ins class="adsbygoogle"> slots stay as visual reserve without network fetch. -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{{ADSENSE_CLIENT}}" crossorigin="anonymous"></script> -->
 
   <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -532,7 +533,7 @@
     <div class="faq-list reveal-stagger">
       <details class="faq-item">
         <summary>Are the IRA tax credits still in effect for 2026?</summary>
-        <p>Most are. The 30% federal solar tax credit (ITC) and the 30% heat pump credit (capped at $2,000) under the IRA survived the One Big Beautiful Bill Act (OBBBA) and remain available through at least 2032. HEEHRA point-of-sale rebates depend on your state — DOE's tracker shows 19 states actively deploying funds as of May 2026. Check <a href="https://www.dsireusa.org/" rel="nofollow" target="_blank">DSIRE</a> for your zip code monthly, the program list changes.</p>
+        <p><strong>No for the big federal ones.</strong> The One Big Beautiful Bill Act (OBBBA), signed July 2025, eliminated the 30% residential solar tax credit (Section 25D) and the $2,000 heat pump credit (Section 25C) for any system installed after that date. State-level rebates (HEEHRA where deployed) and utility incentives are now the main path to offset costs — DOE's tracker shows 19 states actively deploying HEEHRA funds as of May 2026. Check <a href="https://www.dsireusa.org/" rel="nofollow" target="_blank">DSIRE</a> for your zip code monthly, the program list changes. Our <a href="/guides/heat-pump-tax-credit-replacements-by-state-2026.html">state-by-state replacements guide</a> covers what survived and what now offsets the federal gap.</p>
       </details>
       <details class="faq-item">
         <summary>How accurate is your electricity calculator?</summary>
