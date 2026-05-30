@@ -479,18 +479,21 @@ section { padding: 80px 0; position: relative; }
   border: 1px solid rgba(251,191,36,0.32);
 }
 
-/* ========== ADSENSE SLOT (legacy placeholder, kept for backwards-compat) ========== */
+/* ========== ADSENSE SLOT (legacy placeholder, kept for backwards-compat)
+   Hidden until AdSense fills the <ins> with an actual iframe. */
 .adsense-slot {
   margin: 36px 0;
   min-height: 100px;
-  display: flex; align-items: center; justify-content: center;
+  display: none;
+  align-items: center; justify-content: center;
   background: var(--surface);
-  border: 1px dashed var(--border-strong);
+  border: 1px solid var(--border-strong);
   border-radius: var(--r-md);
   color: var(--text-dim);
   font-size: 0.78rem;
   text-transform: uppercase; letter-spacing: 0.12em;
 }
+.adsense-slot:has(iframe) { display: flex; }
 
 /* ========== FOOTER ========== */
 .site-footer {
@@ -955,12 +958,15 @@ section:nth-of-type(even) {
 .hero { position: relative; overflow: hidden; }
 .hero .container { position: relative; z-index: 1; }
 
-/* ---------- AdSense slots (CLS-safe reservation) ---------- */
+/* ---------- AdSense slots (CLS-safe reservation)
+   Pre-approval: slots stay hidden until AdSense fills <ins> with iframes.
+   :has(iframe) auto-shows them post-approval — no code change needed. */
 .ad-slot {
   width: 100%; min-height: 90px;
   margin: 48px auto;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--surface); border: 1px dashed var(--border);
+  display: none;
+  align-items: center; justify-content: center;
+  background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--r-md);
   color: var(--text-dim); font-size: 0.8rem;
   letter-spacing: 0.1em; text-transform: uppercase;
@@ -968,6 +974,7 @@ section:nth-of-type(even) {
   content-visibility: auto;
   contain-intrinsic-size: 1px 280px;
 }
+.ad-slot:has(iframe) { display: flex; }
 .ad-slot-leaderboard { min-height: 120px; max-width: 970px; }
 .ad-slot-in-article  { min-height: 280px; }
 
