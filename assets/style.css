@@ -695,6 +695,16 @@ section { padding: 80px 0; position: relative; }
 .newsletter-cta__legal { position: relative; margin-top: 14px; font-size: 0.82rem; color: var(--text-dim); }
 .newsletter-cta__legal a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* Skip link — a11y */
+.skip-link { position: absolute; top: -50px; left: 12px; z-index: 9999; padding: 10px 18px; background: var(--accent); color: var(--bg-0); font-weight: 600; text-decoration: none; border-radius: 8px; transition: top 0.2s ease; font-size: 0.92rem; }
+.skip-link:focus { top: 12px; outline: 2px solid var(--bg-0); outline-offset: 2px; }
+
+/* Newsletter form status */
+.newsletter-status { display: none; margin-top: 10px; padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; font-weight: 500; }
+.newsletter-status[data-state="success"] { display: block; background: rgba(16, 185, 129, 0.12); color: var(--accent-2); border: 1px solid rgba(16, 185, 129, 0.4); }
+.newsletter-status[data-state="error"] { display: block; background: rgba(239, 68, 68, 0.12); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.4); }
+.newsletter-form button[aria-busy="true"] { opacity: 0.7; pointer-events: none; }
 @media (max-width: 600px) { .newsletter-cta__inner { padding: 32px 22px; } }
 
 /* ==========================================================================

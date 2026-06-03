@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Smooth anchor scroll with header offset ---
+  // --- Smooth anchor scroll with header offset + focus management ---
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
@@ -212,6 +212,10 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const y = target.getBoundingClientRect().top + window.scrollY - 90;
       window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
+      // Move focus to target for a11y (skip-link to <main tabindex="-1">)
+      if (target.hasAttribute('tabindex') || target.tagName === 'MAIN') {
+        target.focus({ preventScroll: true });
+      }
     });
   });
 
@@ -363,6 +367,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+  // --- Newsletter AJAX submit with status + ?subscribed=1 redirect support ---
+  const nlForm = document.getElementById('newsletter-form');
+  const nlStatus = nlForm?.querySelector('.newsletter-status');
+  const nlBtn = nlForm?.querySelector('button[type="submit"]');
+  if (nlForm && nlStatus && nlBtn) {
+    nlForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      nlStatus.dataset.state = '';
+      nlStatus.textContent = '';
+      if (!nlForm.checkValidity()) {
+        nlStatus.dataset.state = 'error';
+        nlStatus.textContent = 'Please enter a valid email.';
+        return;
+      }
+      nlBtn.setAttribute('aria-busy', 'true');
+      const original = nlBtn.textContent;
+      nlBtn.textContent = 'Subscribing…';
+      try {
+        const res = await fetch(nlForm.action, {
+          method: 'POST',
+          body: new FormData(nlForm),
+          headers: { Accept: 'application/json' },
+        });
+        if (!res.ok) throw new Error('Network');
+        nlStatus.dataset.state = 'success';
+        nlStatus.textContent = 'Subscribed. Welcome email arriving shortly.';
+        nlForm.reset();
+      } catch {
+        nlStatus.dataset.state = 'error';
+        nlStatus.textContent = 'Could not subscribe. Try again or email demadrazobruno@gmail.com.';
+      } finally {
+        nlBtn.removeAttribute('aria-busy');
+        nlBtn.textContent = original;
+      }
+    });
+    if (new URLSearchParams(location.search).get('subscribed') === '1') {
+      nlStatus.dataset.state = 'success';
+      nlStatus.textContent = 'Subscribed. Welcome email arriving shortly.';
+      history.replaceState({}, '', location.pathname);
+    }
   }
 });
 

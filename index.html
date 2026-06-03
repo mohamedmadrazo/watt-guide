@@ -136,12 +136,14 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <!-- ========== 1. HEADER ========== -->
 <header class="site-header">
-  <div class="container nav">
-    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <ul class="nav-links">
+  <div class="container nav" role="navigation" aria-label="Primary">
+    <a href="/" class="brand" aria-label="Watt Guide — home"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav-links">☰</button>
+    <ul class="nav-links" id="primary-nav-links">
       <li><a href="#tools">Tools</a></li>
       <li><a href="#by-goal">By goal</a></li>
       <li><a href="/guides/">Guides</a></li>
@@ -152,7 +154,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1" style="outline:none">
 
 <!-- ========== 2. HERO (with looping video bg + mini calculator) ========== -->
 <section class="hero">
@@ -274,7 +276,7 @@
           <p class="tier-sub">The sweet spot. One major switch, real ROI.</p>
         </div>
         <ul class="tier-list">
-          <li>Heat pump replacing gas furnace ($2,000 IRA credit)</li>
+          <li>Heat pump replacing gas furnace (state rebate up to $2,000 where HEEHRA deployed)</li>
           <li>Smart EV charger on TOU rate (vs gas savings: $1,400/yr)</li>
           <li>Heat-pump water heater swap (+$1,750 HEEHRA rebate where available)</li>
           <li>Whole-home payback calculator to pick the order</li>
@@ -387,7 +389,7 @@
       <article class="method-card">
         <span class="method-icon">❄️</span>
         <h3 class="method-title">NEEP (heat pumps)</h3>
-        <p class="method-desc">Northeast Energy Efficiency Partnerships maintains the cold-climate certified heat pump list. Required for IRA cold-climate credit claims.</p>
+        <p class="method-desc">Northeast Energy Efficiency Partnerships maintains the cold-climate certified heat pump list. Required for state HEEHRA, NY Clean Heat and Mass Save rebate claims.</p>
       </article>
     </div>
   </div>
@@ -433,7 +435,7 @@
           <div class="guide-card-body">
             <span class="guide-tag">Heating · Pillar</span>
             <h3>Heat pump vs gas furnace 2026</h3>
-            <p>4 climate zones. Real ROI tables. When gas still wins, when the IRA $2,000 credit flips the math.</p>
+            <p>4 climate zones. Real ROI tables. When gas still wins, when state HEEHRA rebates flip the math.</p>
             <div class="guide-meta-small">20 min · May 2026</div>
           </div>
         </a>
@@ -570,6 +572,7 @@
         </ul>
       </div>
       <form class="newsletter-form"
+            id="newsletter-form"
             action="https://formsubmit.co/demadrazobruno@gmail.com"
             method="POST"
             data-brevo-list-id="{{BREVO_LIST_ID}}"
@@ -578,11 +581,12 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="https://watt-guide.com/?subscribed=1">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="news-email" class="visually-hidden">Email</label>
         <input id="news-email" type="email" name="email" required placeholder="you@email.com" autocomplete="email">
         <input type="hidden" name="source" value="home-newsletter">
         <button type="submit" class="btn btn-primary">Subscribe</button>
+        <div class="newsletter-status" role="status" aria-live="polite"></div>
         <p class="newsletter-fineprint">By subscribing you accept our <a href="/privacy.html">privacy policy</a>. Welcome email arrives in &lt;60 seconds.</p>
       </form>
     </div>
