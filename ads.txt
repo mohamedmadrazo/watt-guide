@@ -1,8 +1,8 @@
 # ads.txt — watt-guide.com
-# Replace pub-XXXXXXXXXXXXXXXX with your real Publisher ID
+# Replace pub-1131493800966237 with your real Publisher ID
 # (AdSense → Account → Account information → Publisher ID)
 #
 # Google requires this file served over HTTPS from the root:
 # https://watt-guide.com/ads.txt
 
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-1131493800966237, DIRECT, f08c47fec0942fa0
