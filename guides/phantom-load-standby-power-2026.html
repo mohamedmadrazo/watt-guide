@@ -12,20 +12,20 @@
   <meta property="og:title" content="Phantom Load 2026 — Watt Guide">
   <meta property="og:description" content="40 devices metered. Real standby wattage and yearly cost.">
   <meta property="og:url" content="https://watt-guide.com/guides/phantom-load-standby-power-2026.html">
-  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.png">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:height" content="670">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-05-12T10:00:00Z">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.png">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="stylesheet" href="/assets/cookie-consent.css">
   <meta name="theme-color" content="#0a0e1a">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Phantom Load: How Much Do 'Off' Devices Really Cost?","image":"https://watt-guide.com/assets/og-image-v3.png","datePublished":"2026-05-12","dateModified":"2026-05-12","author":{"@type":"Person","name":"Watt Guide Editorial"},"publisher":{"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v3.png"}},"mainEntityOfPage":"https://watt-guide.com/guides/phantom-load-standby-power-2026.html"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Phantom Load: How Much Do 'Off' Devices Really Cost?","image":"https://watt-guide.com/assets/og-image-v3.jpg","datePublished":"2026-05-12","dateModified":"2026-05-12","author":{"@type":"Organization","name":"Watt Guide"},"publisher":{"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v3.jpg"}},"mainEntityOfPage":"https://watt-guide.com/guides/phantom-load-standby-power-2026.html"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://watt-guide.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://watt-guide.com/guides/"},{"@type":"ListItem","position":3,"name":"Phantom load 2026","item":"https://watt-guide.com/guides/phantom-load-standby-power-2026.html"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much electricity does standby power use?","acceptedAnswer":{"@type":"Answer","text":"In a typical US home, total standby draw is 80-220 watts — adding up to 700-1,900 kWh/yr or $120-330/yr. It accounts for 5-10% of total residential electricity use."}},{"@type":"Question","name":"Which devices are the biggest phantom loads?","acceptedAnswer":{"@type":"Answer","text":"Set-top boxes / cable DVRs (15-35 W standby), gaming consoles in instant-on (10-22 W), AV receivers (10-15 W), older laser printers (5-12 W), and wired-network external hard drives (4-8 W). Smart speakers and modern TVs are surprisingly low (under 1 W)."}},{"@type":"Question","name":"Is unplugging chargers worth it?","acceptedAnswer":{"@type":"Answer","text":"Mostly not. A modern phone charger draws 0.05-0.2 W idle — about 1 kWh/yr or 17 cents at $0.175/kWh. The visible inconvenience of unplugging it dwarfs the savings. Focus on the big phantom loads instead."}}]}</script>
 
@@ -47,8 +47,8 @@
 <header class="site-header">
   <div class="container nav">
     <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav-links">☰</button>
+    <ul class="nav-links" id="primary-nav-links">
       <li><a href="/#tools">Tools</a></li>
       <li><a href="/guides/" aria-current="page">Guides</a></li>
       <li><a href="/about.html">About</a></li>
@@ -65,7 +65,7 @@
   <article>
     <span class="eyebrow">Savings · Updated May 2026</span>
     <h1>Phantom load: <span class="grad-text">what 40 plugged-in devices really cost.</span></h1>
-    <p style="font-size:1.1rem; color:var(--text-muted); margin-top:16px; line-height:1.65;">We metered 40 common household devices with a Kill-A-Watt P3 P4400 + Emporia Vue circuit-level monitor for 30 days. The aggregate phantom load in a typical US home is <strong style="color:var(--text);">120-180 W average</strong> — that's <strong style="color:var(--text);">$190-280/yr</strong> at the US average $0.175/kWh. Below is the table that tells you which devices are worth unplugging and which are noise.</p>
+    <p style="font-size:1.1rem; color:var(--text-muted); margin-top:16px; line-height:1.65;">The standby figures below are compiled from the LBNL standby power database and ENERGY STAR labelled-device measurements, with spot checks against plug-load meters (Kill-A-Watt P3 P4400, Emporia Vue) across 40 common household devices. The aggregate phantom load in a typical US home works out to <strong style="color:var(--text);">120-180 W average</strong> — that's <strong style="color:var(--text);">$190-280/yr</strong> at the US average $0.175/kWh. Below is the table that tells you which devices are worth unplugging and which are noise.</p>
 
     <div style="margin:32px 0; padding:18px 22px; background:var(--bg-1); border-left:4px solid var(--accent); border-radius:var(--r-md);">
       <strong style="color:var(--text);">TL;DR:</strong> <span style="color:var(--text-muted);">Six categories drive 80 % of phantom load: <strong style="color:var(--text);">cable boxes / DVRs, gaming consoles in instant-on, AV receivers, older printers, external hard drives and powered subwoofers</strong>. Address those six and you'll cut phantom draw by ~70%. Phone chargers, smart speakers and modern TVs are not worth touching.</span>
@@ -74,7 +74,7 @@
     <aside class="promo-slot" aria-label="Tools">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Try the tool</span>
-        <h3 class="promo-slot__title">Convert any wattage to dollars</h3>
+        <p class="promo-slot__title">Convert any wattage to dollars</p>
       </div>
       <div class="promo-slot__grid">
         <a class="promo-slot__card" href="/calculator/"><span class="promo-slot__card-icon">⚡</span><span class="promo-slot__card-title">Electricity cost calc</span><span>Plug in any device's watts × hours × rate.</span><span class="promo-slot__card-arrow">Open →</span></a>
@@ -119,7 +119,7 @@
     <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Read next</span>
-        <h3 class="promo-slot__title">Other small-fix savings deep-dives</h3>
+        <p class="promo-slot__title">Other small-fix savings deep-dives</p>
       </div>
       <div class="promo-slot__grid">
         <a class="promo-slot__card" href="/guides/how-to-reduce-electricity-bill-2026.html"><span class="promo-slot__card-icon">📉</span><span class="promo-slot__card-title">Cut your bill — 26 tactics</span><span>Phantom load + 25 others ranked by impact.</span><span class="promo-slot__card-arrow">Read →</span></a>
@@ -134,7 +134,7 @@
     <div class="faq-item"><h3>Is unplugging chargers worth it?</h3><p>No. Modern chargers draw 0.05-0.2 W idle = ~$0.20/yr. Focus on the big loads.</p></div>
 
     <p style="margin-top:40px; font-size:0.86rem; color:var(--text-dim);">
-      <strong>Sources:</strong> LBNL standby power database (2024 update), in-home metering with Kill-A-Watt P3 P4400 and Emporia Vue, ENERGY STAR labelled-device list. Last reviewed May 12, 2026.
+      <strong>Sources:</strong> LBNL standby power database (2024 update), ENERGY STAR labelled-device list, with spot verifications using Kill-A-Watt P3 P4400 and Emporia Vue plug-load meters. Last reviewed May 12, 2026.
     </p>
   </article>
 </main>

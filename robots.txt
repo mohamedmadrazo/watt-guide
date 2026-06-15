@@ -5,7 +5,6 @@ User-agent: *
 Allow: /
 
 # Don't index internal templates
-Disallow: /guides/_template.html
 Disallow: /guides/_appliance-template.html
 Disallow: /assets/
 

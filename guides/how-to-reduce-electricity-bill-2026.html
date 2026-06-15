@@ -83,11 +83,11 @@
     ]
   }
   </script>
-  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.png">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:height" content="670">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.png">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:locale" content="en_US">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0a0e1a">
@@ -111,8 +111,8 @@
 <header class="site-header">
   <div class="container nav">
     <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav-links">☰</button>
+    <ul class="nav-links" id="primary-nav-links">
       <li><a href="/calculator/">Calculator</a></li>
       <li><a href="/guides/">Guides</a></li>
       <li><a href="/#appliances">Appliances</a></li>
@@ -161,7 +161,7 @@
       <aside class="promo-slot" aria-label="Tools">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Try the tool</span>
-        <h3 class="promo-slot__title">Run your own numbers in our calculators</h3>
+        <p class="promo-slot__title">Run your own numbers in our calculators</p>
       </div>
       <div class="promo-slot__grid">
         <a class="promo-slot__card" href="/calculator/solar/"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">Solar ROI</span><span>State-by-state payback, with or without the federal credit.</span><span class="promo-slot__card-arrow">Open →</span></a>
@@ -220,7 +220,7 @@
       <aside class="promo-slot" aria-label="Tools">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Companion tool</span>
-        <h3 class="promo-slot__title">Plug your numbers into the calculator</h3>
+        <p class="promo-slot__title">Plug your numbers into the calculator</p>
       </div>
       <div class="promo-slot__grid">
         <a class="promo-slot__card" href="/calculator/payback/"><span class="promo-slot__card-icon">📊</span><span class="promo-slot__card-title">Whole-home payback</span><span>Solar + heat pump + EV in one cash-flow model.</span><span class="promo-slot__card-arrow">Open →</span></a>
@@ -336,7 +336,7 @@
       <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Read next</span>
-        <h3 class="promo-slot__title">Other guides you'll likely want</h3>
+        <p class="promo-slot__title">Other guides you'll likely want</p>
       </div>
       <div class="promo-slot__grid">
         <a class="promo-slot__card" href="/guides/solar-panel-cost-california-2026.html"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">California solar 2026</span><span>Real $/W, NEM 3.0, county-by-county payback.</span><span class="promo-slot__card-arrow">Read →</span></a>

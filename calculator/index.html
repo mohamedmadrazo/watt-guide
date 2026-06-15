@@ -28,13 +28,13 @@
     "name": "Electricity Cost Calculator",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "price": "0" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "url": "https://watt-guide.com/calculator/"
   }
   </script>
   <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:height" content="670">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:locale" content="en_US">
@@ -56,8 +56,8 @@
 <header class="site-header">
   <div class="container nav">
     <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav-links">☰</button>
+    <ul class="nav-links" id="primary-nav-links">
       <li><a href="/calculator/" aria-current="page">Calculator</a></li>
       <li><a href="/guides/">Guides</a></li>
       <li><a href="/#appliances">Appliances</a></li>
@@ -78,7 +78,7 @@
   <aside class="promo-slot" aria-label="Other calculators">
     <div class="promo-slot__head">
       <span class="promo-slot__tag">Specialized tools</span>
-      <h3 class="promo-slot__title">Need solar, heat-pump or EV math? Skip to the dedicated tool</h3>
+      <p class="promo-slot__title">Need solar, heat-pump or EV math? Skip to the dedicated tool</p>
     </div>
     <div class="promo-slot__grid">
       <a class="promo-slot__card" href="/calculator/solar/">
@@ -215,7 +215,7 @@
   <aside class="promo-slot" aria-label="Read next">
     <div class="promo-slot__head">
       <span class="promo-slot__tag">Read next</span>
-      <h3 class="promo-slot__title">The companion guides to this calculator</h3>
+      <p class="promo-slot__title">The companion guides to this calculator</p>
     </div>
     <div class="promo-slot__grid">
       <a class="promo-slot__card" href="/guides/how-to-reduce-electricity-bill-2026.html">

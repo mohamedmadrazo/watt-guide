@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://watt-guide.com/calculator/heat-pump/">
   <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:height" content="670">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
@@ -38,7 +38,7 @@
     "operatingSystem": "Web",
     "url": "https://watt-guide.com/calculator/heat-pump/",
     "description": "Compare yearly heating cost between an air-source heat pump and gas, oil or electric resistance for any climate zone.",
-    "offers": { "@type": "Offer", "price": "0" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
   <script type="application/ld+json">
@@ -68,8 +68,8 @@
 <header class="site-header">
   <div class="container nav">
     <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav-links">☰</button>
+    <ul class="nav-links" id="primary-nav-links">
       <li><a href="/calculator/">Calculator</a></li>
       <li><a href="/guides/">Guides</a></li>
       <li><a href="/#appliances">Appliances</a></li>
@@ -211,7 +211,7 @@
   <aside class="promo-slot" aria-label="Related tools">
     <div class="promo-slot__head">
       <span class="promo-slot__tag">Pair this with</span>
-      <h3 class="promo-slot__title">Heat pump math gets even better with solar — try both together</h3>
+      <p class="promo-slot__title">Heat pump math gets even better with solar — try both together</p>
     </div>
     <div class="promo-slot__grid">
       <a class="promo-slot__card" href="/calculator/solar/">
@@ -260,7 +260,7 @@ cost_heat_pump = (annual_BTU ÷ 3412 ÷ (HSPF ÷ 3.412)) × elec_rate
   <aside class="promo-slot" aria-label="Read next">
     <div class="promo-slot__head">
       <span class="promo-slot__tag">Read next</span>
-      <h3 class="promo-slot__title">Go deeper on heat pumps</h3>
+      <p class="promo-slot__title">Go deeper on heat pumps</p>
     </div>
     <div class="promo-slot__grid">
       <a class="promo-slot__card" href="/guides/heat-pump-vs-gas-furnace-2026.html">
