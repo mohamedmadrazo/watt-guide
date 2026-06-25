@@ -1261,3 +1261,53 @@ details.faq-item p a:hover { text-decoration-color: var(--accent); }
   .hero-video { display: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- Author byline + author card (E-E-A-T) ---------- */
+.byline {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 18px 0 4px; padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem; color: var(--text-dim);
+}
+.byline__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  object-fit: cover; border: 1px solid var(--border-strong); flex-shrink: 0;
+}
+.byline__text { line-height: 1.4; }
+.byline__name { color: var(--text); font-weight: 600; text-decoration: none; }
+.byline__name:hover { color: var(--accent); }
+.byline__meta { color: var(--text-dim); }
+.byline__meta a { color: var(--text-dim); text-decoration: underline; text-underline-offset: 2px; }
+.byline__meta a:hover { color: var(--accent); }
+.byline__sep { margin: 0 7px; opacity: 0.5; }
+
+.author-card {
+  display: grid; grid-template-columns: 88px 1fr; gap: 22px; align-items: start;
+  margin: 56px 0 8px; padding: 26px 28px;
+  background: linear-gradient(135deg, rgba(251,191,36,0.05), rgba(16,185,129,0.035));
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+}
+.author-card__img {
+  width: 88px; height: 88px; border-radius: 50%;
+  object-fit: cover; border: 1px solid var(--border-strong);
+}
+.author-card__eyebrow { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.author-card__name { color: var(--text); font-size: 1.15rem; font-weight: 700; margin: 4px 0 8px; }
+.author-card__bio { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin: 0; }
+.author-card__links { margin-top: 12px; font-size: 0.88rem; }
+.author-card__links a { color: var(--accent); text-decoration: none; }
+.author-card__links a:hover { text-decoration: underline; }
+.author-card__links .author-card__sep { color: var(--text-dim); margin: 0 8px; }
+@media (max-width: 560px) {
+  .author-card { grid-template-columns: 1fr; gap: 16px; }
+  .author-card__img { width: 72px; height: 72px; }
+}
+
+/* ---------- AI / methodology disclosure ---------- */
+.disclosure {
+  margin: 28px 0; padding: 18px 22px;
+  background: var(--bg-1); border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-2); border-radius: var(--r-md);
+  color: var(--text-muted); font-size: 0.92rem; line-height: 1.65;
+}
+.disclosure strong { color: var(--text); }

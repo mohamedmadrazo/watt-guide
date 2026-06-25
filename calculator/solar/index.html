@@ -245,6 +245,9 @@
     <pre style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); overflow-x:auto; color:var(--accent); font-family:monospace; font-size:0.88rem; margin-top:10px;">net_cost = (size × $/W × 1000) − federal_credit − state_rebate
 year_savings[y] = production × (1 − 0.005)^y × rate × (1 + inflation)^y
 payback = min y where Σ year_savings[0..y] ≥ net_cost</pre>
+    <div class="disclosure" style="margin-top:20px;">
+      <strong>Sources &amp; assumptions:</strong> production defaults from NREL PVWatts; electricity rates from EIA; incentive logic from DSIRE. Since January 2026 the federal-credit field defaults to $0 (Section 25D ended for systems placed in service after Dec 31, 2025). Full breakdown on the <a href="/methodology">methodology page</a>. Built and maintained by <a href="/author">Bruno de Madrazo</a>.
+    </div>
 
     <h2 style="text-align:center; margin-top:50px;">Frequently asked questions</h2>
     <div class="faq-item" style="margin-top:18px;">
