@@ -102,15 +102,49 @@
         <th style="text-align:left; padding:10px; border-bottom:1px solid var(--border);">Pump type</th>
         <th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">Watts running</th>
         <th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">Hours/day</th>
-        <th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$/yr @ $0.175</th>
+        <th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$/season @ $0.18</th>
       </tr></thead>
       <tbody>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Single-speed 1.5 HP</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">1,800</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">8</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--danger);">$566</td></tr>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Two-speed 1.5 HP (low speed mostly)</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">600 avg</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">12</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$283</td></tr>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Variable-speed (Pentair IntelliFlo3, Hayward TriStar VS)</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">200 avg @ 1,200 RPM</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">12</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$189</td></tr>
-        <tr><td style="padding:10px;">Variable-speed (low setting only)</td><td style="text-align:right; padding:10px;">120</td><td style="text-align:right; padding:10px;">14</td><td style="text-align:right; padding:10px; color:var(--accent-2);"><strong>$132</strong></td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Single-speed 1.5 HP</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">1,800</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">8</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--danger);">$467</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Two-speed 1.5 HP (low speed mostly)</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">600 avg</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">12</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$233</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Variable-speed (Pentair IntelliFlo3, Hayward TriStar VS)</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">200 avg @ 1,200 RPM</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">12</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$78</td></tr>
+        <tr><td style="padding:10px;">Variable-speed (low setting only)</td><td style="text-align:right; padding:10px;">120</td><td style="text-align:right; padding:10px;">14</td><td style="text-align:right; padding:10px; color:var(--accent-2);"><strong>$54</strong></td></tr>
       </tbody>
     </table>
+
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>What switching actually saves on a 20,000-gal pool</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: a 1.5 HP single-speed pump (1,800 W) running 8 h/day over a 6-month season (180 days), at the 2026 US average rate of $0.18/kWh — versus a variable-speed pump (~200 W average) running 12 h/day for the same daily turnover.</p>
+      <table>
+        <tr><td>Single-speed — 1.8 kW × 8 h × 180 days = 2,592 kWh</td><td>$467 / season</td></tr>
+        <tr><td>Variable-speed — 0.2 kW × 12 h × 180 days = 432 kWh</td><td>$78 / season</td></tr>
+        <tr><td>Energy saved — 2,160 kWh</td><td>$389 / season</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Payback:</strong> a variable-speed pump runs about $1,100 installed; after a typical $250 utility rebate that's ~$850 net. At $389 saved per season it pays back in <strong>about 2.2 years</strong> — then keeps saving roughly $389 every season after.</div>
+      <p class="scenario__cta">Different pool size or rate? Put your own pump wattage and hours into the <a href="/calculator/">electricity cost calculator</a> for your exact number.</p>
+    </div>
+
+    <h2 id="worth-it">Is a variable-speed swap worth it for you?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Switch now if…</h4>
+        <ul>
+          <li>You still run a single-speed pump 6+ hours a day in season.</li>
+          <li>Your rate is above $0.15/kWh, or a tiered plan pushes pool load into a high tier.</li>
+          <li>A utility rebate ($100–$400) is available where you live.</li>
+          <li>Your pump is near end of life — replace it with variable-speed, not like-for-like.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Wait if…</h4>
+        <ul>
+          <li>You already run a two-speed pump mostly on low — the extra gain is small.</li>
+          <li>Your pool only runs a few weeks a year (short/cold season).</li>
+          <li>Your rate is below $0.12/kWh and no rebate applies — payback stretches past 4–5 years.</li>
+        </ul>
+      </div>
+    </div>
 
     <h2 id="rebates">Utility rebates that survive in 2026</h2>
     <ul style="margin:14px 0 22px 24px; color:var(--text-muted); line-height:1.7;">
@@ -141,7 +175,7 @@
     </aside>
 
     <h2 id="faq">Frequently asked questions</h2>
-    <div class="faq-item"><h3>How much does a pool pump cost to run per month?</h3><p>Single-speed 1.5 HP × 8 hr/day: $90-$130/month in season. Variable-speed at same effective flow: $25-$35/month.</p></div>
+    <div class="faq-item"><h3>How much does a pool pump cost to run per month?</h3><p>A 1.5 HP single-speed pump (8 hr/day) costs about $78/month in season — roughly $467 over a 6-month season at $0.18/kWh. A variable-speed pump at the same daily turnover runs about $13/month.</p></div>
     <div class="faq-item"><h3>Are variable-speed pool pumps worth it?</h3><p>Yes — 50-75% savings vs single-speed, payback 1-3 years. Federal regulations have phased out non-variable-speed for new installs since 2021.</p></div>
     <div class="faq-item"><h3>How long should I run my pool pump each day?</h3><p>One full pool turnover per day. 20,000 gallons at 40 GPM = 8 hrs. Variable-speed: same turnover at 12 hrs and 1/8 the power.</p></div>
 

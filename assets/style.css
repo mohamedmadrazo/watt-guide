@@ -1303,6 +1303,31 @@ details.faq-item p a:hover { text-decoration-color: var(--accent); }
   .author-card__img { width: 72px; height: 72px; }
 }
 
+/* ---------- Worked-example / scenario box (information gain) ---------- */
+.scenario {
+  margin: 30px 0; padding: 24px 26px;
+  background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(251,191,36,0.04));
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+}
+.scenario__tag { font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-2); font-weight:700; }
+.scenario h3 { margin: 6px 0 12px; color: var(--text); font-size: 1.15rem; }
+.scenario table { width:100%; border-collapse:collapse; font-size:0.92rem; margin:12px 0; }
+.scenario td { padding:7px 10px; border-bottom:1px solid var(--border); color:var(--text-muted); }
+.scenario tr:last-child td { border-bottom:0; }
+.scenario td:last-child { text-align:right; color:var(--text); font-variant-numeric: tabular-nums; }
+.scenario__result { margin-top:14px; padding:12px 16px; background:var(--bg-1); border-left:4px solid var(--accent-2); border-radius:var(--r-md); color:var(--text); line-height:1.6; }
+.scenario__cta { margin-top:12px; font-size:0.9rem; }
+.scenario__cta a { color:var(--accent); }
+
+/* decision framework two-column verdict */
+.verdict { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0; }
+.verdict__col { padding:18px 20px; border:1px solid var(--border); border-radius:var(--r-md); background:var(--bg-1); }
+.verdict__col h4 { margin:0 0 10px; font-size:0.95rem; }
+.verdict__col ul { margin:0; padding-left:18px; color:var(--text-muted); line-height:1.7; font-size:0.92rem; }
+.verdict__col--yes h4 { color:var(--accent-2); }
+.verdict__col--no h4 { color:var(--accent-hot); }
+@media (max-width:560px){ .verdict { grid-template-columns:1fr; } }
+
 /* ---------- AI / methodology disclosure ---------- */
 .disclosure {
   margin: 28px 0; padding: 18px 22px;
