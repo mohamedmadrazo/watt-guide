@@ -120,8 +120,44 @@
     <p>Mitsubishi, Daikin, LG and Fujitsu single-zone units installed by an HVAC contractor: $4,500-$7,500 for a 12k BTU unit. The professional advantage: 12-year warranty, code-compliant install, refrigerant work done right.</p>
 
     <h2 id="operating-cost">Operating cost — 750 sq ft apartment in Chicago</h2>
-    <p>~5,200 kWh/yr of heating + cooling demand. At HSPF 10, that's ~1,750 kWh of electricity = <strong style="color:var(--accent-2);">$305/yr at $0.175/kWh</strong>.</p>
-    <p>Compared to a baseboard electric heater for the same demand: 5,200 kWh = $910/yr. <strong style="color:var(--accent);">Annual savings: ~$600</strong>. On a $1,800 DIY mini-split: 3-year payback.</p>
+    <p>Assume a delivered heating + cooling load of ~5,200 kWh-equivalent per year for a tightly-conditioned 750 sq ft unit. A mini-split at HSPF 10 has a seasonal efficiency of 10 ÷ 3.412 = <strong>COP 2.93</strong>, so it needs only 5,200 ÷ 2.93 ≈ <strong>1,774 kWh</strong> of electricity = <strong style="color:var(--accent-2);">$310/yr at $0.175/kWh</strong>.</p>
+    <p>A resistance baseboard heater is COP 1.0 — it draws the full 5,200 kWh = <strong style="color:var(--danger);">$910/yr</strong>. <strong style="color:var(--accent);">Annual savings: ~$600</strong>. On a $1,800 DIY mini-split that is a ~3-year payback on energy alone.</p>
+
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>What the mini-split actually costs to run — 750 sq ft, Chicago</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: a delivered annual load of 5,200 kWh-equivalent (heating + cooling) for a 750 sq ft apartment, at the 2026 rate used above of $0.175/kWh. We compare three ways to meet that exact same load: a 12k BTU mini-split (HSPF 10 → COP 2.93), a 110 V window heat pump (real-world seasonal COP ~2.4), and a resistance heater / older window AC (COP 1.0).</p>
+      <table>
+        <tr><td>Mini-split (COP 2.93) — 5,200 ÷ 2.93 = 1,774 kWh × $0.175</td><td>$310 / yr</td></tr>
+        <tr><td>Window heat pump (COP 2.4) — 5,200 ÷ 2.4 = 2,167 kWh × $0.175</td><td>$379 / yr</td></tr>
+        <tr><td>Resistance baseboard / window AC (COP 1.0) — 5,200 kWh × $0.175</td><td>$910 / yr</td></tr>
+        <tr><td>Mini-split vs resistance — saved 3,426 kWh</td><td>$600 / yr</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Payback:</strong> a $1,800 DIY mini-split saving $600/yr pays for itself in <strong>about 3.0 years</strong> against resistance heat. A $700 window heat pump beats a resistance window AC by $910 − $379 = ~$531/yr — so it clears its price inside its <strong>first heating-plus-cooling year</strong>. The catch: window units only condition the room they're in.</div>
+      <p class="scenario__cta">Different climate, load or rate? Set your climate zone and rate in the <a href="/calculator/heat-pump/">heat pump calculator</a> (or the plain <a href="/calculator/">electricity calculator</a> for any wattage) to get your own number.</p>
+    </div>
+
+    <h2 id="worth-it">Is a mini-split worth it, or is a window unit enough?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>A mini-split is worth it if…</h4>
+        <ul>
+          <li>You heat in a real winter (Zone 5–6) where resistance or wall-furnace heat dominates your bill — the COP ~2.9 gap is biggest in heating.</li>
+          <li>You own the condo, or your landlord will sign off, so a 12-year system pays back over years you'll actually be there.</li>
+          <li>You need to condition more than one room, or a space above ~500 sq ft a single window unit can't reach.</li>
+          <li>A heat-pump rebate is available where you live — many 2026 programs now include renters.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>A window / portable unit is fine if…</h4>
+        <ul>
+          <li>You rent and might move within a year or two — a $500–$1,200 plug-in unit moves with you, no install permission needed.</li>
+          <li>You only need to condition one room (bedroom or studio under ~500 sq ft).</li>
+          <li>Your winters are mild, so cooling is the main job and a cooling-only inverter window AC already runs cheap.</li>
+          <li>You can't get landlord/HOA approval to mount an outdoor unit — the window heat pump is your only no-permission heat-pump path.</li>
+        </ul>
+      </div>
+    </div>
 
     <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">

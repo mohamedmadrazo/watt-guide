@@ -115,12 +115,25 @@
       <thead><tr style="background:var(--bg-1);"><th style="text-align:left; padding:10px; border-bottom:1px solid var(--border);">Type / mode</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">kWh / cycle</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$ / cycle @ $0.175</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$ / yr (daily)</th></tr></thead>
       <tbody>
         <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Compact / 18"</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent);">0.7–0.9</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$0.12–$0.16</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$45–$57</td></tr>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Energy Star, eco / air-dry</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent);">0.8–1.0</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$0.14–$0.18</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$51–$64</td></tr>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Standard, normal cycle</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent);">1.1–1.4</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$0.19–$0.25</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$70–$89</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Energy Star, eco / air-dry</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent);">0.8–1.0</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$0.14–$0.17</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$51–$64</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Standard, normal cycle</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent);">1.1–1.4</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$0.19–$0.24</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$70–$89</td></tr>
         <tr><td style="padding:10px;">Heavy / sanitize + heated dry</td><td style="text-align:right; padding:10px; color:var(--danger);">1.6–2.0</td><td style="text-align:right; padding:10px;">$0.28–$0.35</td><td style="text-align:right; padding:10px;">$102–$128</td></tr>
       </tbody>
     </table>
     <p style="margin-top:14px;">Most households don't run a load every single day, so real annual electricity for a typical dishwasher lands around <strong style="color:var(--accent);">$35–$60</strong>. The daily column shows the worst case — and how much the cycle you choose changes the bill.</p>
+
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>What a typical kitchen actually pays in a year</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: a normal household runs the dishwasher <strong>5 cycles a week</strong> (not every single day), at <strong>1.0 kWh per eco cycle</strong>, at the 2026 US average rate of <strong>$0.175/kWh</strong>. The formula is the same one the calculator uses: cycles/week × 52 × kWh/cycle × rate.</p>
+      <table>
+        <tr><td>Eco / air-dry — 5 × 52 × 1.0 kWh = 260 kWh/yr</td><td>$45.50 / yr</td></tr>
+        <tr><td>Same loads on heavy + heated dry — 5 × 52 × 1.7 kWh = 442 kWh/yr</td><td>$77.35 / yr</td></tr>
+        <tr><td>The heated-dry &amp; heavy-cycle tax</td><td>$31.85 / yr</td></tr>
+      </table>
+      <div class="scenario__result"><strong>The takeaway:</strong> the machine itself is cheap — about <strong>$45 a year</strong> run sensibly. The difference between a frugal and a wasteful dishwasher isn't the model you buy, it's the button you press: choosing eco and air-dry instead of heavy and heated dry saves roughly <strong>$32 a year</strong> on the exact same dishes. Run only full loads and that $45 covers more dishes per dollar still.</div>
+      <p class="scenario__cta">Run it daily, or on UK/Ireland rates, or with your real kWh-per-cycle from the Energy Guide label? Put your own numbers into the <a href="/calculator/">electricity cost calculator</a> for your exact figure.</p>
+    </div>
 
     <aside class="promo-slot" aria-label="Companion tool">
       <div class="promo-slot__head">
@@ -156,6 +169,28 @@
       <li><strong style="color:var(--text);">Lower your water heater to 120 °F.</strong> The dishwasher's incoming hot water is heated by your water heater first — a cooler setpoint trims that upstream cost.</li>
       <li><strong style="color:var(--text);">Keep the filter clean.</strong> A clogged filter makes the machine work harder and re-run, wasting water and energy.</li>
     </ol>
+
+    <h2 id="verdict">Worth running daily — or worth cheaper habits?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Just run it (don't overthink it)</h4>
+        <ul>
+          <li>You have a full load — a modern dishwasher beats hand washing on water and energy.</li>
+          <li>You're on a low or average rate (≤ $0.18/kWh): a year of normal use is only ~$45.</li>
+          <li>You already use eco and air-dry — there's little left to squeeze.</li>
+          <li>You'd otherwise hand-wash under a running hot tap, which costs more in heated water.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Change the habit, not the machine</h4>
+        <ul>
+          <li>You run half-empty loads — the cycle costs nearly the same, so you're paying double per dish.</li>
+          <li>You default to heavy + heated dry — that's ~$32/yr extra for no cleaner dishes.</li>
+          <li>You're on a high rate (UK/Ireland) — eco mode and off-peak delay-start pay back fastest there.</li>
+          <li>Buying a new machine to save energy rarely pays back on electricity alone; fix the buttons first.</li>
+        </ul>
+      </div>
+    </div>
 
     <h2 id="related">Test your dishwasher in the calculator</h2>
     <p>Find your model's <strong>kWh per cycle</strong> on the yellow Energy Guide label (or its estimated annual kWh), then drop it into the <a href="/calculator/" style="color:var(--accent);">electricity calculator</a> with your real rate and how often you run it.</p>

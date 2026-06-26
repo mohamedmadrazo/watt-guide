@@ -119,9 +119,48 @@
       </tbody>
     </table>
 
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>Add up one home-theatre corner</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Take a typical living-room stack and use the <em>midpoint</em> of each range from the table above. Each device runs 24 h/day, 365 days, at the 2026 US average rate of $0.175/kWh. The yearly formula is the same for every row: <strong>kWh/yr = watts × 24 × 365 ÷ 1,000</strong>, then <strong>cost = kWh × $0.175</strong>.</p>
+      <table>
+        <tr><td>Cable DVR / set-top box — 28.5 W × 24 × 365 ÷ 1,000 = 250 kWh</td><td>$43.69 / yr</td></tr>
+        <tr><td>PS5 in instant-on — 16 W → 140 kWh</td><td>$24.53 / yr</td></tr>
+        <tr><td>AV receiver — 11.5 W → 101 kWh</td><td>$17.63 / yr</td></tr>
+        <tr><td>Older laser printer — 8.5 W → 74 kWh</td><td>$13.03 / yr</td></tr>
+        <tr><td>Powered subwoofer — 7.5 W → 66 kWh</td><td>$11.50 / yr</td></tr>
+        <tr><td>External USB hard drive — 6 W → 53 kWh</td><td>$9.20 / yr</td></tr>
+        <tr><td><strong>Total — 78 W standby → 683 kWh</strong></td><td><strong>$119.57 / yr</strong></td></tr>
+      </table>
+      <div class="scenario__result"><strong>The fix:</strong> a $35 smart power strip that kills these five peripherals when the TV goes off cuts roughly 70 % of that draw — about <strong>$84/yr</strong> back, ROI in under six months. The DVR usually has to stay on its own outlet (it reboots and re-downloads its guide otherwise), so it's the one device here worth metering before you decide.</div>
+      <p class="scenario__cta">Different gear or rate? Drop your own standby watts and your electricity rate into the <a href="/calculator/">electricity cost calculator</a> for an exact figure.</p>
+    </div>
+
     <h2 id="cheapest-fix">The single cheapest fix</h2>
     <p>An advanced smart power strip ($25-$45) that detects "master device off" and cuts power to peripherals. Common setup: TV plugged into master outlet, AV receiver + game console + soundbar + sub on "switched" outlets. When you turn off the TV, the strip waits 5 seconds and kills the other four.</p>
     <p>Typical year-1 savings: <strong style="color:var(--accent);">$45-$90</strong>. ROI under 6 months. The TrickleStar 7-Outlet (UL-listed, used in NV Energy's commercial rebate program) is the reference unit.</p>
+
+    <h2 id="verdict">What's actually worth unplugging</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Worth the effort</h4>
+        <ul>
+          <li><strong>Cable DVR / set-top box</strong> — 22-35 W, up to $54/yr. The single biggest phantom load in most homes.</li>
+          <li><strong>Game console in instant-on</strong> — 10-22 W, up to $34/yr. Switch it to "energy saving" mode; you lose nothing but a few seconds of wake time.</li>
+          <li><strong>AV receiver + powered subwoofer + external drive</strong> — 17-33 W combined. Put them on a smart strip behind the TV and they vanish together.</li>
+          <li><strong>Older laser printer</strong> — 5-12 W. Unplug it or use a switched outlet; you only print a few times a week.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Not worth the hassle</h4>
+        <ul>
+          <li><strong>Phone chargers</strong> — 0.05-0.2 W, about $0.20/yr each. You'd unplug it 365 times to save the price of a coffee.</li>
+          <li><strong>Smart speakers</strong> — 1.5-2.5 W, $2-4/yr, and unplugging defeats the point of having them.</li>
+          <li><strong>Modern OLED TVs and Energy Star printers</strong> — under 1 W. Already engineered to a near-zero standby spec.</li>
+          <li><strong>Wi-Fi router and modem</strong> — 5-12 W, but cutting them drops your whole network; leave them on.</li>
+        </ul>
+      </div>
+    </div>
 
     <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">

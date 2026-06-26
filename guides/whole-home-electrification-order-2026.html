@@ -106,13 +106,49 @@
 
     <h2 id="step-4">Step 4 — Right-size solar (year 2)</h2>
     <p>Now you have 12 months of data with heat pump + EV loads. Plug into our <a href="/guides/what-size-solar-system-do-i-need-2026" style="color:var(--accent);">sizing guide</a> and size for 100-110 % of actual usage.</p>
-    <p>This is the moment most homeowners get wrong if they skipped to step 4 first: they sized the array for old usage, added a heat pump and EV later, and now their array covers 60-70 % of usage. Adding panels later costs $2.20-$2.80/W extra (installer return-trip fees, second permit, more inverter work) — about $4,000-$8,000 of premium for 4-6 kW added late.</p>
+    <p>This is the moment most homeowners get wrong if they skipped to step 4 first: they sized the array for old usage, added a heat pump and EV later, and now their array covers 60-70 % of usage. Adding panels later carries a premium of about $1.00-$1.35/W on top of the install price (installer return-trip fees, second permit, more inverter work) — roughly $4,000-$8,000 extra for 4-6 kW added late ($4,000 at 4 kW × $1.00/W; ~$8,000 at 6 kW × $1.35/W).</p>
 
     <h2 id="step-5">Step 5 — Battery (only if utility regime requires)</h2>
     <p>See <a href="/guides/solar-battery-storage-payback-2026" style="color:var(--accent);">battery payback by regime</a>. NEM 3.0 California, Hawaii, parts of Texas: add the battery in the same install as solar (saves $1,500-$2,500 labor vs adding later). Net-metered states: skip unless you need backup-only.</p>
 
     <h2 id="step-6">Step 6 — Panel upgrade only if forced</h2>
     <p>Modern smart panels (SPAN, Lumin) or load-management devices (NeoCharge, DCC-9 Black Box) can postpone or eliminate a $3-5k panel upgrade. Try the smart approach first. Only upgrade to 200A if (a) you're maxing out the existing panel under stress test, or (b) you need a second EV charger + heat pump pool heater + induction range simultaneously.</p>
+
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the Payback calc</span>
+      <h3>The first three steps on one real house</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">A gas-heated home with one commuter car, electrifying in the order above. Assumptions stated up front: a current heating + cooling bill of <strong>$2,000/yr</strong>, US-average electricity at <strong>$0.18/kWh</strong>, and the low end of every range in this guide (so the example never flatters itself).</p>
+      <table>
+        <tr><td><strong>Step 1 — Insulation.</strong> Air sealing + attic top-up at $2,500 (within $1,500-$4,000). Saves the midpoint 20% of the $2,000 heating + cooling bill.</td><td>−$2,500 once<br>+$400 / yr</td></tr>
+        <tr><td><strong>Step 2 — Heat pump.</strong> Replaces gas. Adds ~3,000 kWh/yr of electric load (low end of 3,000-8,000).</td><td>+3,000 kWh/yr</td></tr>
+        <tr><td><strong>Step 3 — EV + L2.</strong> Replaces the gas car. Adds ~3,000 kWh/yr (low end of 3,000-4,500).</td><td>+3,000 kWh/yr</td></tr>
+        <tr><td>New combined load you now size solar against — and the number you did <em>not</em> guess at in year zero.</td><td><strong>6,000 kWh/yr</strong></td></tr>
+      </table>
+      <div class="scenario__result"><strong>Why the order pays:</strong> insulation went first, so the heat pump (and later the solar array) is sized for a <em>tighter</em> house — and solar is sized for the real 6,000 kWh of new load, not a guess. Skipping straight to solar would have over-built the array by ~$4,000 <em>and</em> forced a late panel add-on at roughly another $4,000 — about <strong>$8,000 of avoidable detour</strong> (up to ~$15k at the high end of both).</div>
+      <p class="scenario__cta">Swap in your own bill, rate and kWh and watch the combined break-even move in the <a href="/calculator/payback/">whole-home payback calculator</a>.</p>
+    </div>
+
+    <h2 id="do-first">Do this first, leave this for last</h2>
+    <p>If you remember nothing else, remember which moves are cheap-and-foundational versus which ones you should refuse to do speculatively.</p>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Do first</h4>
+        <ul>
+          <li><strong>Air sealing + insulation.</strong> $1,500-$4,000, 15-25% savings on day one, shrinks everything downstream.</li>
+          <li><strong>Heat pump</strong> before solar — it defines 3,000-8,000 kWh of the load solar has to cover.</li>
+          <li><strong>EV + L2 charger</strong> next, so the full 6,000 kWh+ post-electrification load is known before you size panels.</li>
+          <li><strong>Battery in the same install as solar</strong> — but only under NEM 3.0 / Hawaii / Texas regimes, where it saves $1,500-$2,500 in labor.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Leave for last (or skip)</h4>
+        <ul>
+          <li><strong>Solar before the heat pump + EV.</strong> The classic mistake: undersized array, then a $4,000-$8,000 premium to add panels late.</li>
+          <li><strong>A speculative 200A panel upgrade.</strong> $3,000-$5,500 you often avoid entirely with a smart panel or load manager.</li>
+          <li><strong>A battery in a net-metered state.</strong> No regime pressure means no payback — backup-only at best.</li>
+        </ul>
+      </div>
+    </div>
 
     <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">
