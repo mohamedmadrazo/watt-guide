@@ -155,6 +155,43 @@
     <h2 id="scheduling">Level 2 home charging: scheduling matters more than the plan</h2>
     <p>If your Level 2 charger has scheduling built in (most do — Tesla Wall Connector, Wallbox Pulsar Plus, ChargePoint Home Flex, Emporia EV), the savings come automatically. If it doesn't, every modern EV (Model 3/Y/3-Performance, Mach-E, Ioniq 5/6, Bolt, F-150 Lightning) has scheduling in the dashboard. Set the start time to <strong>30 minutes after super-off-peak begins</strong> (gives the utility a buffer for slightly off-clock meters) and the stop time as <strong>30 minutes before super-off-peak ends</strong>.</p>
 
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>Model Y, 12,500 mi/yr: flat rate vs TOU super-off-peak</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: a Tesla Model Y at ~3.5 mi/kWh covers 12,500 mi/yr ≈ 3,570 kWh/yr ≈ <strong>300 kWh/month</strong> of home charging. Flat rate is the 2026 US average of <strong>$0.18/kWh</strong>. On TOU, all charging is scheduled overnight in the <strong>super-off-peak</strong> band — we use <strong>$0.08/kWh</strong>, mid-range of the $0.04–$0.17 band shown above.</p>
+      <table>
+        <tr><td>Flat rate — 300 kWh × $0.18</td><td>$54.00 / month</td></tr>
+        <tr><td>TOU super-off-peak — 300 kWh × $0.08</td><td>$24.00 / month</td></tr>
+        <tr><td>Saved on EV charging — 300 kWh × ($0.18 − $0.08)</td><td>$30.00 / month</td></tr>
+      </table>
+      <div class="scenario__result"><strong>EV-charging savings: $30/month = $360/year</strong> — squarely inside the $300–$900/yr range a TOU-aware utility typically delivers. But that's only the charging line. The catch: TOU re-prices <em>every other kWh in the house</em> too. If your peak-hour load can't move (next section), the surcharge on the rest of the home can wipe this $360 out.</div>
+      <p class="scenario__cta">Different car, mileage or off-peak rate? Override the home rate in the <a href="/calculator/ev-charging/">EV charging calculator</a> to model both plans side by side and get your own number.</p>
+    </div>
+
+    <h2 id="verdict">The verdict: switch or stay on flat rate?</h2>
+    <p>TOU is not a free win — it re-prices your whole bill, not just the EV. Use the $30/month EV-charging gain above as your budget: if your un-shiftable peak load costs more than that in surcharge, you lose. Here's the clean split.</p>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Switch to a TOU plan if…</h4>
+        <ul>
+          <li>You can shift <strong>≥ 70 %</strong> of household kWh off-peak — an EV-only or low-load home, ~600 kWh/month.</li>
+          <li>Your EV charging alone is 250–350 kWh/month, banked at super-off-peak ($0.04–$0.17) — that's the $360/yr above.</li>
+          <li>You have solar, or a heat pump you can run during super-off-peak / solar hours.</li>
+          <li>A Texas "free nights" plan covers ≥ 50 % of your usage overnight.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Stay on flat rate if…</h4>
+        <ul>
+          <li><strong>Central AC runs through the 4–9 PM peak.</strong> A ~$400/season summer peak surcharge dwarfs the $360/yr EV win.</li>
+          <li>You have electric resistance heat that can't be shifted off the peak window.</li>
+          <li>You work from home — daytime cooking, HVAC and devices push load into peak/off-peak hours.</li>
+          <li>Your peak premium is high: even +$0.04/kWh on ~400 un-shiftable peak kWh/month ≈ $16/month, over half the EV gain — and most homes can't move that little.</li>
+        </ul>
+      </div>
+    </div>
+    <p>Rule of thumb: TOU pays only when the kWh you <em>can't</em> move out of peak cost you less in surcharge than the kWh you <em>can</em> move to super-off-peak save you. Run the 4-step test above on 12 months of your real data before enrolling.</p>
+
     <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Read next</span>

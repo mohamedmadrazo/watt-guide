@@ -27,7 +27,7 @@
   <meta name="theme-color" content="#0a0e1a">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Solar + Battery Storage Payback in 2026: Real Math by Scenario","image":"https://watt-guide.com/assets/og-image-v3.jpg","datePublished":"2026-05-12","dateModified":"2026-05-12","author": {"@type":"Person","name":"Bruno de Madrazo","url":"https://watt-guide.com/author"},"publisher":{"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v3.jpg"}},"mainEntityOfPage":"https://watt-guide.com/guides/solar-battery-storage-payback-2026"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://watt-guide.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://watt-guide.com/guides/"},{"@type":"ListItem","position":3,"name":"Solar battery payback","item":"https://watt-guide.com/guides/solar-battery-storage-payback-2026"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a Powerwall pay for itself?","acceptedAnswer":{"@type":"Answer","text":"In 2026: yes in California NEM 3.0 (TOU arbitrage + self-consumption save ~$1,400/yr), yes in Hawaii (no net metering, full retail offset), borderline in Texas with ERCOT volatility. Net-metered states: no — payback is 15-20+ years on a $12,000 Powerwall 3 because grid serves the same role for free."}},{"@type":"Question","name":"How much does a Powerwall 3 cost installed in 2026?","acceptedAnswer":{"@type":"Answer","text":"$10,500-$14,000 installed in the US after Tesla's price adjustments. Bundled with an 8 kW solar array: $11,000-$12,500 due to shared mounting/labor. Enphase IQ Battery 5P: $11,500-$14,000 for 5 kWh; needs multiple units for whole-home backup."}},{"@type":"Question","name":"What's the difference between TOU arbitrage and backup-only usage?","acceptedAnswer":{"@type":"Answer","text":"TOU arbitrage: battery charges during super-off-peak (or solar production) and discharges during peak hours, capturing the rate difference. Real economic value. Backup-only: battery sits idle and only kicks in during outages. Insurance value, not economic."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a Powerwall pay for itself?","acceptedAnswer":{"@type":"Answer","text":"In 2026: yes in California NEM 3.0 (TOU arbitrage + self-consumption save ~$900/yr, ~13-year payback), yes in Hawaii (no net metering, full retail offset, ~$1,400/yr and ~8.5 years), borderline in Texas with ERCOT volatility. Net-metered states: no — pure economic payback is 15-20+ years on a $12,000 Powerwall 3 because the grid serves the same role for free."}},{"@type":"Question","name":"How much does a Powerwall 3 cost installed in 2026?","acceptedAnswer":{"@type":"Answer","text":"$10,500-$14,000 installed in the US after Tesla's price adjustments. Bundled with an 8 kW solar array: $11,000-$12,500 due to shared mounting/labor. Enphase IQ Battery 5P: $11,500-$14,000 for 5 kWh; needs multiple units for whole-home backup."}},{"@type":"Question","name":"What's the difference between TOU arbitrage and backup-only usage?","acceptedAnswer":{"@type":"Answer","text":"TOU arbitrage: battery charges during super-off-peak (or solar production) and discharges during peak hours, capturing the rate difference. Real economic value. Backup-only: battery sits idle and only kicks in during outages. Insurance value, not economic."}}]}</script>
 
   <!-- AdSense preconnects (perf optimization) -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
@@ -120,6 +120,19 @@
       </tbody>
     </table>
     <p style="margin-top:14px;">At $900/yr on a $12,000 battery: <strong style="color:var(--accent);">13.3-year simple payback</strong>. With rate inflation: ~10-11 years. The 12-15 year battery lifespan means it pays back just before replacement — marginally economic.</p>
+
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>Where the $900/yr actually comes from (NEM 3.0 arbitrage)</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">A battery earns its keep by cycling kWh through a price spread: <em>annual value = kWh cycled per year × spread per kWh</em>. Inputs: a 13.5 kWh Powerwall 3 at $12,000 installed, cycled roughly once a day (≈365 cycles/yr), capturing the gap between what an evening-peak kWh is worth to self-consume and the ~$0.05–0.08/kWh you'd have been paid to export it under NEM 3.0.</p>
+      <table>
+        <tr><td>kWh cycled — 13.5 kWh × 365 days</td><td>≈ 4,930 kWh/yr</td></tr>
+        <tr><td>Captured spread — peak self-consumption value minus NEM 3.0 export, after round-trip loss</td><td>≈ $0.18/kWh</td></tr>
+        <tr><td>Annual value — 4,930 kWh × $0.18</td><td>≈ $887/yr (the ~$900 above)</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Payback:</strong> $12,000 net ÷ $900/yr = <strong>~13.3 years</strong> — right at the edge of the battery's 12–15 year life. The single assumption that moves this number is the spread: at $0.25/kWh it drops to ~9 years; at $0.12/kWh it stretches past 20. If you qualify for California's SGIP rebate (HFTD / medical-baseline), the net cost can fall near zero and the payback collapses to under a year.</div>
+      <p class="scenario__cta">Plug your own export rate, peak rate and battery price into the <a href="/calculator/solar/">Solar ROI calculator</a> — or model the full stack in the <a href="/calculator/payback/">whole-home payback tool</a> — to get your exact spread and payback.</p>
+    </div>
     <p>The case is stronger if you can claim California's <strong>SGIP</strong> (Self-Generation Incentive Program): $1,000/kWh for medical-baseline customers and high-fire-risk-zone (HFTD) homes. A 13.5 kWh Powerwall in an HFTD zone gets a $13,500 SGIP rebate — battery effectively free, payback under 1 year.</p>
 
     <h3 style="margin-top:24px;">3. Hawaii: 100% self-consumption regime</h3>
@@ -150,6 +163,31 @@
       <li><strong style="color:var(--text);">Sub-3 kW solar.</strong> Not enough surplus to fill a battery anyway.</li>
     </ul>
 
+    <h2 id="verdict">The honest verdict: does a battery pay off?</h2>
+    <p style="color:var(--text-muted); margin-bottom:4px;">Outside NEM 3.0 California, Hawaii and real-time-priced Texas, a battery almost never pays back on energy savings alone — the grid already stores your surplus for free under net metering. Buy it for resilience, not arithmetic, unless you're on the left-hand list.</p>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>A battery pays off if…</h4>
+        <ul>
+          <li>You're on <strong>California NEM 3.0</strong> with TOU peaks — ~$900/yr arbitrage, ~13-year payback (sooner with rate inflation).</li>
+          <li>You're in <strong>Hawaii</strong> with no net metering and $0.42/kWh rates — ~$1,400/yr, ~8.5-year payback.</li>
+          <li>You qualify for <strong>SGIP</strong> ($1,000/kWh in HFTD / medical-baseline) — net cost near zero, payback under a year.</li>
+          <li>You already have <strong>solar</strong> producing real midday surplus to charge it.</li>
+          <li>You face frequent outages (PSPS, hurricane zones) — one avoided $2,500–$5,000 outage shifts the math on its own.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Skip it if…</h4>
+        <ul>
+          <li>You're on <strong>NEM 1.0/2.0 net metering</strong> with no outage worries — payback is 25+ years; the grid is your free battery.</li>
+          <li>You <strong>don't have solar yet</strong> — a battery alone is an expensive UPS, almost never economic.</li>
+          <li>You're on a <strong>flat-rate plan under $0.12/kWh</strong> — the spread is too thin to cycle into payback.</li>
+          <li>You live in an <strong>apartment or condo</strong> — wall space, 240V circuit and transfer switch usually rule it out.</li>
+          <li>Your array is <strong>under 3 kW</strong> — not enough surplus to fill the battery.</li>
+        </ul>
+      </div>
+    </div>
+
     <h2 id="lifespan">Battery lifespan + warranty reality</h2>
     <p>2026 lithium-iron-phosphate (LFP) batteries from Tesla, Enphase, FranklinWH and BYD-based brands carry 10-year warranties with 70% capacity retention guarantee. Real-world degradation in cycling-heavy applications (TOU arbitrage daily): 12-15 % loss by year 10. Real-world in backup-only mode: under 5 % loss by year 10. Most warranties cover the cell pack but not labor; expect a $1,500-$2,500 replacement install fee around year 12-14.</p>
 
@@ -168,7 +206,7 @@
     <h2 id="faq">Frequently asked questions</h2>
     <div class="faq-item">
       <h3>Does a Powerwall pay for itself?</h3>
-      <p>Yes in California NEM 3.0 (~$1,400/yr value), Hawaii (~$1,400/yr), and parts of Texas with real-time pricing. No in net-metered states — pure economic payback is 25+ years.</p>
+      <p>Yes in California NEM 3.0 (~$900/yr incremental value, ~13-year payback), Hawaii (~$1,400/yr, ~8.5 years), and parts of Texas with real-time pricing. No in net-metered states — pure economic payback is 25+ years.</p>
     </div>
     <div class="faq-item">
       <h3>How much does a Powerwall 3 cost installed in 2026?</h3>

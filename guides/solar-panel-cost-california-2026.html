@@ -181,6 +181,44 @@
       <a href="/calculator/solar/" class="btn btn-primary">Run your own numbers in the Solar ROI calculator →</a>
     </div>
 
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>An 8 kW PG&amp;E system, no battery, no federal credit</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: 8 kW DC at $2.85/W installed, NREL PVWatts California default of 1,490 kWh/kW/yr, PG&amp;E retail $0.32/kWh, and the federal credit set to $0 (OBBBA, 2026). The catch under NEM&nbsp;3.0 is that exports are <em>not</em> worth retail — so we split production into what you use on-site vs what you sell back.</p>
+      <table>
+        <tr><td>System cost — 8 kW × 1,000 × $2.85/W</td><td>$22,800</td></tr>
+        <tr><td>Year-1 production — 8 kW × 1,490 kWh/kW</td><td>11,920 kWh</td></tr>
+        <tr><td>Self-consumed (70%) — 8,344 kWh × $0.32 retail</td><td>$2,670</td></tr>
+        <tr><td>Exported (30%) — 3,576 kWh × $0.06 NEM 3.0</td><td>$215</td></tr>
+        <tr><td>Blended value — $2,885 ÷ 11,920 kWh</td><td>$0.242 / kWh</td></tr>
+        <tr><td>Year-1 savings — 11,920 kWh × $0.242 blended</td><td>$2,885 / yr</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Payback (no credit):</strong> $22,800 ÷ $2,885 = <strong>about 7.9 years</strong> on flat rates, or <strong>~7.2 years</strong> once you add the 3.5%/yr rate inflation the calculator models. That is the honest NEM 3.0 number — not the ~5.6-year figure you'd get if you (wrongly) valued every exported kWh at full retail.</div>
+      <p class="scenario__cta">To reproduce it: open the <a href="/calculator/solar/">Solar ROI calculator</a>, pick California, leave size 8 kW and cost $2.85/W, set the rate field to <strong>24.2&nbsp;¢/kWh</strong> (your NEM 3.0 blended value, not the 32&nbsp;¢ retail default), and keep the federal credit unchecked.</p>
+    </div>
+
+    <h2 id="verdict">The honest verdict: does CA solar still pencil?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Solar still pencils if…</h4>
+        <ul>
+          <li>You're on PG&amp;E or SDG&amp;E, where retail rates ($0.32–$0.44/kWh) make every self-consumed kWh worth a fortune.</li>
+          <li>You can self-consume 60%+ of production — a daytime EV charge, a heat pump, or a battery shifting midday solar to the evening peak.</li>
+          <li>You pay <strong>cash</strong> or use a low-rate HELOC. At $2.85/W or below, the 7–9-year payback holds.</li>
+          <li>You right-size the array to your own load instead of oversizing to export at $0.06.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Wait (or go smaller) if…</h4>
+        <ul>
+          <li>You're SCE coastal with low usage (450 kWh/mo) — payback stretches past 13 years; a 5 kW system fits better.</li>
+          <li>You'd be exporting most of your production at the $0.06 NEM 3.0 rate with little daytime load.</li>
+          <li>A salesperson is quoting above $3.20/W, a 20-year 7.99% loan, or a lease/PPA — the financing eats most of the upside.</li>
+          <li>You're banking on a return of the 30% credit. Nothing has been proposed to restore it in 2026.</li>
+        </ul>
+      </div>
+    </div>
+
     <aside class="promo-slot" aria-label="Tools">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Companion tool</span>

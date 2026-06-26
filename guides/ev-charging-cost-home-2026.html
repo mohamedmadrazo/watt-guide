@@ -118,7 +118,7 @@
     </figure>
 
     <div style="margin:32px 0; padding:18px 22px; background:var(--bg-1); border-left:4px solid var(--accent); border-radius:var(--r-md);">
-      <strong style="color:var(--text);">TL;DR:</strong> <span style="color:var(--text-muted);">At the May-2026 US average $0.175/kWh home rate, a Model Y costs <strong style="color:var(--text);">~$614/yr</strong> to charge for 12,500 mi — same miles in a 32-MPG gas crossover ≈ <strong style="color:var(--text);">$1,350/yr</strong>. The math collapses if you charge primarily on public DC fast: a Model Y at Tesla Superchargers comes to <strong style="color:var(--text);">~$1,580/yr</strong>, barely cheaper than gas. Home charging is the entire economic story.</span>
+      <strong style="color:var(--text);">TL;DR:</strong> <span style="color:var(--text-muted);">At the May-2026 US average $0.175/kWh home rate, a Model Y costs <strong style="color:var(--text);">~$673/yr</strong> to charge for 12,500 mi — same miles in a 32-MPG gas crossover ≈ <strong style="color:var(--text);">$1,350/yr</strong>. The math collapses if you charge primarily on public DC fast: a Model Y at Tesla Superchargers comes to <strong style="color:var(--text);">~$1,580/yr</strong>, barely cheaper than gas. Home charging is the entire economic story.</span>
     </div>
 
     <aside class="promo-slot" aria-label="Tools">
@@ -162,6 +162,41 @@
     </table>
 
     <p>All numbers assume 10% Level-2 charging losses, no public charging. For your real situation, plug into the <a href="/calculator/ev-charging/" style="color:var(--accent);">EV charging calculator</a> — it accounts for home/public mix and TOU rates.</p>
+
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>What a Tesla Model Y actually costs to charge at home</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs straight from the table above: 12,500 mi/yr, a Model Y at 0.28 kWh/mi, the May-2026 US average home rate of $0.175/kWh, and a 10% Level-2 charging loss — versus the same 12,500 miles in a 32-MPG gas crossover at $3.45/gal.</p>
+      <table>
+        <tr><td>Energy at the wheels — 12,500 mi × 0.28 kWh/mi</td><td>3,500 kWh</td></tr>
+        <tr><td>From the grid — 3,500 kWh ÷ 0.90 (10% L2 loss)</td><td>≈ 3,889 kWh</td></tr>
+        <tr><td>Home charging — 3,889 kWh × $0.175/kWh</td><td>≈ $673 / yr</td></tr>
+        <tr><td>Same miles on gas — 12,500 mi ÷ 32 MPG × $3.45</td><td>$1,348 / yr</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Net:</strong> charging that Model Y at home runs about <strong>$673/yr</strong> — roughly <strong>$675/yr less than gas</strong>, or $0.054/mi vs $0.108/mi. Move that charging to a Con Edison-style off-peak rate and the annual cost drops near $155; charge it 100% on Superchargers at $0.45/kWh and it climbs to ~$1,580, barely beating the gas car.</div>
+      <p class="scenario__cta">Different car, mileage or rate? Drop your own kWh/mi, annual miles and rate into the <a href="/calculator/ev-charging/">EV charging cost calculator</a> for your exact number.</p>
+    </div>
+
+    <h2 id="install-l2">Should you install Level 2, or is Level 1 enough?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Install Level 2 if…</h4>
+        <ul>
+          <li>You drive more than ~30 mi/day — Level 1's ~4 mi/hr can't refill that overnight.</li>
+          <li>You can charge in your own garage or driveway (homeowner, or a landlord who'll allow it).</li>
+          <li>You're on a TOU/EV plan — Level 2 finishes inside the cheap off-peak window; Level 1 may not.</li>
+          <li>A utility rebate ($150–$1,500) offsets the $800–$3,200 installed cost.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Stick with Level 1 / public if…</h4>
+        <ul>
+          <li>You drive a plug-in hybrid or a low-mileage second car — 120 V overnight is plenty.</li>
+          <li>You can't charge where you park (renter, street parking) — and remember: public-only charging erases most of the savings shown above.</li>
+          <li>A panel upgrade pushes install past $3,000 and your mileage is modest — the payback stretches for years.</li>
+        </ul>
+      </div>
+    </div>
 
     <aside class="promo-slot" aria-label="Tools">
       <div class="promo-slot__head">

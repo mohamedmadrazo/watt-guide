@@ -171,6 +171,42 @@
     </table>
     <p style="margin-top:14px;">The cheapest Florida option (TECO super-off-peak) is still ~2× more expensive than NYC's Con Ed TOU. Insolation in Florida partially closes the gap if you pair the EV with a small solar array — see the <a href="/guides/best-states-solar-payback-2026" style="color:var(--accent);">solar payback ranking</a>.</p>
 
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>Same car, cheapest state vs most expensive plan</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">One Tesla Model Y, 12,500 mi/yr, at <strong>0.307 kWh/mi</strong> (the EPA-rated ~0.28 kWh/mi plus ~10% home-charging loss — the single efficiency assumption behind every row in the tables above). That works out to <strong>12,500 × 0.307 = 3,838 kWh/yr</strong> of charging. The only thing that changes the bill is the per-kWh rate:</p>
+      <table>
+        <tr><td>PG&E E-1 standard (CA, default tiered) — 3,838 kWh × $0.32</td><td>$1,230 / yr</td></tr>
+        <tr><td>Con Edison voluntary TOU off-peak (NYC) — 3,838 kWh × $0.04</td><td>$155 / yr</td></tr>
+        <tr><td>Difference — same car, same miles</td><td>$1,075 / yr</td></tr>
+      </table>
+      <div class="scenario__result"><strong>The plan, not the car, is the variable.</strong> Switching enrollment from a default California tiered rate to an opt-in overnight TOU rate is a <strong>~8×</strong> swing — about <strong>$1,075/yr</strong> on identical driving. No new hardware, just a rate change and a charging schedule.</div>
+      <p class="scenario__cta">Your car, miles or off-peak rate are different? Drop them into the <a href="/calculator/ev-charging/">EV charging cost calculator</a> — it uses the same miles × kWh/mi × rate math for your exact number.</p>
+    </div>
+
+    <h2 id="home-vs-public">Charge at home or use public/DC fast?</h2>
+    <p>Before chasing a TOU plan, settle the bigger question: most people overpay simply by relying on public charging when home charging is available. The split is rarely close.</p>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Charge at home if…</h4>
+        <ul>
+          <li>You have any off-street parking and can run a Level 2 circuit — home is $0.04–$0.32/kWh vs $0.45–$0.55 for public DC fast.</li>
+          <li>You can schedule charging into an overnight window — that's where the free-nights and TOU rates above live.</li>
+          <li>Your driving is routine commuting and errands — daily mileage refills overnight with hours to spare.</li>
+          <li>Even on a pricey standard rate, home beats public DC fast on nearly every plan in this guide.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Use public / DC fast if…</h4>
+        <ul>
+          <li>You have no home charging (apartment, street parking) — then a free workplace or destination charger is your cheapest real option.</li>
+          <li>You're road-tripping and need to add range fast — the time cost outweighs the kWh premium.</li>
+          <li>The charger is genuinely free (some hotels, grocery stores, employers) — free always beats any home rate.</li>
+          <li>Driving across town to a paid DC fast charger to "save money" almost never pays — at $0.50/kWh it usually costs more than home.</li>
+        </ul>
+      </div>
+    </div>
+
     <aside class="promo-slot" aria-label="Companion tool">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Companion tool</span>
