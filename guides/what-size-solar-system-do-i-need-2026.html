@@ -142,6 +142,20 @@
     <p><strong style="color:var(--text);">Example 3 — Boston household considering full electrification.</strong> 9,500 kWh/yr current + 3,500 EV + 7,000 heat pump (offsetting gas) = 20,000 kWh × 105% ÷ 1,280 = <strong style="color:var(--accent);">16.4 kW</strong>. That's at the edge of roof space — most likely 13-14 kW + 10 kWh battery, accepting some grid backup.</p>
     <p><strong style="color:var(--text);">Example 4 — San Diego SDG&E household, NEM 3.0.</strong> 8,800 kWh × 100% ÷ 1,490 = 5.9 kW. With NEM 3.0 the export is worthless, so resist the installer's pitch for 9 kW "future-proofing". Right-size at 6 kW + a 10 kWh Powerwall 3.</p>
 
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>Sizing the typical US household, step by step</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: a single-family home using <strong style="color:var(--text);">10,800 kWh/yr</strong> (12-month bill total), a <strong style="color:var(--text);">100% coverage target</strong> (net-metered state, no EV or heat pump planned), and a state production factor of <strong style="color:var(--text);">1,400 kWh per kW per year</strong> (NREL PVWatts, roughly the California / national-average figure). Same numbers as the TL;DR — here is every step.</p>
+      <table>
+        <tr><td>System size — (10,800 kWh × 100%) ÷ 1,400 kWh/kW</td><td>7.7 kW</td></tr>
+        <tr><td>Expected production — 7.7 kW × 1,400 kWh/kW</td><td>10,780 kWh/yr</td></tr>
+        <tr><td>Coverage achieved — 10,780 ÷ 10,800</td><td>99.8%</td></tr>
+        <tr><td>Panel count — ceil(7,700 W ÷ 430 W panels)</td><td>18 panels</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Result:</strong> a <strong>7.7 kW</strong> array (18 × 430 W panels) produces about <strong>10,780 kWh/yr</strong> — covering 99.8% of this home's usage, just as designed. Add a buffer only if an EV or heat pump is coming; for a flat load, this is the right size and oversizing it just wastes panels.</div>
+      <p class="scenario__cta">Different usage, state or coverage target? Drop your own annual kWh and state into the <a href="/calculator/solar/">Solar ROI calculator</a> to size your system and see its payback.</p>
+    </div>
+
     <aside class="promo-slot" aria-label="Companion tool">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Companion tool</span>
@@ -161,6 +175,28 @@
 
     <h2 id="inverter">Inverter sizing (DC/AC ratio)</h2>
     <p>Most installers ship a system with a DC/AC ratio of 1.15-1.25, meaning the inverter is undersized vs panel nameplate. This is fine — peak DC output rarely happens (clouds, temperature, angle) so the inverter clips a few hours per year. Don't pay extra for a larger inverter unless you live somewhere clear-sky like Arizona; the math doesn't pencil.</p>
+
+    <h2 id="size-up-down">Should you size up or size down?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Size up if…</h4>
+        <ul>
+          <li>You're in a net-metered state and an EV is coming in &lt;5 years — add ~3,500 kWh/yr of load now (target 115–125%).</li>
+          <li>You plan to swap gas heat for a heat pump — that's another ~7,000 kWh/yr to offset (target 130–150%).</li>
+          <li>Your roof has clear, well-oriented space to spare, so the marginal panels are cheap per watt.</li>
+          <li>Your utility export credit is genuine net metering, so any surplus is worth close to retail.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Size down if…</h4>
+        <ul>
+          <li>You're on California NEM 3.0 or a no-net-metering state — surplus exports for ~$0.05 while imports cost ~$0.32.</li>
+          <li>Your load is flat (no EV or electrification planned) — past 100% coverage you're paying for kWh you give away.</li>
+          <li>Your utility caps residential systems at 105–115% of historical usage and will deny interconnection above it.</li>
+          <li>Usable roof is limited or shaded — don't add north-slope panels just to hit a number; right-size and add a battery instead.</li>
+        </ul>
+      </div>
+    </div>
 
     <h2 id="oversizing">When NOT to oversize</h2>
     <ol style="margin:14px 0 22px 24px; color:var(--text-muted); line-height:1.8;">

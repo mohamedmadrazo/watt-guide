@@ -108,6 +108,21 @@
       </tbody>
     </table>
 
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>What a heat pump water heater actually costs to run</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: the same 4-person household above — 64 gallons/day raised ~63 °F (a 57 °F US-average inlet to a 120 °F output) — at the 2026 US-average rate of $0.18/kWh. First we find the heat that has to be delivered, then divide by each unit's efficiency (UEF).</p>
+      <table>
+        <tr><td>Heat delivered — 64 gal × 8.34 lb × 63 °F × 365 days</td><td>≈ 12.27 M BTU/yr</td></tr>
+        <tr><td>As electricity — 12.27 M BTU ÷ 3,412 BTU/kWh</td><td>3,597 kWh/yr delivered</td></tr>
+        <tr><td>Heat pump (UEF 4.0) — 3,597 ÷ 4.0 = 899 kWh × $0.18</td><td>$162 / year</td></tr>
+        <tr><td>Electric resistance (UEF 0.93) — 3,597 ÷ 0.93 = 3,868 kWh × $0.18</td><td>$696 / year</td></tr>
+        <tr><td>Energy &amp; money saved — 2,969 kWh</td><td>$534 / year</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Payback:</strong> a heat pump unit runs about $3,500 installed; after a typical $1,000 state rebate that's ~$2,500 net. At $534 saved per year vs an electric resistance tank it pays back in <strong>about 4.7 years</strong> — then keeps saving roughly $534 every year for the rest of its 12–15 year life. (The $162/yr lands inside the table's $130–$180 range; the UEF 3.5–4.3 spread is what produces that range.)</div>
+      <p class="scenario__cta">Different inlet temp, household size or rate? Put your delivered kWh and UEF into the <a href="/calculator/heat-pump/">heat pump calculator</a> — it's the same COP × kWh math — or run raw kWh × rate in the <a href="/calculator/">electricity cost calculator</a>.</p>
+    </div>
+
     <h2 id="hpwh">Why heat pump water heaters dominate the math</h2>
     <p>An HPWH moves heat from ambient air into the water tank rather than generating it. Modern units (Rheem ProTerra, A.O. Smith Voltex, Bradford White AeroTherm) have UEF ratings of 3.5-4.3. Translation: 1 kWh of electricity moves ~4 kWh of heat into your water. Electric resistance is 0.93 UEF — it converts but doesn't move.</p>
     <p>Practical implications:</p>
@@ -128,6 +143,28 @@
       <li><strong style="color:var(--text);">Cold-climate inlet temp.</strong> Boston winter inlet is 38 °F — needs 100 °F rise to hit 138 °F. BTU calculations get tight.</li>
       <li><strong style="color:var(--text);">Electric tankless without gas backup.</strong> Needs 100-160 A of additional service. Often requires panel upgrade.</li>
     </ul>
+
+    <h2 id="worth-it">Is a heat pump water heater worth it for you?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Go heat pump if…</h4>
+        <ul>
+          <li>You're replacing an electric resistance tank — that's the $534/yr swing above, and the 4–5 year payback case.</li>
+          <li>You have a garage, utility room or basement with ≥700 cubic feet of air (cool exhaust is a feature, not a bug, in a warm climate).</li>
+          <li>A state or utility rebate ($500–$1,500) is on the table — it can cut the net cost roughly in half.</li>
+          <li>You're electrifying anyway and want to drop a gas line, or your gas is expensive.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Stick with what you have if…</h4>
+        <ul>
+          <li>You run a working gas tank on cheap gas (~$0.92/therm) and have no plans to electrify — operating cost is already low.</li>
+          <li>Your only spot is a tank-sized closet with no airflow and no easy ducting — an HPWH won't breathe there.</li>
+          <li>You're a low-demand single or couple — a gas tankless eliminates standby loss and may win on lifespan instead.</li>
+          <li>You're in a cold basement you already heat — the HPWH steals that heat back, eroding the savings above.</li>
+        </ul>
+      </div>
+    </div>
 
     <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">

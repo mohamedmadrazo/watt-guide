@@ -167,6 +167,20 @@ payback = min y where Σ year_savings[0..y] ≥ net_cost</pre>
       Rate source: EIA "Average Price of Electricity to Ultimate Customers" (Form EIA-861, Feb 2026 release). Production source: NREL PVWatts v8, default tilt/orientation. State rebates pulled from DSIRE (May 12, 2026 snapshot) — see breakdown below.
     </p>
 
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>Same 8 kW system, best state vs worst state</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: an 8 kW grid-tied array at $2.85/W = <strong>$22,800</strong> installed, <strong>no federal credit</strong> (eliminated July 2025) and no state rebate, using each state's NREL production and EIA retail rate straight from the table above. To keep it reproducible, this example uses <em>plain year-one savings</em> (production × rate, no escalator) — a more conservative number than the 25-year inflation-adjusted model the ranking column uses.</p>
+      <table>
+        <tr><td><strong>Hawaii</strong> — 8 kW × 1,480 kWh/kW = 11,840 kWh × $0.424</td><td>$5,020 / yr saved</td></tr>
+        <tr><td>Hawaii payback — $22,800 ÷ $5,020</td><td><strong>4.5 years</strong></td></tr>
+        <tr><td><strong>Idaho</strong> — 8 kW × 1,360 kWh/kW = 10,880 kWh × $0.114</td><td>$1,240 / yr saved</td></tr>
+        <tr><td>Idaho payback — $22,800 ÷ $1,240</td><td><strong>18.4 years</strong></td></tr>
+      </table>
+      <div class="scenario__result"><strong>The verdict:</strong> identical hardware, identical sun-hours-class production — yet the same $22,800 system pays for itself in <strong>4.5 years in Hawaii</strong> and takes <strong>18.4 years in Idaho</strong>. The only thing that changed is the retail rate ($0.42 vs $0.11/kWh). The panels barely care where they live; your utility bill is the whole story. (The ranking's higher 5.8 / 22.4-year figures simply add rate inflation and panel degradation over 25 years — both honest, the simpler one is just the floor.)</div>
+      <p class="scenario__cta">Different state, $/W, rate or array size? Put your own numbers into the <a href="/calculator/solar/">solar ROI calculator</a> — it has the state dropdown and a tax-credit toggle (leave it off for the 2026 reality).</p>
+    </div>
+
     <aside class="promo-slot" aria-label="Companion tool">
       <div class="promo-slot__head">
         <span class="promo-slot__tag">Companion tool</span>
@@ -207,6 +221,29 @@ payback = min y where Σ year_savings[0..y] ≥ net_cost</pre>
 
     <h2 id="top-5">Why the top 5 win: rates over insolation</h2>
     <p>Hawaii's payback (5.8 years) isn't driven by sun — its 1,480 kWh/kW is middle-of-pack. It's driven by $0.424/kWh retail electricity, which makes every panel-generated kWh worth 3× what it is in the Midwest. Massachusetts (#2) gets 1,280 kWh/kW (below the national average) but combines $0.33/kWh retail with the SMART performance incentive that pays ~$0.06/kWh for 10 years.</p>
+
+    <h2 id="should-you">Should you go solar in your state?</h2>
+    <p>Forget the 50-row table for a second. With the federal credit gone, the decision collapses to one threshold — your retail rate — plus whether a state program still tops it up.</p>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Solar pencils in your state if…</h4>
+        <ul>
+          <li>Your retail rate is above <strong>$0.18/kWh</strong> — that's where payback drops under ~12 years even with no incentive.</li>
+          <li>You're in a top-10 state (HI, MA, CT, CA-SDG&amp;E, RI, NH, ME, NY, AK, VT): payback is under 10 years before any rebate.</li>
+          <li>A state program still stacks on top — MA SMART, NY-Sun, CT, NJ SREC-II, OR storage — knocking another 1–3 years off.</li>
+          <li>You plan to stay 12+ years, so you actually collect the savings tail after break-even.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Hold off if…</h4>
+        <ul>
+          <li>Your retail rate is below <strong>$0.13/kWh</strong> (ID, WA, NE, UT, ND, LA, KY): payback stretches past 18 years — good sun can't fix cheap power.</li>
+          <li>No standing state rebate applies and your rate sits in the $0.13–0.15 band — you're looking at 13–17 years.</li>
+          <li>You might move within ~10 years; you'd hand the unrecovered cost to the next owner.</li>
+          <li>In cheap-power states, look at <strong>community solar</strong> (no upfront cost, ~10% off the bill) instead of rooftop PV.</li>
+        </ul>
+      </div>
+    </div>
 
     <aside class="promo-slot" aria-label="Read next">
       <div class="promo-slot__head">
