@@ -1336,3 +1336,26 @@ details.faq-item p a:hover { text-decoration-color: var(--accent); }
   color: var(--text-muted); font-size: 0.92rem; line-height: 1.65;
 }
 .disclosure strong { color: var(--text); }
+
+/* ---------- Solar Payback Index table (50-state data study) ---------- */
+.idx-wrap { margin:22px 0 8px; overflow-x:auto; border:1px solid var(--border); border-radius:var(--r-md); }
+.idx-table { width:100%; border-collapse:collapse; font-size:0.9rem; min-width:640px; }
+.idx-table thead th {
+  position:sticky; top:0; z-index:1; background:var(--bg-1); color:var(--text);
+  text-align:right; padding:11px 12px; border-bottom:1px solid var(--border);
+  font-weight:600; white-space:nowrap; cursor:pointer; user-select:none;
+}
+.idx-table thead th:first-child, .idx-table thead th.idx-l { text-align:left; }
+.idx-table thead th[aria-sort="ascending"]::after { content:" ▲"; color:var(--accent); }
+.idx-table thead th[aria-sort="descending"]::after { content:" ▼"; color:var(--accent); }
+.idx-table tbody td { padding:9px 12px; border-bottom:1px solid var(--border); text-align:right; color:var(--text-muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.idx-table tbody td.idx-l { text-align:left; color:var(--text); }
+.idx-table tbody tr:nth-child(even) { background:rgba(255,255,255,0.015); }
+.idx-table tbody tr:last-child td { border-bottom:0; }
+.idx-table .idx-now { color:var(--text); font-weight:600; }
+.idx-table .idx-delta { color:var(--accent-hot); }
+.nm-badge { display:inline-block; padding:2px 9px; border-radius:999px; font-size:0.74rem; font-weight:600; white-space:nowrap; }
+.nm-full { background:rgba(52,199,120,0.14); color:var(--accent-2); }
+.nm-net_billing { background:rgba(240,175,60,0.14); color:var(--accent); }
+.nm-none { background:rgba(240,90,90,0.14); color:var(--accent-hot); }
+.idx-hint { font-size:0.82rem; color:var(--text-dim); margin:6px 2px 0; }

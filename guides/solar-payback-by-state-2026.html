@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solar Payback by State in 2026 — After the Federal Credit Expired | Watt Guide</title>
+  <meta name="description" content="Residential solar payback recomputed for all 50 states now that the 30% federal tax credit expired on Dec 31, 2025. Sortable table, transparent method, downloadable dataset.">
+  <link rel="canonical" href="https://watt-guide.com/guides/solar-payback-by-state-2026">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Solar Payback by State 2026 — After the Credit Expired">
+  <meta property="og:description" content="All 50 states recomputed without the 30% federal credit. Sortable table + downloadable dataset.">
+  <meta property="og:url" content="https://watt-guide.com/guides/solar-payback-by-state-2026">
+  <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="670">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-07-05T10:00:00Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <meta name="theme-color" content="#0a0e1a">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Solar Payback by State in 2026 — After the Federal Credit Expired","image":"https://watt-guide.com/assets/og-image-v3.jpg","datePublished":"2026-07-05","dateModified":"2026-07-05","author":{"@type":"Person","name":"Bruno de Madrazo","url":"https://watt-guide.com/author"},"publisher":{"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v3.jpg"}},"mainEntityOfPage":"https://watt-guide.com/guides/solar-payback-by-state-2026"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://watt-guide.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://watt-guide.com/guides/"},{"@type":"ListItem","position":3,"name":"Solar payback by state 2026","item":"https://watt-guide.com/guides/solar-payback-by-state-2026"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Post-Credit Solar Payback Index 2026","description":"Residential solar simple-payback for all 50 US states recomputed after the 30% federal ITC expired on 2025-12-31, plus the historical payback with the credit and the difference. Inputs: EIA residential electricity rates, NREL PVWatts peak sun hours, statewide net-metering regime, EnergySage installed cost.","creator":{"@type":"Person","name":"Bruno de Madrazo","url":"https://watt-guide.com/author"},"datePublished":"2026-07-05","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"variableMeasured":["payback years without federal credit","payback years with 30% federal credit","difference in years","residential electricity rate","net-metering regime"],"distribution":{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://watt-guide.com/assets/data/solar-payback-index-2026.csv"}}</script>
+
+  <!-- AdSense preconnects (perf optimization) -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+  <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+  <!-- AdSense ownership verification -->
+  <meta name="google-adsense-account" content="ca-pub-1131493800966237">
+  <!-- Google AdSense (async + crossorigin). Replace pub-1131493800966237 after approval. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1131493800966237" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav-links">☰</button>
+    <ul class="nav-links" id="primary-nav-links">
+      <li><a href="/#tools">Tools</a></li>
+      <li><a href="/guides/" aria-current="page">Guides</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/calculator/solar/">Solar calculator →</a>
+  </div>
+</header>
+
+<main class="container" style="padding-top:120px; padding-bottom:80px; max-width:860px;">
+  <nav class="crumbs" aria-label="Breadcrumb" style="margin-bottom:18px; font-size:0.85rem; color:var(--text-dim);">
+    <a href="/" style="color:var(--text-dim);">Home</a> › <a href="/guides/" style="color:var(--text-dim);">Guides</a> › <span style="color:var(--text-muted);">Solar payback by state 2026</span>
+  </nav>
+  <article>
+    <span class="eyebrow">Data study · Updated July 2026</span>
+    <h1>Solar payback in all 50 states — <span class="grad-text">now that the federal credit is gone.</span></h1>
+    <div class="byline">
+      <img class="byline__avatar" src="/assets/author-bruno.webp" alt="Bruno de Madrazo" width="40" height="40" loading="lazy" decoding="async">
+      <div class="byline__text">
+        <a class="byline__name" href="/author">Bruno de Madrazo</a>
+        <div class="byline__meta">Updated July 5, 2026<span class="byline__sep">·</span><a href="/methodology">How we calculate this</a></div>
+      </div>
+    </div>
+    <p style="font-size:1.1rem; color:var(--text-muted); margin-top:16px; line-height:1.65;">The 30% federal solar tax credit (Section 25D) <strong style="color:var(--text);">expired on December 31, 2025</strong>. Almost every "solar payback" number online was written when the credit still existed. So we recomputed it — simple payback for all 50 states, without the credit, using public data and math you can reproduce. Here's what changed, and where solar still pays off fastest.</p>
+
+    <div style="margin:32px 0; padding:18px 22px; background:var(--bg-1); border-left:4px solid var(--accent); border-radius:var(--r-md);">
+      <strong style="color:var(--text);">The one stat that's exact:</strong> <span style="color:var(--text-muted);">removing a 30% up-front credit makes payback <strong style="color:var(--accent);">about 43% longer in every state</strong> — it's just 1 ÷ (1 − 0.30) = 1.43×, regardless of where you live. For the typical system that's roughly <strong style="color:var(--danger);">4 extra years</strong> (our 50-state average moved from ~9.2 to ~13.2 years).</span>
+    </div>
+
+    <h2 id="surprise">The surprise: sunshine barely matters</h2>
+    <p>You'd expect sunny states to win. They don't. After the credit, the fastest payback in America is in <strong>cloudy New England</strong> — because two things dwarf sunshine: your <strong>electricity rate</strong> (the value of every kWh you offset) and your state's <strong>net-metering policy</strong> (whether exports are credited at full retail or a fraction of it). Sun-drenched Arizona takes about 15.0 years; foggy Massachusetts, about 6.4 — the same panels, less than half the wait.</p>
+
+    <aside class="promo-slot" aria-label="Tools">
+      <div class="promo-slot__head">
+        <span class="promo-slot__tag">Make it yours</span>
+        <p class="promo-slot__title">These are state averages — get your own number</p>
+      </div>
+      <div class="promo-slot__grid">
+        <a class="promo-slot__card" href="/calculator/solar/"><span class="promo-slot__card-icon">☀️</span><span class="promo-slot__card-title">Solar ROI calculator</span><span>Your rate, roof and system size — no 30% credit assumed.</span><span class="promo-slot__card-arrow">Open →</span></a>
+        <a class="promo-slot__card" href="/guides/best-states-solar-payback-2026"><span class="promo-slot__card-icon">🏆</span><span class="promo-slot__card-title">Best states, ranked</span><span>The evergreen ranking companion to this study.</span><span class="promo-slot__card-arrow">Read →</span></a>
+        <a class="promo-slot__card" href="/guides/solar-battery-storage-payback-2026"><span class="promo-slot__card-icon">🔋</span><span class="promo-slot__card-title">Battery payback</span><span>Where net-billing makes storage worth it.</span><span class="promo-slot__card-arrow">Read →</span></a>
+      </div>
+    </aside>
+
+    <h2 id="table">Solar payback by state, 2026 (sortable)</h2>
+    <p style="color:var(--text-muted);">Simple payback in years, sorted fastest first. <strong style="color:var(--text);">Now</strong> = without the federal credit (the 2026 reality). <strong style="color:var(--text);">With credit</strong> = what the same system would have paid back before 2026. Click any column to sort.</p>
+    <div class="idx-wrap">
+      <table class="idx-table" id="idx">
+        <thead><tr>
+          <th class="idx-l" scope="col">#</th>
+          <th class="idx-l" scope="col">State</th>
+          <th scope="col" aria-sort="ascending">Now (yrs)</th>
+          <th scope="col">With credit</th>
+          <th scope="col">Δ yrs</th>
+          <th scope="col">Rate ¢/kWh</th>
+          <th class="idx-l" scope="col">Net metering</th>
+        </tr></thead>
+        <tbody>
+        <tr><td class="idx-l" data-v="1">1</td><td class="idx-l" data-v="Hawaii">Hawaii</td><td class="idx-now" data-v="5.6">5.6</td><td data-v="3.9">3.9</td><td class="idx-delta" data-v="1.7">+1.7</td><td data-v="46.62">46.62</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="2">2</td><td class="idx-l" data-v="Connecticut">Connecticut</td><td class="idx-now" data-v="6.0">6.0</td><td data-v="4.2">4.2</td><td class="idx-delta" data-v="1.8">+1.8</td><td data-v="32.24">32.24</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="3">3</td><td class="idx-l" data-v="Massachusetts">Massachusetts</td><td class="idx-now" data-v="6.4">6.4</td><td data-v="4.5">4.5</td><td class="idx-delta" data-v="1.9">+1.9</td><td data-v="29.45">29.45</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="4">4</td><td class="idx-l" data-v="Rhode Island">Rhode Island</td><td class="idx-now" data-v="6.6">6.6</td><td data-v="4.6">4.6</td><td class="idx-delta" data-v="2.0">+2.0</td><td data-v="28.3">28.3</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="5">5</td><td class="idx-l" data-v="New York">New York</td><td class="idx-now" data-v="6.7">6.7</td><td data-v="4.7">4.7</td><td class="idx-delta" data-v="2.0">+2.0</td><td data-v="29.45">29.45</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="6">6</td><td class="idx-l" data-v="Maine">Maine</td><td class="idx-now" data-v="6.8">6.8</td><td data-v="4.8">4.8</td><td class="idx-delta" data-v="2.0">+2.0</td><td data-v="28.42">28.42</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="7">7</td><td class="idx-l" data-v="California">California</td><td class="idx-now" data-v="7.1">7.1</td><td data-v="5.0">5.0</td><td class="idx-delta" data-v="2.1">+2.1</td><td data-v="35.25">35.25</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="8">8</td><td class="idx-l" data-v="New Hampshire">New Hampshire</td><td class="idx-now" data-v="7.1">7.1</td><td data-v="5.0">5.0</td><td class="idx-delta" data-v="2.1">+2.1</td><td data-v="27.24">27.24</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="9">9</td><td class="idx-l" data-v="New Jersey">New Jersey</td><td class="idx-now" data-v="8.1">8.1</td><td data-v="5.6">5.6</td><td class="idx-delta" data-v="2.4">+2.4</td><td data-v="23.53">23.53</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="10">10</td><td class="idx-l" data-v="Maryland">Maryland</td><td class="idx-now" data-v="8.2">8.2</td><td data-v="5.7">5.7</td><td class="idx-delta" data-v="2.5">+2.5</td><td data-v="22.07">22.07</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="11">11</td><td class="idx-l" data-v="Vermont">Vermont</td><td class="idx-now" data-v="8.3">8.3</td><td data-v="5.8">5.8</td><td class="idx-delta" data-v="2.5">+2.5</td><td data-v="24.56">24.56</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="12">12</td><td class="idx-l" data-v="Pennsylvania">Pennsylvania</td><td class="idx-now" data-v="8.6">8.6</td><td data-v="6.0">6.0</td><td class="idx-delta" data-v="2.6">+2.6</td><td data-v="21.47">21.47</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="13">13</td><td class="idx-l" data-v="New Mexico">New Mexico</td><td class="idx-now" data-v="9.1">9.1</td><td data-v="6.4">6.4</td><td class="idx-delta" data-v="2.7">+2.7</td><td data-v="15.15">15.15</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="14">14</td><td class="idx-l" data-v="Colorado">Colorado</td><td class="idx-now" data-v="9.4">9.4</td><td data-v="6.6">6.6</td><td class="idx-delta" data-v="2.8">+2.8</td><td data-v="16.54">16.54</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="15">15</td><td class="idx-l" data-v="Illinois">Illinois</td><td class="idx-now" data-v="9.6">9.6</td><td data-v="6.7">6.7</td><td class="idx-delta" data-v="2.9">+2.9</td><td data-v="20.47">20.47</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="16">16</td><td class="idx-l" data-v="South Carolina">South Carolina</td><td class="idx-now" data-v="9.7">9.7</td><td data-v="6.8">6.8</td><td class="idx-delta" data-v="2.9">+2.9</td><td data-v="17.06">17.06</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="17">17</td><td class="idx-l" data-v="Delaware">Delaware</td><td class="idx-now" data-v="9.8">9.8</td><td data-v="6.9">6.9</td><td class="idx-delta" data-v="2.9">+2.9</td><td data-v="18.79">18.79</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="18">18</td><td class="idx-l" data-v="Ohio">Ohio</td><td class="idx-now" data-v="10.0">10.0</td><td data-v="7.0">7.0</td><td class="idx-delta" data-v="3.0">+3.0</td><td data-v="19.49">19.49</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="19">19</td><td class="idx-l" data-v="Wisconsin">Wisconsin</td><td class="idx-now" data-v="10.0">10.0</td><td data-v="7.0">7.0</td><td class="idx-delta" data-v="3.0">+3.0</td><td data-v="19.21">19.21</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="20">20</td><td class="idx-l" data-v="Virginia">Virginia</td><td class="idx-now" data-v="10.1">10.1</td><td data-v="7.1">7.1</td><td class="idx-delta" data-v="3.0">+3.0</td><td data-v="17.38">17.38</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="21">21</td><td class="idx-l" data-v="Kansas">Kansas</td><td class="idx-now" data-v="10.4">10.4</td><td data-v="7.3">7.3</td><td class="idx-delta" data-v="3.1">+3.1</td><td data-v="15.78">15.78</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="22">22</td><td class="idx-l" data-v="North Carolina">North Carolina</td><td class="idx-now" data-v="10.4">10.4</td><td data-v="7.2">7.2</td><td class="idx-delta" data-v="3.1">+3.1</td><td data-v="16.25">16.25</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="23">23</td><td class="idx-l" data-v="Florida">Florida</td><td class="idx-now" data-v="10.5">10.5</td><td data-v="7.3">7.3</td><td class="idx-delta" data-v="3.1">+3.1</td><td data-v="15.38">15.38</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="24">24</td><td class="idx-l" data-v="Georgia">Georgia</td><td class="idx-now" data-v="11.1">11.1</td><td data-v="7.8">7.8</td><td class="idx-delta" data-v="3.3">+3.3</td><td data-v="15.37">15.37</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="25">25</td><td class="idx-l" data-v="Wyoming">Wyoming</td><td class="idx-now" data-v="11.2">11.2</td><td data-v="7.9">7.9</td><td class="idx-delta" data-v="3.4">+3.4</td><td data-v="14.68">14.68</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="26">26</td><td class="idx-l" data-v="Minnesota">Minnesota</td><td class="idx-now" data-v="11.7">11.7</td><td data-v="8.2">8.2</td><td class="idx-delta" data-v="3.5">+3.5</td><td data-v="16.39">16.39</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="27">27</td><td class="idx-l" data-v="West Virginia">West Virginia</td><td class="idx-now" data-v="12.0">12.0</td><td data-v="8.4">8.4</td><td class="idx-delta" data-v="3.6">+3.6</td><td data-v="16.06">16.06</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="28">28</td><td class="idx-l" data-v="Oklahoma">Oklahoma</td><td class="idx-now" data-v="12.1">12.1</td><td data-v="8.4">8.4</td><td class="idx-delta" data-v="3.6">+3.6</td><td data-v="13.31">13.31</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="29">29</td><td class="idx-l" data-v="Kentucky">Kentucky</td><td class="idx-now" data-v="12.3">12.3</td><td data-v="8.6">8.6</td><td class="idx-delta" data-v="3.7">+3.7</td><td data-v="15.02">15.02</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="30">30</td><td class="idx-l" data-v="Missouri">Missouri</td><td class="idx-now" data-v="12.5">12.5</td><td data-v="8.8">8.8</td><td class="idx-delta" data-v="3.8">+3.8</td><td data-v="14.01">14.01</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="31">31</td><td class="idx-l" data-v="Iowa">Iowa</td><td class="idx-now" data-v="13.4">13.4</td><td data-v="9.4">9.4</td><td class="idx-delta" data-v="4.0">+4.0</td><td data-v="13.86">13.86</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="32">32</td><td class="idx-l" data-v="Montana">Montana</td><td class="idx-now" data-v="13.4">13.4</td><td data-v="9.3">9.3</td><td class="idx-delta" data-v="4.0">+4.0</td><td data-v="13.9">13.9</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="33">33</td><td class="idx-l" data-v="Nebraska">Nebraska</td><td class="idx-now" data-v="13.4">13.4</td><td data-v="9.4">9.4</td><td class="idx-delta" data-v="4.0">+4.0</td><td data-v="13.28">13.28</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="34">34</td><td class="idx-l" data-v="Oregon">Oregon</td><td class="idx-now" data-v="13.8">13.8</td><td data-v="9.7">9.7</td><td class="idx-delta" data-v="4.1">+4.1</td><td data-v="15.78">15.78</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="35">35</td><td class="idx-l" data-v="Arizona">Arizona</td><td class="idx-now" data-v="15.0">15.0</td><td data-v="10.5">10.5</td><td class="idx-delta" data-v="4.5">+4.5</td><td data-v="15.48">15.48</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="36">36</td><td class="idx-l" data-v="Washington">Washington</td><td class="idx-now" data-v="15.6">15.6</td><td data-v="10.9">10.9</td><td class="idx-delta" data-v="4.7">+4.7</td><td data-v="14.36">14.36</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="37">37</td><td class="idx-l" data-v="Michigan">Michigan</td><td class="idx-now" data-v="15.9">15.9</td><td data-v="11.2">11.2</td><td class="idx-delta" data-v="4.8">+4.8</td><td data-v="21.39">21.39</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="38">38</td><td class="idx-l" data-v="North Dakota">North Dakota</td><td class="idx-now" data-v="16.1">16.1</td><td data-v="11.3">11.3</td><td class="idx-delta" data-v="4.8">+4.8</td><td data-v="12.35">12.35</td><td class="idx-l" data-v="0"><span class="nm-badge nm-full">Full retail</span></td></tr>
+        <tr><td class="idx-l" data-v="39">39</td><td class="idx-l" data-v="Nevada">Nevada</td><td class="idx-now" data-v="16.6">16.6</td><td data-v="11.6">11.6</td><td class="idx-delta" data-v="5.0">+5.0</td><td data-v="14.29">14.29</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="40">40</td><td class="idx-l" data-v="Indiana">Indiana</td><td class="idx-now" data-v="18.3">18.3</td><td data-v="12.8">12.8</td><td class="idx-delta" data-v="5.5">+5.5</td><td data-v="17.9">17.9</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="41">41</td><td class="idx-l" data-v="Louisiana">Louisiana</td><td class="idx-now" data-v="19.8">19.8</td><td data-v="13.9">13.9</td><td class="idx-delta" data-v="5.9">+5.9</td><td data-v="14.44">14.44</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="42">42</td><td class="idx-l" data-v="Arkansas">Arkansas</td><td class="idx-now" data-v="20.8">20.8</td><td data-v="14.5">14.5</td><td class="idx-delta" data-v="6.2">+6.2</td><td data-v="14.16">14.16</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="43">43</td><td class="idx-l" data-v="Alabama">Alabama</td><td class="idx-now" data-v="21.2">21.2</td><td data-v="14.8">14.8</td><td class="idx-delta" data-v="6.4">+6.4</td><td data-v="17.41">17.41</td><td class="idx-l" data-v="2"><span class="nm-badge nm-none">None</span></td></tr>
+        <tr><td class="idx-l" data-v="44">44</td><td class="idx-l" data-v="Utah">Utah</td><td class="idx-now" data-v="21.3">21.3</td><td data-v="14.9">14.9</td><td class="idx-delta" data-v="6.4">+6.4</td><td data-v="13.29">13.29</td><td class="idx-l" data-v="1"><span class="nm-badge nm-net_billing">Net billing</span></td></tr>
+        <tr><td class="idx-l" data-v="45">45</td><td class="idx-l" data-v="Texas">Texas</td><td class="idx-now" data-v="21.7">21.7</td><td data-v="15.2">15.2</td><td class="idx-delta" data-v="6.5">+6.5</td><td data-v="16.99">16.99</td><td class="idx-l" data-v="2"><span class="nm-badge nm-none">None</span></td></tr>
+        <tr><td class="idx-l" data-v="46">46</td><td class="idx-l" data-v="Mississippi">Mississippi</td><td class="idx-now" data-v="21.8">21.8</td><td data-v="15.3">15.3</td><td class="idx-delta" data-v="6.5">+6.5</td><td data-v="16.76">16.76</td><td class="idx-l" data-v="2"><span class="nm-badge nm-none">None</span></td></tr>
+        <tr><td class="idx-l" data-v="47">47</td><td class="idx-l" data-v="Alaska">Alaska</td><td class="idx-now" data-v="22.2">22.2</td><td data-v="15.5">15.5</td><td class="idx-delta" data-v="6.6">+6.6</td><td data-v="27.35">27.35</td><td class="idx-l" data-v="2"><span class="nm-badge nm-none">None</span></td></tr>
+        <tr><td class="idx-l" data-v="48">48</td><td class="idx-l" data-v="Tennessee">Tennessee</td><td class="idx-now" data-v="26.7">26.7</td><td data-v="18.7">18.7</td><td class="idx-delta" data-v="8.0">+8.0</td><td data-v="14.94">14.94</td><td class="idx-l" data-v="2"><span class="nm-badge nm-none">None</span></td></tr>
+        <tr><td class="idx-l" data-v="49">49</td><td class="idx-l" data-v="South Dakota">South Dakota</td><td class="idx-now" data-v="27.2">27.2</td><td data-v="19.1">19.1</td><td class="idx-delta" data-v="8.2">+8.2</td><td data-v="14.52">14.52</td><td class="idx-l" data-v="2"><span class="nm-badge nm-none">None</span></td></tr>
+        <tr><td class="idx-l" data-v="50">50</td><td class="idx-l" data-v="Idaho">Idaho</td><td class="idx-now" data-v="29.0">29.0</td><td data-v="20.3">20.3</td><td class="idx-delta" data-v="8.7">+8.7</td><td data-v="12.7">12.7</td><td class="idx-l" data-v="2"><span class="nm-badge nm-none">None</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="idx-hint">Payback is independent of system size (cost and output both scale with kW, so it cancels). Full dataset below.</p>
+
+    <p style="margin-top:18px;">
+      <a class="nav-cta" href="/assets/data/solar-payback-index-2026.csv" download style="display:inline-block;">⬇ Download the dataset (CSV)</a>
+    </p>
+
+    <h2 id="best-worst">Where solar pays off fastest — and slowest</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Fastest payback (2026)</h4>
+        <ul>
+          <li>Hawaii (5.6), Connecticut (6.0), Massachusetts (6.4), Rhode Island (6.6), New York (6.7)</li>
+          <li>The pattern: high electricity rates + full-retail net metering.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Slowest payback (2026)</h4>
+        <ul>
+          <li>Idaho (29.0), South Dakota (27.2), Tennessee (26.7), Alaska (22.2), Mississippi (21.8)</li>
+          <li>The pattern: cheap power + no statewide net-metering mandate.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
+      <h3>Ohio, an 11 kW system, without the credit</h3>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs: Ohio retail rate $0.1949/kWh; NREL yield ≈ 1,326 kWh per kW per year (4.54 peak sun hours × 365 × 0.80 derate); full-retail net metering; installed cost $2.58/W (EnergySage 2026).</p>
+      <table>
+        <tr><td>System cost — 11 kW × $2,580/kW</td><td>$28,380</td></tr>
+        <tr><td>Annual production — 11 kW × 1,326 kWh</td><td>14,586 kWh</td></tr>
+        <tr><td>Annual savings — 14,586 kWh × $0.1949</td><td>$2,843 / yr</td></tr>
+      </table>
+      <div class="scenario__result"><strong>Payback:</strong> $28,380 ÷ $2,843 ≈ <strong>10.0 years</strong> without the credit. With the old 30% credit the cost was $19,866, so payback was ≈ <strong>7.0 years</strong> — the 3-year swing this study measures for every state.</div>
+      <p class="scenario__cta">Different state or rate? Put your own numbers into the <a href="/calculator/solar/">solar ROI calculator</a>.</p>
+    </div>
+
+    <h2 id="worth-it">So is solar still worth it in 2026?</h2>
+    <div class="verdict">
+      <div class="verdict__col verdict__col--yes">
+        <h4>Still worth it if…</h4>
+        <ul>
+          <li>Your electricity rate is high (roughly above $0.20/kWh) — most of the Northeast, California, Hawaii.</li>
+          <li>Your state keeps full-retail net metering, so exports are worth as much as what you'd pay.</li>
+          <li>You have a strong state or utility incentive that replaces part of the lost federal credit.</li>
+        </ul>
+      </div>
+      <div class="verdict__col verdict__col--no">
+        <h4>Think twice if…</h4>
+        <ul>
+          <li>Your power is cheap (below ~$0.14/kWh) and there's no state net-metering mandate.</li>
+          <li>Your utility only pays avoided-cost / net-billing rates for exports (payback stretches past 15 years).</li>
+          <li>You'd finance at a rate that eats the savings — run the loan cost, not just the cash payback.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="method">How we calculated this</h2>
+    <p style="color:var(--text-muted); line-height:1.7;">Payback = installed cost ÷ annual savings, per kW (system size cancels). Annual savings = annual production × your retail rate × a value factor for how exports are credited (full retail = 1.00; net-billing / avoided-cost ≈ 0.58; no statewide mandate ≈ 0.46). Inputs are public: <strong style="color:var(--text);">EIA</strong> residential rates (Apr 2026), <strong style="color:var(--text);">NREL PVWatts</strong> peak sun hours, statewide net-metering regime, and <strong style="color:var(--text);">EnergySage</strong> installed cost ($2.58/W, 2026). This is <em>simple</em> payback — no rate inflation (which would shorten it) and no discounting (which would lengthen it). Full sources and assumptions on the <a href="/methodology" style="color:var(--accent);">methodology page</a>.</p>
+    <div class="disclosure">
+      <strong>Honest limits.</strong> These are statewide averages — your utility, roof and tariff will differ, which is exactly why the calculator lets you plug in your own numbers. California is shown under the generic net-billing factor; its NEM 3.0 export rates are lower still, so real California payback is likely a bit longer than the table shows. "No statewide mandate" states vary a lot by utility (some Texas plans, for instance, beat the average) — treat that tail as a pessimistic edge, not a floor.
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq-item"><h3>Did the solar tax credit really end?</h3><p>Yes. The 30% residential credit (Section 25D) ended for systems placed in service after December 31, 2025, under the 2025 budget law. Systems energized in 2026 and later don't qualify for the federal credit, though many state and utility incentives remain.</p></div>
+    <div class="faq-item"><h3>How much longer is payback without the credit?</h3><p>About 43% longer, everywhere — it's a fixed 1 ÷ (1 − 0.30) ≈ 1.43× multiplier. In years, that's roughly 3–6 extra years depending on your state, and a ~4-year jump for the average state in our data.</p></div>
+    <div class="faq-item"><h3>Which state has the fastest solar payback in 2026?</h3><p>High-rate states with full-retail net metering lead — Hawaii, Connecticut, Massachusetts, Rhode Island and New York all pay back in under 7 years in our model, despite modest sunshine.</p></div>
+
+    <p style="margin-top:40px; font-size:0.86rem; color:var(--text-dim);">
+      <strong>Sources:</strong> EIA residential electricity prices (via ChooseEnergy, Apr 2026); NREL PVWatts v8 peak sun hours; statewide net-metering status (Apr 2026); EnergySage installed-cost data 2026. Method and assumptions: <a href="/methodology" style="color:var(--text-muted);">/methodology</a>. Modeling, not field measurement. Last reviewed July 5, 2026.
+    </p>
+
+    <aside class="author-card" aria-label="About the author">
+      <img class="author-card__img" src="/assets/author-bruno.webp" alt="Bruno de Madrazo" width="88" height="88" loading="lazy" decoding="async">
+      <div>
+        <span class="author-card__eyebrow">Written &amp; reviewed by</span>
+        <div class="author-card__name">Bruno de Madrazo</div>
+        <p class="author-card__bio">Builds the Watt Guide calculators and compiles its energy-cost figures from public datasets (EIA, NREL, DSIRE, EnergySage). Not an installer and doesn't sell equipment — every figure is checked against its source, and you can re-run the math with your own rate.</p>
+        <div class="author-card__links"><a href="/author">More about Bruno</a><span class="author-card__sep">·</span><a href="/methodology">How we calculate this</a></div>
+      </div>
+    </aside>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="/" class="brand"><span class="brand-dot"></span><span>Watt<span style="color:var(--accent)">Guide</span></span></a><p>Independent electricity cost calculator and energy guides.</p></div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator/">Electricity</a></li><li><a href="/calculator/solar/">Solar ROI</a></li><li><a href="/calculator/heat-pump/">Heat pump</a></li><li><a href="/calculator/ev-charging/">EV charging</a></li><li><a href="/calculator/payback/">Payback</a></li></ul></div>
+      <div class="footer-col"><h4>Site</h4><ul><li><a href="/about">About</a></li><li><a href="/author">Author</a></li><li><a href="/methodology">Methodology</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/cookies">Cookies</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact">Write to us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© <span data-year></span> Watt Guide</div><div>Made for people who read their bills</div></div>
+  </div>
+</footer>
+<script src="/assets/main.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script>
+(function(){
+  var t=document.getElementById('idx'); if(!t||!t.tHead||!t.tBodies[0]) return;
+  var tb=t.tBodies[0], ths=t.tHead.rows[0].cells, cur=2, asc=true;
+  function val(row,i){ var c=row.cells[i]; if(!c) return ''; var v=c.getAttribute('data-v'); var n=parseFloat(v); return isNaN(n)? String(v).toLowerCase(): n; }
+  function sortBy(i,th){
+    asc=(cur===i)?!asc:true; cur=i;
+    for(var k=0;k<ths.length;k++) ths[k].removeAttribute('aria-sort');
+    th.setAttribute('aria-sort', asc?'ascending':'descending');
+    var rows=[].slice.call(tb.rows);
+    rows.sort(function(a,b){ var x=val(a,i), y=val(b,i); if(x<y) return asc?-1:1; if(x>y) return asc?1:-1; return 0; });
+    rows.forEach(function(r){ tb.appendChild(r); });
+  }
+  for(var i=0;i<ths.length;i++){ (function(idx,th){
+    th.setAttribute('tabindex','0');
+    th.addEventListener('click',function(){ sortBy(idx,th); });
+    th.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); sortBy(idx,th); } });
+  })(i,ths[i]); }
+})();
+</script>
+</body>
+</html>
