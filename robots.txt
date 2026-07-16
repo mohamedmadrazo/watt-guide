@@ -4,12 +4,4 @@
 User-agent: *
 Allow: /
 
-# Don't index internal templates
-Disallow: /guides/_appliance-template.html
-Disallow: /assets/
-
-# But let crawlers read CSS/JS needed to render the page
-Allow: /assets/style.css
-Allow: /assets/main.js
-
 Sitemap: https://watt-guide.com/sitemap.xml

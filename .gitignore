@@ -46,3 +46,6 @@ temp/
 *.xlsx
 *.xls
 *.pdf
+
+# Documentacion interna (no desplegar)
+.internal/

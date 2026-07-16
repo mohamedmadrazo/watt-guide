@@ -84,7 +84,7 @@
         '<div class="wg-cc__inner">' +
           '<div class="wg-cc__body">' +
             '<strong>We use cookies</strong>' +
-            '<p>We use cookies for analytics and advertising. You can accept all, reject non-essential, or customize your choice. See our <a href="/cookies.html">cookie policy</a>.</p>' +
+            '<p>We use cookies for analytics and advertising. You can accept all, reject non-essential, or customize your choice. See our <a href="/cookies">cookie policy</a>.</p>' +
           '</div>' +
           '<div class="wg-cc__actions">' +
             '<button type="button" class="wg-cc__btn wg-cc__btn--ghost" data-cc="reject">Reject</button>' +

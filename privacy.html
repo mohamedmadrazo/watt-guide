@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="/assets/style.css">
   <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="670">
@@ -23,6 +23,9 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0a0e1a">
   <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <!-- AdSense site verification + loader (ad units are created after approval) -->
+  <meta name="google-adsense-account" content="ca-pub-1131493800966237">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1131493800966237" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
@@ -52,7 +55,7 @@
   <h2>2. What we collect</h2>
   <ul>
     <li><strong>Information you provide:</strong> name, email, and message when you use the contact form.</li>
-    <li><strong>Technical data:</strong> IP address, browser type, device type, pages visited, referrer, collected in an aggregated form by our analytics provider.</li>
+    <li><strong>Technical data:</strong> IP address, browser type, device type, pages visited and referrer, processed by our hosting/CDN provider (Cloudflare) and, if we enable it, by Cloudflare Web Analytics in cookieless, aggregated form.</li>
     <li><strong>Cookies and similar technologies:</strong> see our <a href="/cookies">Cookie Policy</a> for a full breakdown.</li>
   </ul>
   <p>We do <strong>not</strong> collect health data, financial information, or any special category of personal data.</p>
@@ -72,12 +75,12 @@
   </ul>
 
   <h2>5. Data retention</h2>
-  <p>Contact form enquiries are kept for the time needed to answer you and up to 12 months afterwards for recordkeeping. Aggregated analytics data is retained according to Google Analytics' default retention window (14 months).</p>
+  <p>Contact form enquiries are kept for the time needed to answer you and up to 12 months afterwards for recordkeeping. We do not run cookie-based analytics; any aggregated traffic statistics (Cloudflare Web Analytics, if enabled) are cookieless and contain no personal profiles.</p>
 
   <h2>6. Third-party recipients</h2>
   <p>We share technical or aggregated data with the following processors only to operate the Site:</p>
   <ul>
-    <li><strong>Google Ireland Ltd / Google LLC</strong> — AdSense and Analytics.</li>
+    <li><strong>Google Ireland Ltd / Google LLC</strong> — AdSense (advertising).</li>
     <li><strong>Cloudflare</strong> — CDN, DDoS protection and hosting.</li>
     <li><strong>FormSubmit or similar</strong> — contact form delivery.</li>
   </ul>
@@ -126,9 +129,8 @@
     <div class="footer-bottom"><div>© <span data-year></span> Watt Guide</div><div>Made for people who read their bills</div></div>
   </div>
 </footer>
-<script src="assets/main.js" defer></script>
+<script src="/assets/main.js" defer></script>
   <script src="/assets/cookie-consent.js" defer></script>
-  <!-- Cloudflare Web Analytics (privacy-friendly, no cookie consent required). Replace TOKEN or delete this block after launch. -->
-  <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_ME"}'></script> -->
+  <!-- Cloudflare Web Analytics: enable auto-injection from the Cloudflare Pages dashboard when ready. -->
 </body>
 </html>
