@@ -159,6 +159,11 @@
   var saved = getSaved();
   if (saved) {
     apply(saved);
+  } else if (navigator.globalPrivacyControl === true) {
+    // Honor Global Privacy Control: treat as an opt-out of non-essential
+    // cookies / sale-sharing (CCPA-CPRA) without requiring a banner click.
+    save({ analytics: false, ads: false });
+    document.addEventListener('click', onClick, { capture: true });
   } else {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', show);

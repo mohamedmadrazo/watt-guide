@@ -59,11 +59,11 @@
     "mainEntity": [
       {"@type":"Question","name":"What is COP and HSPF and why do they matter?","acceptedAnswer":{"@type":"Answer","text":"COP (Coefficient of Performance) is the ratio of heat delivered to electricity consumed. A COP of 3 means 1 kWh of electricity moves 3 kWh of heat. HSPF (Heating Seasonal Performance Factor) is the season-weighted equivalent for US ratings — divide HSPF by 3.412 to approximate a season-average COP."}},
       {"@type":"Question","name":"Do heat pumps work in cold climates?","acceptedAnswer":{"@type":"Answer","text":"Cold-climate (ccASHP) models from Mitsubishi, Daikin and LG operate down to −13°F / −25°C with COP near 2. They are now common in Maine, Vermont, Minnesota. Below that, a supplemental electric or gas backup is typically wired in."}},
-      {"@type":"Question","name":"Is the heat pump tax credit still 30% in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Section 25C Energy Efficient Home Improvement Credit (up to $2,000 for heat pumps) was eliminated alongside the solar credit in July 2025. Some state rebates and utility programs still apply — check DSIRE for your state."}}
+      {"@type":"Question","name":"Is the heat pump tax credit still 30 % in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Section 25C Energy Efficient Home Improvement Credit (up to $2,000 for heat pumps) was eliminated alongside the solar credit in July 2025. Some state rebates and utility programs still apply — check DSIRE for your state."}}
     ]
   }
   </script>
-  <!-- AdSense site verification + loader (ad units are created after approval) -->
+  <!-- Google AdSense -->
   <meta name="google-adsense-account" content="ca-pub-1131493800966237">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1131493800966237" crossorigin="anonymous"></script>
 </head>
@@ -123,7 +123,7 @@
       <div class="calc-field">
         <label for="demand">Annual heat demand (MMBTU/yr)</label>
         <input type="number" id="demand" min="10" max="300" step="1" value="80">
-        <small style="color:var(--text-dim); display:block; margin-top:6px;">Find on your gas bill (Therms × 0.1) or oil bill (Gallons × 0.139).</small>
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">From your gas bill: Therms × 0.1 × your furnace AFUE (bills count fuel in, not heat out). From an oil bill: Gallons × 0.139 × AFUE.</small>
       </div>
 
       <div style="border-top:1px solid var(--border); margin:24px 0; padding-top:18px;">
@@ -352,7 +352,7 @@ function compute() {
   // Current system
   let currentCost;
   if (fuel === 'electric-resistance') {
-    currentCost = (demandBTU / 3412) * elecRate; // raw kWh × rate
+    currentCost = (demandBTU / 3412) * (fuelPrice || elecRate); // raw kWh × the visible USD/kWh field
   } else {
     const unitsNeeded = demandBTU / btuPerUnit / afue;
     currentCost = unitsNeeded * fuelPrice;

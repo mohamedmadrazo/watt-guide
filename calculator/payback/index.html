@@ -51,7 +51,7 @@
     ]
   }
   </script>
-  <!-- AdSense site verification + loader (ad units are created after approval) -->
+  <!-- Google AdSense -->
   <meta name="google-adsense-account" content="ca-pub-1131493800966237">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1131493800966237" crossorigin="anonymous"></script>
 </head>
@@ -263,7 +263,7 @@ function compute() {
     const yearSavings = projects.reduce((s,p) => s + p.save * Math.pow(1 + inflation, y), 0);
     totalSaved += yearSavings;
     cumulative += yearSavings;
-    if (paybackYear === null && cumulative >= totalCost) {
+    if (paybackYear === null && totalCost > 0 && yearSavings > 0 && cumulative >= totalCost) {
       const overshoot = cumulative - totalCost;
       paybackYear = (y + 1) - (overshoot / yearSavings);
     }
