@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Solar Payback by State in 2026 — After the Federal Credit Expired | Watt Guide</title>
-  <meta name="description" content="Residential solar payback recomputed for all 50 states now that the 30% federal tax credit expired on Dec 31, 2025. Sortable table, transparent method, downloadable dataset.">
+  <title>Post-Credit Solar Payback Index 2026: 50-State Data Study, Methodology &amp; CSV | Watt Guide</title>
+  <meta name="description" content="Data study: simple solar payback recomputed for all 50 states after the federal credit expired — one transparent formula, public EIA/NREL inputs, sortable table and downloadable CSV dataset.">
   <link rel="canonical" href="https://watt-guide.com/guides/solar-payback-by-state-2026">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Solar Payback by State 2026 — After the Credit Expired">
-  <meta property="og:description" content="All 50 states recomputed without the 30% federal credit. Sortable table + downloadable dataset.">
+  <meta property="og:title" content="Post-Credit Solar Payback Index 2026 — 50-State Data Study &amp; Dataset">
+  <meta property="og:description" content="Transparent methodology, EIA + NREL inputs, sortable 50-state table and a downloadable CSV dataset you can reuse.">
   <meta property="og:url" content="https://watt-guide.com/guides/solar-payback-by-state-2026">
   <meta property="og:image" content="https://watt-guide.com/assets/og-image-v3.jpg">
   <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="stylesheet" href="/assets/cookie-consent.css">
   <meta name="theme-color" content="#0a0e1a">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Solar Payback by State in 2026 — After the Federal Credit Expired","image":"https://watt-guide.com/assets/og-image-v3.jpg","datePublished":"2026-07-05","dateModified":"2026-07-05","author":{"@type":"Person","name":"Bruno de Madrazo","url":"https://watt-guide.com/author"},"publisher":{"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v3.jpg"}},"mainEntityOfPage":"https://watt-guide.com/guides/solar-payback-by-state-2026"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Post-Credit Solar Payback Index 2026: 50-State Data Study, Methodology & CSV","image":"https://watt-guide.com/assets/og-image-v3.jpg","datePublished":"2026-07-05","dateModified":"2026-07-16","author":{"@type":"Person","name":"Bruno de Madrazo","url":"https://watt-guide.com/author"},"publisher":{"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v3.jpg"}},"mainEntityOfPage":"https://watt-guide.com/guides/solar-payback-by-state-2026"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://watt-guide.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://watt-guide.com/guides/"},{"@type":"ListItem","position":3,"name":"Solar payback by state 2026","item":"https://watt-guide.com/guides/solar-payback-by-state-2026"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Post-Credit Solar Payback Index 2026","description":"Residential solar simple-payback for all 50 US states recomputed after the 30% federal ITC expired on 2025-12-31, plus the historical payback with the credit and the difference. Inputs: EIA residential electricity rates, NREL PVWatts peak sun hours, statewide net-metering regime, EnergySage installed cost.","creator":{"@type":"Person","name":"Bruno de Madrazo","url":"https://watt-guide.com/author"},"datePublished":"2026-07-05","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"variableMeasured":["payback years without federal credit","payback years with 30% federal credit","difference in years","residential electricity rate","net-metering regime"],"distribution":{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://watt-guide.com/assets/data/solar-payback-index-2026.csv"}}</script>
 
@@ -60,15 +60,19 @@
   </nav>
   <article>
     <span class="eyebrow">Data study · Updated July 2026</span>
-    <h1>Solar payback in all 50 states — <span class="grad-text">now that the federal credit is gone.</span></h1>
+    <h1>Post-Credit Solar Payback Index 2026: <span class="grad-text">the data, the method, all 50 states.</span></h1>
     <div class="byline">
       <img class="byline__avatar" src="/assets/author-bruno.webp" alt="Bruno de Madrazo" width="40" height="40" loading="lazy" decoding="async">
       <div class="byline__text">
         <a class="byline__name" href="/author">Bruno de Madrazo</a>
-        <div class="byline__meta">Updated July 5, 2026<span class="byline__sep">·</span><a href="/methodology">How we calculate this</a></div>
+        <div class="byline__meta">Updated July 16, 2026<span class="byline__sep">·</span><a href="/methodology">How we calculate this</a></div>
       </div>
     </div>
-    <p style="font-size:1.1rem; color:var(--text-muted); margin-top:16px; line-height:1.65;">The 30% federal solar tax credit (Section 25D) <strong style="color:var(--text);">expired on December 31, 2025</strong>. Almost every "solar payback" number online was written when the credit still existed. So we recomputed it — simple payback for all 50 states, without the credit, using public data and math you can reproduce. Here's what changed, and where solar still pays off fastest.</p>
+    <p style="font-size:1.1rem; color:var(--text-muted); margin-top:16px; line-height:1.65;">The 30% federal solar tax credit (Section 25D) <strong style="color:var(--text);">expired on December 31, 2025</strong> — and almost every payback figure online predates that. This study recomputes simple payback for all 50 states from four public inputs — <strong style="color:var(--text);">EIA residential rates, NREL PVWatts sun hours, statewide net-metering regime, and EnergySage installed cost</strong> — applying one identical formula everywhere. Below: the full sortable table, the exact method and its honest limits, and the raw dataset as a CSV so you can rerun the numbers yourself.</p>
+
+    <div style="margin:24px 0; padding:16px 20px; background:var(--bg-1); border-left:4px solid var(--accent); border-radius:var(--r-md); color:var(--text-muted); font-size:0.94rem;">
+      📊 <strong style="color:var(--text);">Companion piece:</strong> this page is the <strong style="color:var(--text);">data study</strong> — methodology, sortable 50-state index and downloadable CSV — while our <a href="/guides/best-states-solar-payback-2026" style="color:var(--accent);">editorial ranking of which states are worth going solar in</a> turns these numbers into verdicts and recommendations.
+    </div>
 
     <div style="margin:32px 0; padding:18px 22px; background:var(--bg-1); border-left:4px solid var(--accent); border-radius:var(--r-md);">
       <strong style="color:var(--text);">The one stat that's exact:</strong> <span style="color:var(--text-muted);">removing a 30% up-front credit makes payback <strong style="color:var(--accent);">about 43% longer in every state</strong> — it's just 1 ÷ (1 − 0.30) = 1.43×, regardless of where you live. For the typical system that's roughly <strong style="color:var(--danger);">4 extra years</strong> (our 50-state average moved from ~9.2 to ~13.2 years).</span>
@@ -225,7 +229,7 @@
     <div class="faq-item"><h3>Which state has the fastest solar payback in 2026?</h3><p>High-rate states with full-retail net metering lead — Hawaii, Connecticut, Massachusetts, Rhode Island and New York all pay back in under 7 years in our model, despite modest sunshine.</p></div>
 
     <p style="margin-top:40px; font-size:0.86rem; color:var(--text-dim);">
-      <strong>Sources:</strong> EIA residential electricity prices (via ChooseEnergy, Apr 2026); NREL PVWatts v8 peak sun hours; statewide net-metering status (Apr 2026); EnergySage installed-cost data 2026. Method and assumptions: <a href="/methodology" style="color:var(--text-muted);">/methodology</a>. Modeling, not field measurement. Last reviewed July 5, 2026.
+      <strong>Sources:</strong> EIA residential electricity prices (via ChooseEnergy, Apr 2026); NREL PVWatts v8 peak sun hours; statewide net-metering status (Apr 2026); EnergySage installed-cost data 2026. Method and assumptions: <a href="/methodology" style="color:var(--text-muted);">/methodology</a>. Modeling, not field measurement. Last reviewed July 16, 2026.
     </p>
 
     <aside class="author-card" aria-label="About the author">

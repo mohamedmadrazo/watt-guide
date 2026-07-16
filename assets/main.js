@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nlForm.reset();
       } catch {
         nlStatus.dataset.state = 'error';
-        nlStatus.textContent = 'Could not subscribe. Try again or email demadrazobruno@gmail.com.';
+        nlStatus.textContent = 'Could not subscribe. Please try again, or use the contact form.';
       } finally {
         nlBtn.removeAttribute('aria-busy');
         nlBtn.textContent = original;
