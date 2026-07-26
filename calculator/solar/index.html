@@ -58,9 +58,10 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type":"Question","name":"Is the 30% federal tax credit still available in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 30% federal Residential Clean Energy Credit was eliminated in July 2025 by the One Big Beautiful Bill Act. State-level incentives, net metering and SREC programs still exist in many states. The calculator toggle lets you compare both scenarios."}},
-      {"@type":"Question","name":"How is payback period calculated?","acceptedAnswer":{"@type":"Answer","text":"Payback = net system cost ÷ first-year savings, adjusted for an annual utility rate increase. Net cost = gross cost minus any incentives. First-year savings = annual kWh produced × your electricity rate. We assume a 0.5% annual panel degradation and a 3.5% utility rate inflation."}},
-      {"@type":"Question","name":"What kWh production per kW should I expect?","acceptedAnswer":{"@type":"Answer","text":"Annual production per kW of installed solar varies from ~1,100 kWh in cloudy Pacific Northwest to ~1,700 kWh in the Southwest. The calculator uses NREL PVWatts national averages by state and applies a 0.5% annual degradation factor."}},
-      {"@type":"Question","name":"Should I include battery storage in the cost?","acceptedAnswer":{"@type":"Answer","text":"A 10 kWh home battery adds $8,000–$15,000 installed and rarely shortens payback in net-metered states. It does help in states without net metering (Hawaii, parts of Texas, California NEM 3.0). This calculator focuses on grid-tied PV only."}}
+      {"@type":"Question","name":"How is payback period calculated?","acceptedAnswer":{"@type":"Answer","text":"Two ways, and the calculator reports both. The headline figure runs a 25-year cash flow: net cost = gross cost minus any incentives, and each year's saving = annual production × your retail rate × your state's net-metering value factor, with panels degrading 0.5% a year and rates rising by the inflation percentage you set (3.5% by default). The simple payback line in the breakdown drops the escalation — net cost ÷ year-1 savings — which is the convention behind our Solar Payback Index. On the index baseline ($2.58/W installed, no federal credit, no rebate) the 50-state median simple payback is 11.5 years, ranging from 5.6 years in Hawaii to 29.0 years in Idaho; it was 8.1 years at the median while the 30% credit was still available."}},
+      {"@type":"Question","name":"Does the calculator account for net metering?","acceptedAnswer":{"@type":"Answer","text":"Yes. Picking a state loads its 2026 net-metering regime from our Solar Payback Index dataset and applies an export value factor to every kWh generated: 1.00 in the 34 states with full-retail net metering, 0.58 in the 9 states on net-billing or avoided-cost tariffs (California NEM 3.0, Hawaii, Arizona, Nevada, Michigan, Indiana, Louisiana, Arkansas, Utah) and 0.46 in the 7 states with no statewide mandate (Texas, Alabama, Mississippi, Alaska, Tennessee, South Dakota, Idaho). You can override the factor if your own utility publishes a different export rate: divide that export rate by your retail rate."}},
+      {"@type":"Question","name":"What kWh production per kW should I expect?","acceptedAnswer":{"@type":"Answer","text":"In our 50-state dataset, annual production per installed kW runs from 926 kWh in Alaska to 1,910 kWh in Arizona — NREL PVWatts state averages at default tilt and orientation. The calculator preloads the value for the state you pick and applies 0.5% annual degradation across the 25-year run. Override it if you know your own roof's specific yield."}},
+      {"@type":"Question","name":"Should I include battery storage in the cost?","acceptedAnswer":{"@type":"Answer","text":"A 10 kWh home battery such as the Enphase IQ Battery 10C adds $11,500–$14,000 installed, and a larger 13.5 kWh Tesla Powerwall 3 runs $10,500–$14,000. Either rarely shortens payback where full-retail net metering already banks your exports at retail value. It earns its keep where exports are discounted — California NEM 3.0, Hawaii, Arizona, Nevada — or where there is no statewide mandate at all, such as Texas. This calculator focuses on grid-tied PV only."}}
     ]
   }
   </script>
@@ -94,7 +95,7 @@
   <div style="text-align:center; margin-bottom:32px;">
     <span class="eyebrow">Free tool · 2026 post-tax-credit edition</span>
     <h1>Solar panel <span class="grad-text">ROI calculator</span></h1>
-    <p style="max-width:680px; margin:12px auto 0;">Pick your state, system size and electricity rate. See real payback period, 25-year savings and break-even point — with or without the federal tax credit. Numbers sourced from NREL PVWatts and EIA state averages.</p>
+    <p style="max-width:680px; margin:12px auto 0;">Pick your state, system size and electricity rate. See real payback period, 25-year savings and break-even point — with or without the federal tax credit, and with your state's net-metering rules already priced in. Rates, production and export value factors come from our own 50-state Solar Payback Index dataset (EIA + NREL PVWatts).</p>
   </div>
 
   <figure class="hero-illustration" aria-hidden="true">
@@ -122,19 +123,30 @@
 
       <div class="calc-field">
         <label for="cost-per-watt">Installed cost ($/W DC)</label>
-        <input type="number" id="cost-per-watt" min="1" max="6" step="0.05" value="2.85">
-        <small style="color:var(--text-dim); display:block; margin-top:6px;">Pre-incentive. EnergySage 2026 national median: $2.85/W.</small>
+        <input type="number" id="cost-per-watt" min="1" max="6" step="0.05" value="2.58">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">Pre-incentive. EnergySage 2026 national median: $2.58/W — the same baseline as our Solar Payback Index. National-brand quotes run $3.10–$3.60/W.</small>
       </div>
 
       <div class="calc-field">
         <label for="rate">Electricity rate (¢/kWh)</label>
         <input type="number" id="rate" min="5" max="60" step="0.5" value="17.5">
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">EIA 2026 residential average for the selected state.</small>
       </div>
 
       <div class="calc-field">
         <label for="production">Annual production per kW (kWh/kW/yr)</label>
         <input type="number" id="production" min="800" max="2000" step="10" value="1400">
-        <small style="color:var(--text-dim); display:block; margin-top:6px;">NREL PVWatts average for the selected state.</small>
+        <small style="color:var(--text-dim); display:block; margin-top:6px;">NREL PVWatts state average, as published in our index dataset.</small>
+      </div>
+
+      <div class="calc-field">
+        <label for="net-metering">How your utility credits exports</label>
+        <select id="net-metering">
+          <option value="1.00">Full retail net metering (×1.00)</option>
+          <option value="0.58">Net billing / avoided cost (×0.58)</option>
+          <option value="0.46">No statewide mandate (×0.46)</option>
+        </select>
+        <small id="nm-note" style="color:var(--text-dim); display:block; margin-top:6px;">Set automatically from the state's net-metering regime.</small>
       </div>
 
       <div class="calc-field" style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); border:1px solid var(--border);">
@@ -165,7 +177,7 @@
 
       <div class="calc-result" style="margin-top:18px;">
         <div class="amount" id="payback-years">—</div>
-        <div class="desc">Years to break even</div>
+        <div class="desc">Years to break even (rates escalating)</div>
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:18px;">
@@ -201,14 +213,22 @@
           <span style="color:var(--text-muted);">Year-1 production</span>
           <span id="year1-kwh" style="color:var(--text); font-weight:600;">—</span>
         </div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:0.9rem;">
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Export credit factor</span>
+          <span id="export-factor" style="color:var(--text); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.9rem;">
           <span style="color:var(--text-muted);">Year-1 savings</span>
           <span id="year1-savings" style="color:var(--accent-2); font-weight:600;">—</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:0.9rem;">
+          <span style="color:var(--text-muted);">Simple payback <span style="color:var(--text-dim);">(index basis, no rate escalation)</span></span>
+          <span id="simple-payback" style="color:var(--text); font-weight:600;">—</span>
         </div>
       </div>
 
       <div style="margin-top:18px; padding:14px; background:var(--bg-1); border:1px solid var(--border); border-radius:var(--r-md); font-size:0.86rem; color:var(--text-muted);">
-        <strong style="color:var(--text);">Assumptions:</strong> 25-year panel life, 0.5%/yr degradation, no inverter replacement priced in. Real-world payback can vary ±20% depending on shading, roof orientation and utility net-metering policy.
+        <strong style="color:var(--text);">Assumptions:</strong> 25-year panel life, 0.5%/yr degradation, no inverter replacement priced in. Every kWh you generate is valued at your retail rate × the export credit factor above (full retail net metering 1.00, net billing 0.58, no statewide mandate 0.46) — the same value factor our <a href="/guides/solar-payback-by-state-2026">Solar Payback Index</a> applies, which is why a high-rate state without full-retail net metering still pays back slowly. The headline figure escalates your rate each year; the <em>simple payback</em> line above does not, and at the index defaults ($2.58/W, no credit, no rebate) it returns the same number the index publishes for that state. Beyond that, real-world payback still varies with shading, roof orientation and your specific utility tariff.
       </div>
     </section>
   </div>
@@ -243,13 +263,16 @@
   <!-- CONTEXT -->
   <section style="margin-top:60px; max-width:780px; margin-left:auto; margin-right:auto;">
     <h2 style="text-align:center;">How the math works</h2>
-    <p style="margin-top:14px;">A 25-year cash-flow simulation. Each year your panels produce slightly less (0.5% degradation), but the utility raises rates (your inflation %), so the dollar value of what you generate keeps growing. We sum every year's saving, subtract the net up-front cost, and report when the cumulative line crosses zero.</p>
+    <p style="margin-top:14px;">A 25-year cash-flow simulation. Each year your panels produce slightly less (0.5% degradation), but the utility raises rates (your inflation %), so the dollar value of what you generate keeps growing. Not every kWh is worth the full retail rate, though: what your utility pays for exported power depends on your state's net-metering regime, so each year's saving is multiplied by an export value factor — 1.00 under full-retail net metering, 0.58 under net billing / avoided-cost tariffs, 0.46 where there is no statewide mandate. We sum every year's saving, subtract the net up-front cost, and report when the cumulative line crosses zero.</p>
     <p style="margin-top:14px;">The formula in plain terms:</p>
-    <pre style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); overflow-x:auto; color:var(--accent); font-family:monospace; font-size:0.88rem; margin-top:10px;">net_cost = (size × $/W × 1000) − federal_credit − state_rebate
-year_savings[y] = production × (1 − 0.005)^y × rate × (1 + inflation)^y
-payback = min y where Σ year_savings[0..y] ≥ net_cost</pre>
+    <pre style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); overflow-x:auto; color:var(--accent); font-family:monospace; font-size:0.88rem; margin-top:10px;">net_cost        = (size × $/W × 1000) − federal_credit − state_rebate
+value_factor    = 1.00 full retail | 0.58 net billing | 0.46 no mandate
+year_savings[y] = size × production × (1 − 0.005)^y × rate × (1 + inflation)^y × value_factor
+payback         = min y where Σ year_savings[0..y] ≥ net_cost
+simple_payback  = net_cost ÷ year_savings[0]     # no escalation — the index convention</pre>
+    <p style="margin-top:14px;">Those are two different questions, so we report both. The headline number answers "when do I get my money back if electricity keeps getting more expensive?" The <strong>simple payback</strong> line in the breakdown freezes today's rate and answers "how many years of today's bill does this system cost?" — the deliberately conservative convention used by our <a href="/guides/solar-payback-by-state-2026">Post-Credit Solar Payback Index</a>. Leave the defaults alone ($2.58/W, credit off, no rebate) and that line returns exactly the payback the index publishes for the state you picked; the 8 kW worked examples in the <a href="/guides/best-states-solar-payback-2026">best-states ranking</a> reproduce here too, because system size cancels out when cost and output both scale with kW.</p>
     <div class="disclosure" style="margin-top:20px;">
-      <strong>Sources &amp; assumptions:</strong> production defaults from NREL PVWatts; electricity rates from EIA; incentive logic from DSIRE. Since January 2026 the federal-credit field defaults to $0 (Section 25D ended for systems placed in service after Dec 31, 2025). Full breakdown on the <a href="/methodology">methodology page</a>. Built and maintained by <a href="/author">Bruno de Madrazo</a>.
+      <strong>Sources &amp; assumptions:</strong> the state dropdown loads three fields straight from our <a href="/assets/data/solar-payback-index-2026.csv">Solar Payback Index dataset</a> (CSV, 50 states): the 2026 <a href="https://www.eia.gov/electricity/sales_revenue_price/" rel="nofollow">EIA</a> residential rate, the <a href="https://pvwatts.nrel.gov/" rel="nofollow">NREL PVWatts</a> annual yield per kW, and the net-metering value factor. Same numbers, same file, so a state's payback here matches the <a href="/guides/solar-payback-by-state-2026">index study</a> and the state ranking that cites it. Incentive logic from <a href="https://www.dsireusa.org/" rel="nofollow">DSIRE</a>. Since January 2026 the federal-credit field defaults to $0 (Section 25D ended for systems placed in service after Dec 31, 2025). Full breakdown on the <a href="/methodology">methodology page</a>. Built and maintained by <a href="/author">Bruno de Madrazo</a>.
     </div>
 
     <h2 style="text-align:center; margin-top:50px;">Frequently asked questions</h2>
@@ -259,15 +282,19 @@ payback = min y where Σ year_savings[0..y] ≥ net_cost</pre>
     </div>
     <div class="faq-item">
       <h3>How is payback period calculated?</h3>
-      <p>Payback equals net system cost divided by cumulative annual savings, with rates inflating ~3.5%/yr and panels degrading ~0.5%/yr. Most US households today see 9–14 years post-credit-cut, vs 7–10 years when the 30% was active.</p>
+      <p>Two ways, and the calculator reports both. The headline figure runs a 25-year cash flow: net cost = gross cost minus any incentives, and each year's saving = annual production × your retail rate × your state's net-metering value factor, with panels degrading ~0.5%/yr and rates rising by the inflation % you set (3.5% by default). The <strong>simple payback</strong> line in the breakdown drops the escalation — net cost ÷ year-1 savings — the convention behind our <a href="/guides/solar-payback-by-state-2026">Solar Payback Index</a>. On the index baseline ($2.58/W, no federal credit, no rebate) the 50-state median simple payback is <strong>11.5 years</strong>, from 5.6 in Hawaii to 29.0 in Idaho; the median was 8.1 years while the 30% credit was still available.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does the calculator account for net metering?</h3>
+      <p>Yes — it is the single biggest reason two states with similar sunshine pay back a decade apart. Picking a state loads its 2026 regime from the index dataset and applies an export value factor to every kWh generated: <strong>1.00</strong> in the 34 full-retail net-metering states, <strong>0.58</strong> in the 9 net-billing / avoided-cost states (California NEM 3.0, Hawaii, Arizona, Nevada, Michigan, Indiana, Louisiana, Arkansas, Utah) and <strong>0.46</strong> in the 7 states with no statewide mandate (Texas, Alabama, Mississippi, Alaska, Tennessee, South Dakota, Idaho). If your own utility publishes a different export rate, divide it by your retail rate and enter that factor.</p>
     </div>
     <div class="faq-item">
       <h3>What kWh production per kW should I expect?</h3>
-      <p>From ~1,100 kWh/kW in the cloudy Pacific Northwest to ~1,700 kWh/kW in the Southwest. The calculator preloads NREL PVWatts state averages — override if you know your roof's specific yield.</p>
+      <p>In our 50-state dataset, from 926 kWh/kW in Alaska to 1,910 kWh/kW in Arizona — NREL PVWatts state averages at default tilt and orientation. The calculator preloads the value for the state you pick and degrades it 0.5%/yr across the run; override it if you know your roof's specific yield.</p>
     </div>
     <div class="faq-item">
       <h3>Should I include battery storage in the cost?</h3>
-      <p>A 10 kWh home battery adds $8,000–$15,000 installed and rarely shortens payback in net-metered states. It does help in California NEM 3.0, Hawaii and parts of Texas. This tool focuses on grid-tied PV only — for battery economics see our dedicated guide.</p>
+      <p>A 10 kWh home battery — an Enphase IQ Battery 10C, say — adds $11,500–$14,000 installed, and a larger 13.5 kWh Tesla Powerwall 3 runs $10,500–$14,000. Either rarely shortens payback where full-retail net metering already banks your exports at retail value. It earns its keep where exports are discounted — California NEM 3.0, Hawaii, Arizona, Nevada — or where there is no statewide mandate at all, such as Texas. This tool focuses on grid-tied PV only — for battery economics see our <a href="/guides/solar-battery-storage-payback-2026">dedicated guide</a>.</p>
     </div>
   </section>
 
@@ -318,27 +345,42 @@ payback = min y where Σ year_savings[0..y] ≥ net_cost</pre>
 </footer>
 
 <script>
-// ============ STATE DATA (NREL PVWatts annual prod + EIA rates, 2024 baseline) ============
+// ============ STATE DATA ============
+// Every column below is read straight from /assets/data/solar-payback-index-2026.csv — the published
+// dataset behind our Post-Credit Solar Payback Index. Rates: EIA 2026 residential retail averages
+// (rate_c_kwh). Production: NREL PVWatts state yield (kwh_per_kw_yr). Value factor: how the state's
+// net-metering regime credits exported kWh (value_factor: full retail 1.00, net billing 0.58,
+// no statewide mandate 0.46). Keep this table and the CSV in sync — the CSV is the source of truth.
 const STATES = [
-  // [name, kWh/kW/yr (PVWatts national average), avg residential rate ¢/kWh (EIA 2024)]
-  ['AL','Alabama',1380,15.7],['AK','Alaska',1100,24.4],['AZ','Arizona',1680,14.3],
-  ['AR','Arkansas',1370,12.4],['CA','California',1490,32.0],['CO','Colorado',1520,15.3],
-  ['CT','Connecticut',1280,32.4],['DE','Delaware',1290,14.2],['FL','Florida',1430,15.0],
-  ['GA','Georgia',1380,14.2],['HI','Hawaii',1480,42.4],['ID','Idaho',1360,11.4],
-  ['IL','Illinois',1280,17.5],['IN','Indiana',1290,16.5],['IA','Iowa',1310,14.0],
-  ['KS','Kansas',1430,14.6],['KY','Kentucky',1290,12.7],['LA','Louisiana',1380,12.7],
-  ['ME','Maine',1240,25.2],['MD','Maryland',1320,17.6],['MA','Massachusetts',1280,33.4],
-  ['MI','Michigan',1230,19.8],['MN','Minnesota',1280,15.2],['MS','Mississippi',1380,14.1],
-  ['MO','Missouri',1330,12.8],['MT','Montana',1310,12.4],['NE','Nebraska',1380,11.4],
-  ['NV','Nevada',1680,14.7],['NH','New Hampshire',1240,28.0],['NJ','New Jersey',1280,18.0],
-  ['NM','New Mexico',1670,14.2],['NY','New York',1230,24.7],['NC','North Carolina',1370,13.0],
-  ['ND','North Dakota',1320,11.5],['OH','Ohio',1230,14.7],['OK','Oklahoma',1450,13.5],
-  ['OR','Oregon',1180,12.6],['PA','Pennsylvania',1240,18.2],['RI','Rhode Island',1280,28.3],
-  ['SC','South Carolina',1370,14.2],['SD','South Dakota',1340,12.5],['TN','Tennessee',1290,12.8],
-  ['TX','Texas',1530,15.1],['UT','Utah',1560,11.2],['VT','Vermont',1230,21.7],
-  ['VA','Virginia',1330,13.7],['WA','Washington',1140,11.2],['WV','West Virginia',1240,14.4],
-  ['WI','Wisconsin',1240,17.2],['WY','Wyoming',1490,11.6]
+  // [code, name, kWh/kW/yr, rate ¢/kWh, export value factor, net-metering regime]
+  ['AL','Alabama',1521,17.41,0.46,'none'],['AK','Alaska',926,27.35,0.46,'none'],['AZ','Arizona',1910,15.48,0.58,'net-billing'],
+  ['AR','Arkansas',1513,14.16,0.58,'net-billing'],['CA','California',1775,35.25,0.58,'net-billing'],['CO','Colorado',1653,16.54,1.00,'full'],
+  ['CT','Connecticut',1323,32.24,1.00,'full'],['DE','Delaware',1402,18.79,1.00,'full'],['FL','Florida',1600,15.38,1.00,'full'],
+  ['GA','Georgia',1510,15.37,1.00,'full'],['HI','Hawaii',1699,46.62,0.58,'net-billing'],['ID','Idaho',1524,12.7,0.46,'none'],
+  ['IL','Illinois',1317,20.47,1.00,'full'],['IN','Indiana',1361,17.9,0.58,'net-billing'],['IA','Iowa',1387,13.86,1.00,'full'],
+  ['KS','Kansas',1574,15.78,1.00,'full'],['KY','Kentucky',1399,15.02,1.00,'full'],['LA','Louisiana',1553,14.44,0.58,'net-billing'],
+  ['ME','Maine',1329,28.42,1.00,'full'],['MD','Maryland',1425,22.07,1.00,'full'],['MA','Massachusetts',1372,29.45,1.00,'full'],
+  ['MI','Michigan',1305,21.39,0.58,'net-billing'],['MN','Minnesota',1346,16.39,1.00,'full'],['MS','Mississippi',1536,16.76,0.46,'none'],
+  ['MO','Missouri',1469,14.01,1.00,'full'],['MT','Montana',1390,13.9,1.00,'full'],['NE','Nebraska',1454,13.28,1.00,'full'],
+  ['NV','Nevada',1872,14.29,0.58,'net-billing'],['NH','New Hampshire',1337,27.24,1.00,'full'],['NJ','New Jersey',1361,23.53,1.00,'full'],
+  ['NM','New Mexico',1875,15.15,1.00,'full'],['NY','New York',1314,29.45,1.00,'full'],['NC','North Carolina',1533,16.25,1.00,'full'],
+  ['ND','North Dakota',1299,12.35,1.00,'full'],['OH','Ohio',1326,19.49,1.00,'full'],['OK','Oklahoma',1606,13.31,1.00,'full'],
+  ['OR','Oregon',1186,15.78,1.00,'full'],['PA','Pennsylvania',1399,21.47,1.00,'full'],['RI','Rhode Island',1372,28.3,1.00,'full'],
+  ['SC','South Carolina',1556,17.06,1.00,'full'],['SD','South Dakota',1419,14.52,0.46,'none'],['TN','Tennessee',1407,14.94,0.46,'none'],
+  ['TX','Texas',1524,16.99,0.46,'none'],['UT','Utah',1574,13.29,0.58,'net-billing'],['VT','Vermont',1273,24.56,1.00,'full'],
+  ['VA','Virginia',1463,17.38,1.00,'full'],['WA','Washington',1153,14.36,1.00,'full'],['WV','West Virginia',1334,16.06,1.00,'full'],
+  ['WI','Wisconsin',1337,19.21,1.00,'full'],['WY','Wyoming',1565,14.68,1.00,'full']
 ];
+
+// Export-credit regimes. Label + factor must match the value_factor column of the CSV.
+// Fallback rule: if a state ever lands here without a regime, we default to full retail (1.00) —
+// the most optimistic case — and say so, rather than silently inventing a haircut.
+const REGIMES = {
+  'full':        { factor: 1.00, label: 'Full retail net metering', note: 'exported kWh are credited at your full retail rate' },
+  'net-billing': { factor: 0.58, label: 'Net billing / avoided cost', note: 'exports are credited below retail (e.g. California NEM 3.0, Hawaii, Arizona)' },
+  'none':        { factor: 0.46, label: 'No statewide mandate', note: 'export credit is utility-by-utility and typically well below retail' }
+};
+const DEFAULT_REGIME = 'full';
 
 const $ = (id) => document.getElementById(id);
 const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
@@ -346,12 +388,14 @@ const fmtUSD0 = (n) => '$' + Math.round(n).toLocaleString('en-US');
 
 // Populate state dropdown
 const sel = $('state');
-STATES.forEach(([code,name,prod,rate]) => {
+STATES.forEach(([code,name,prod,rate,factor,regime]) => {
   const opt = document.createElement('option');
   opt.value = code;
   opt.textContent = name;
   opt.dataset.prod = prod;
   opt.dataset.rate = rate;
+  opt.dataset.factor = factor;
+  opt.dataset.regime = REGIMES[regime] ? regime : DEFAULT_REGIME;
   sel.appendChild(opt);
 });
 sel.value = 'CA';
@@ -360,6 +404,12 @@ function applyStateDefaults() {
   const opt = sel.options[sel.selectedIndex];
   $('production').value = opt.dataset.prod;
   $('rate').value = opt.dataset.rate;
+
+  const regime = REGIMES[opt.dataset.regime] || REGIMES[DEFAULT_REGIME];
+  $('net-metering').value = regime.factor.toFixed(2);
+  $('nm-note').innerHTML = '<strong>' + opt.textContent + ': ' + regime.label + '</strong> — ' +
+    regime.note + ', so the calculator values a generated kWh at ' + regime.factor.toFixed(2) +
+    ' × your rate. Override it if your own utility credits exports differently.';
   compute();
 }
 sel.addEventListener('change', applyStateDefaults);
@@ -369,6 +419,9 @@ function compute() {
   const costPerW = parseFloat($('cost-per-watt').value) || 0;
   const rate = (parseFloat($('rate').value) || 0) / 100; // ¢ → $
   const prod = parseFloat($('production').value) || 0;
+  // Export value factor: what a generated kWh is actually worth once the state's
+  // net-metering regime is applied (1.00 full retail, 0.58 net billing, 0.46 no mandate).
+  const valueFactor = parseFloat($('net-metering').value) || REGIMES[DEFAULT_REGIME].factor;
   const useTaxCredit = $('tax-credit').checked;
   const stateIncentive = parseFloat($('state-incentive').value) || 0;
   const inflation = (parseFloat($('rate-inflation').value) || 0) / 100;
@@ -385,7 +438,7 @@ function compute() {
   for (let y = 0; y < 25; y++) {
     const annualKwh = size * prod * Math.pow(1 - DEGRADATION, y);
     const annualRate = rate * Math.pow(1 + inflation, y);
-    const annualSavings = annualKwh * annualRate;
+    const annualSavings = annualKwh * annualRate * valueFactor;
     cumulative += annualSavings;
     total25 += annualSavings;
     if (paybackYear === null && cumulative >= net) {
@@ -396,13 +449,20 @@ function compute() {
   }
 
   const year1Kwh = size * prod;
-  const year1Savings = year1Kwh * rate;
+  const year1Savings = year1Kwh * rate * valueFactor;
   const lifetimeNet = total25 - net;
   const roiPct = net > 0 ? (lifetimeNet / net) * 100 : 0;
+  // Simple payback: net cost ÷ year-1 savings, no rate escalation and no degradation.
+  // This is the exact convention published in the Solar Payback Index dataset, so with the
+  // index inputs ($2.58/W, no incentives) this line reproduces the index figure for the state.
+  const simplePayback = year1Savings > 0 ? net / year1Savings : null;
 
   const anim = window.animateNumber || ((el,v,o)=>{el.textContent=(o&&o.prefix||'')+Math.round(v)+(o&&o.suffix||'');});
   if (paybackYear !== null) anim($('payback-years'), paybackYear, {suffix:' yr', decimals:1, duration:750});
   else $('payback-years').textContent = '> 25 yr';
+  if (simplePayback !== null) anim($('simple-payback'), simplePayback, {suffix:' yr', decimals:1, duration:600});
+  else $('simple-payback').textContent = '—';
+  $('export-factor').textContent = '×' + valueFactor.toFixed(2);
   anim($('lifetime-savings'), lifetimeNet, {prefix:'$', decimals:0, duration:750});
   anim($('roi-pct'), roiPct, {suffix:'%', decimals:0, duration:750});
   anim($('gross-cost'), gross, {prefix:'$', decimals:0, duration:600});
@@ -413,8 +473,9 @@ function compute() {
   anim($('year1-savings'), year1Savings, {prefix:'$', suffix:'/yr', decimals:0, duration:600});
 }
 
-['size','cost-per-watt','rate','production','tax-credit','state-incentive','rate-inflation']
+['size','cost-per-watt','rate','production','tax-credit','state-incentive','rate-inflation','net-metering']
   .forEach(id => $(id).addEventListener('input', compute));
+$('net-metering').addEventListener('change', compute);
 
 applyStateDefaults();
 </script>

@@ -1,7 +1,7 @@
 {
   "name": "Watt Guide",
   "short_name": "Watt Guide",
-  "description": "Know exactly what electricity costs. Free calculator & 300+ appliance guides.",
+  "description": "Know exactly what electricity costs. Free calculator & 23 in-depth energy guides.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

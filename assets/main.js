@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const countryRates = {
-      US: { rate: 0.17, currency: 'USD' },
+      US: { rate: 0.175, currency: 'USD' },
       UK: { rate: 0.28, currency: 'GBP' },
       IE: { rate: 0.35, currency: 'EUR' },
       CA: { rate: 0.13, currency: 'USD' },

@@ -41,7 +41,7 @@
   <text x="100" y="290" font-family="'Space Grotesk', Inter, Arial, sans-serif" font-size="76" font-weight="700" fill="#ffffff">Know exactly what</text>
   <text x="100" y="378" font-family="'Space Grotesk', Inter, Arial, sans-serif" font-size="76" font-weight="700" fill="url(#txt)">electricity costs.</text>
   <!-- Subtítulo -->
-  <text x="100" y="448" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#94a3b8">Free calculator · 300+ appliances · 5 countries</text>
+  <text x="100" y="448" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#94a3b8">Free calculator · 23 in-depth guides · 5 countries</text>
   <!-- Píldora -->
   <rect x="100" y="500" width="260" height="50" rx="25" fill="#fbbf24"/>
   <text x="230" y="533" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="600" fill="#1a1400">watt-guide.com →</text>

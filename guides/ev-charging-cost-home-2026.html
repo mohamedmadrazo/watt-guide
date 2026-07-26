@@ -35,7 +35,7 @@
     "headline": "Cost to Charge an EV at Home in 2026: Full kWh Math by Car Model",
     "image": "https://watt-guide.com/assets/hero-ev-home.webp",
     "datePublished": "2026-05-12",
-    "dateModified": "2026-05-12",
+    "dateModified": "2026-07-26",
     "author": {"@type":"Person","name":"Bruno de Madrazo","url":"https://watt-guide.com/author"},
     "publisher": {"@type":"Organization","name":"Watt Guide","logo":{"@type":"ImageObject","url":"https://watt-guide.com/assets/og-image-v3.jpg"}},
     "mainEntityOfPage": "https://watt-guide.com/guides/ev-charging-cost-home-2026"
@@ -93,13 +93,13 @@
   </nav>
 
   <article>
-    <span class="eyebrow">EV · Pillar · Updated May 2026</span>
+    <span class="eyebrow">EV · Pillar · Updated July 2026</span>
     <h1>Cost to charge an EV at home in 2026: <span class="grad-text">full kWh math by car model.</span></h1>
     <div class="byline">
       <img class="byline__avatar" src="/assets/author-bruno.webp" alt="Bruno de Madrazo" width="40" height="40" loading="lazy" decoding="async">
       <div class="byline__text">
         <a class="byline__name" href="/author">Bruno de Madrazo</a>
-        <div class="byline__meta">Updated May 12, 2026<span class="byline__sep">·</span><a href="/methodology">How we calculate this</a></div>
+        <div class="byline__meta">Updated July 26, 2026<span class="byline__sep">·</span><a href="/methodology">How we calculate this</a></div>
       </div>
     </div>
     <p style="font-size:1.1rem; color:var(--text-muted); margin-top:16px; line-height:1.6;">
@@ -112,7 +112,7 @@
     </figure>
 
     <div style="margin:32px 0; padding:18px 22px; background:var(--bg-1); border-left:4px solid var(--accent); border-radius:var(--r-md);">
-      <strong style="color:var(--text);">TL;DR:</strong> <span style="color:var(--text-muted);">At the May-2026 US average $0.175/kWh home rate, a Model Y costs <strong style="color:var(--text);">~$673/yr</strong> to charge for 12,500 mi — same miles in a 32-MPG gas crossover ≈ <strong style="color:var(--text);">$1,350/yr</strong>. The math collapses if you charge primarily on public DC fast: a Model Y at Tesla Superchargers comes to <strong style="color:var(--text);">~$1,580/yr</strong>, barely cheaper than gas. Home charging is the entire economic story.</span>
+      <strong style="color:var(--text);">TL;DR:</strong> <span style="color:var(--text-muted);">At the 2026 US average $0.175/kWh home rate, a Model Y costs <strong style="color:var(--text);">~$681/yr</strong> to charge for 12,500 mi — same miles in a 32-MPG gas crossover ≈ <strong style="color:var(--text);">$1,350/yr</strong>. The math collapses if you charge primarily on public DC fast: a Model Y at Tesla Superchargers comes to <strong style="color:var(--text);">~$1,676/yr</strong>, which is <em>more</em> than the gas car. Home charging is the entire economic story.</span>
     </div>
 
     <aside class="promo-slot" aria-label="Tools">
@@ -130,6 +130,7 @@
     <h2 id="formula">The one-line formula</h2>
     <pre style="background:var(--bg-1); padding:16px; border-radius:var(--r-md); overflow-x:auto; color:var(--accent); font-family:monospace; font-size:0.9rem; margin:14px 0;">annual_cost = annual_miles × (kWh ÷ mi) ÷ (1 − charging_loss) × blended_rate</pre>
     <p>Three numbers do all the work: kWh/mi (the car), charging losses (~10% Level 2, ~6% DC fast), and your blended rate (weighted average of home and public charging). Everything else is detail.</p>
+    <p><strong style="color:var(--text);">One convention, used on every page of this site:</strong> the kWh/mi we quote is the EPA-rated figure — the energy that reaches the wheels. Charging losses are added on top by dividing by (1 − loss), so a Model Y at 0.28 kWh/mi actually pulls <strong>0.28 ÷ 0.90 = 0.311 kWh/mi from the wall</strong> on Level 2. That is the same arithmetic the <a href="/calculator/ev-charging/" style="color:var(--accent);">EV charging calculator</a> runs, so every figure below reproduces in the tool.</p>
 
     <h2 id="model-by-model">Cost per year, 12,500 mi/yr, all home charging at $0.175/kWh</h2>
 
@@ -141,17 +142,17 @@
         <th style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$/mi</th>
       </tr></thead>
       <tbody>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Lucid Air Touring</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.25</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$601</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.048</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Hyundai Ioniq 6 (LR RWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.24</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$577</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.046</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Tesla Model 3 (LR AWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.26</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$625</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.050</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Tesla Model Y (LR AWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.28</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$673</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.054</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Chevy Bolt EUV</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.28</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$673</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.054</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Hyundai Ioniq 5 (RWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.30</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$721</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.058</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">VW ID.4 / Nissan Leaf SV+</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.30–0.32</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$721–$769</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.058–$0.062</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Ford Mach-E (Ext RWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.33</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$793</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.063</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Rivian R1S</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.43</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent);">$1,033</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.083</td></tr>
-        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Ford F-150 Lightning (Ext)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.48</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent);">$1,154</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.092</td></tr>
-        <tr><td style="padding:12px;">Chevy Silverado EV (RST)</td><td style="text-align:right; padding:12px; color:var(--accent);">0.50</td><td style="text-align:right; padding:12px; color:var(--accent);">$1,202</td><td style="text-align:right; padding:12px;">$0.096</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Lucid Air Touring</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.25</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$608</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.049</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Hyundai Ioniq 6 (LR RWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.24</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$583</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.047</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Tesla Model 3 (LR AWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.26</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$632</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.051</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Tesla Model Y (LR AWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.28</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$681</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.054</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Chevy Bolt EUV</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.28</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$681</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.054</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Hyundai Ioniq 5 (RWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.30</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$729</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.058</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">VW ID.4 / Nissan Leaf SV+</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.30–0.32</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$729–$778</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.058–$0.062</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Ford Mach-E (Ext RWD)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.33</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent-2);">$802</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.064</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Rivian R1S</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.43</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent);">$1,045</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.084</td></tr>
+        <tr><td style="padding:12px; border-bottom:1px solid var(--border);">Ford F-150 Lightning (Ext)</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">0.48</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border); color:var(--accent);">$1,167</td><td style="text-align:right; padding:12px; border-bottom:1px solid var(--border);">$0.093</td></tr>
+        <tr><td style="padding:12px;">Chevy Silverado EV (RST)</td><td style="text-align:right; padding:12px; color:var(--accent);">0.50</td><td style="text-align:right; padding:12px; color:var(--accent);">$1,215</td><td style="text-align:right; padding:12px;">$0.097</td></tr>
       </tbody>
     </table>
 
@@ -160,14 +161,14 @@
     <div class="scenario">
       <span class="scenario__tag">Worked example · reproduce it in the calculator</span>
       <h3>What a Tesla Model Y actually costs to charge at home</h3>
-      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs straight from the table above: 12,500 mi/yr, a Model Y at 0.28 kWh/mi, the May-2026 US average home rate of $0.175/kWh, and a 10% Level-2 charging loss — versus the same 12,500 miles in a 32-MPG gas crossover at $3.45/gal.</p>
+      <p style="color:var(--text-muted); margin:0 0 6px;">Inputs straight from the table above: 12,500 mi/yr, a Model Y at 0.28 kWh/mi <em>at the wheels</em>, the 2026 US average home rate of $0.175/kWh, and a 10% Level-2 charging loss — versus the same 12,500 miles in a 32-MPG gas crossover at $3.45/gal.</p>
       <table>
         <tr><td>Energy at the wheels — 12,500 mi × 0.28 kWh/mi</td><td>3,500 kWh</td></tr>
         <tr><td>From the grid — 3,500 kWh ÷ 0.90 (10% L2 loss)</td><td>≈ 3,889 kWh</td></tr>
-        <tr><td>Home charging — 3,889 kWh × $0.175/kWh</td><td>≈ $673 / yr</td></tr>
+        <tr><td>Home charging — 3,889 kWh × $0.175/kWh</td><td>≈ $681 / yr</td></tr>
         <tr><td>Same miles on gas — 12,500 mi ÷ 32 MPG × $3.45</td><td>$1,348 / yr</td></tr>
       </table>
-      <div class="scenario__result"><strong>Net:</strong> charging that Model Y at home runs about <strong>$673/yr</strong> — roughly <strong>$675/yr less than gas</strong>, or $0.054/mi vs $0.108/mi. Move that charging to a Con Edison-style off-peak rate and the annual cost drops near $155; charge it 100% on Superchargers at $0.45/kWh and it climbs to ~$1,580, barely beating the gas car.</div>
+      <div class="scenario__result"><strong>Net:</strong> charging that Model Y at home runs about <strong>$681/yr</strong> — roughly <strong>$667/yr less than gas</strong>, or $0.054/mi vs $0.108/mi. Move that charging to a Con Edison-style off-peak rate and the annual cost drops near $156; charge it 100% on Superchargers at $0.45/kWh and it climbs to ~$1,676 — <em>above</em> the gas car, not below it.</div>
       <p class="scenario__cta">Different car, mileage or rate? Drop your own kWh/mi, annual miles and rate into the <a href="/calculator/ev-charging/">EV charging cost calculator</a> for your exact number.</p>
     </div>
 
@@ -223,7 +224,7 @@
       <li><strong style="color:var(--text);">Con Edison voluntary TOU:</strong> off-peak $0.04 (yes, four cents) in NYC.</li>
       <li><strong style="color:var(--text);">Texas (most retailers):</strong> "free nights" plans, $0.00 from 9 PM to 6 AM (premium on day rate).</li>
     </ul>
-    <p>On the Con Edison off-peak rate, charging a Model Y for 12,500 mi/yr costs <strong style="color:var(--accent-2);">~$155/yr</strong>. That's the practical floor for EV charging cost in the US: at $3.45/gal it's the gas-equivalent of roughly 280 MPG — several times better than any hybrid on sale.</p>
+    <p>On the Con Edison off-peak rate, charging a Model Y for 12,500 mi/yr costs <strong style="color:var(--accent-2);">~$156/yr</strong> (3,889 kWh × $0.04). That's the practical floor for EV charging cost in the US: at $3.45/gal it's the gas-equivalent of roughly 280 MPG — several times better than any hybrid on sale.</p>
 
     <h2 id="cold-weather">Cold weather: the hidden tax</h2>
     <p>EV efficiency drops 20–40% in sub-freezing weather. Reasons:</p>
@@ -239,14 +240,14 @@
     <table style="width:100%; margin-top:14px; border-collapse:collapse; font-size:0.94rem;">
       <thead><tr style="background:var(--bg-1);"><th style="text-align:left; padding:10px; border-bottom:1px solid var(--border);">Scenario</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">$/yr</th><th style="text-align:right; padding:10px; border-bottom:1px solid var(--border);">vs gas $1,348</th></tr></thead>
       <tbody>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 100% home · $0.175</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$673</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$675</td></tr>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 100% home · TOU off-peak $0.08</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$308</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$1,040</td></tr>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 85% home + 15% DC fast</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$873</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$475</td></tr>
-        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 50/50 home/DC fast</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$1,160</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$188</td></tr>
-        <tr><td style="padding:10px;">Model Y · 100% Supercharger $0.45</td><td style="text-align:right; padding:10px;">$1,580</td><td style="text-align:right; padding:10px; color:var(--danger);">+$232</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 100% home · $0.175</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$681</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$667</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 100% home · TOU off-peak $0.08</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$311</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$1,037</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 85% home $0.175 + 15% DC fast $0.48</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$847</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$501</td></tr>
+        <tr><td style="padding:10px; border-bottom:1px solid var(--border);">Model Y · 50% home $0.175 + 50% DC fast $0.48</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">$1,234</td><td style="text-align:right; padding:10px; border-bottom:1px solid var(--border); color:var(--accent-2);">−$114</td></tr>
+        <tr><td style="padding:10px;">Model Y · 100% Supercharger $0.45</td><td style="text-align:right; padding:10px;">$1,676</td><td style="text-align:right; padding:10px; color:var(--danger);">+$328</td></tr>
       </tbody>
     </table>
-    <p style="margin-top:10px;">If you cannot charge at home, the EV economic case dissolves. Renters and street-parkers should check their actual cost very carefully before switching.</p>
+    <p style="margin-top:10px;">Home rows apply the 10% Level-2 loss (3,889 kWh from the grid); DC-fast rows apply the smaller ~6% fast-charge loss to the share of miles they cover. If you cannot charge at home, the EV economic case dissolves — on 2026 retail DC-fast pricing a Model Y is more expensive per mile than a 32-MPG gas crossover. Renters and street-parkers should check their actual cost very carefully before switching.</p>
 
     <h2 id="home-installation">What a Level 2 install actually costs in 2026</h2>
     <p>If the verdict above pointed you at Level 2, four line items decide the bill:</p>
@@ -289,7 +290,7 @@
     </div>
 
     <p style="margin-top:40px; font-size:0.86rem; color:var(--text-dim);">
-      <strong>Sources:</strong> EPA fueleconomy.gov (2026 model year), EIA average retail prices May 2026, Tesla Supercharger and Electrify America price disclosures Q1 2026, Wall Connector installation surveys (Recurrent Auto, May 2026). Last reviewed May 12, 2026.
+      <strong>Sources:</strong> <a href="https://www.fueleconomy.gov/" rel="nofollow" style="color:var(--text-dim); text-decoration:underline;">EPA fueleconomy.gov</a> (2026 model year), <a href="https://www.eia.gov/electricity/monthly/" rel="nofollow" style="color:var(--text-dim); text-decoration:underline;">EIA average retail prices</a> May 2026, Tesla Supercharger and Electrify America price disclosures Q1 2026, Wall Connector installation surveys (Recurrent Auto, May 2026). Last reviewed July 26, 2026.
     </p>
   
     <aside class="author-card" aria-label="About the author">
