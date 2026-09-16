@@ -233,6 +233,13 @@
   </url>
 
   <url>
+    <loc>https://watt-guide.com/corrections</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
     <loc>https://watt-guide.com/contact</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>yearly</changefreq>
