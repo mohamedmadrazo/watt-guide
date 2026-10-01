@@ -96,19 +96,31 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = new Date().getFullYear();
   });
 
-  // --- Reveal on scroll ---
+  // --- Reveal on scroll (progressive enhancement) ---
+  // CSS keeps every .reveal visible by default. Only elements that start well
+  // below the fold get .pre-anim (opacity:0) and are revealed with .in when they
+  // enter the viewport. A 600 ms safety net reveals anything the observer missed,
+  // so a crawler, a screenshot or a browser without IO callbacks never sees a
+  // blank page. (Same strategy as hogarconectado, fix 2026-05-31.)
   if ('IntersectionObserver' in window) {
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.classList.add('is-visible');
+          e.target.classList.add('in');
           revealObs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    }, { threshold: 0.05, rootMargin: '0px 0px -8% 0px' });
+    const vpH = window.innerHeight;
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (el.getBoundingClientRect().top >= vpH * 1.3) {
+        el.classList.add('pre-anim');
+        revealObs.observe(el);
+      }
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.pre-anim:not(.in)').forEach(el => el.classList.add('in'));
+    }, 600);
   }
 
   // --- Count-up for hero metrics ---
@@ -340,14 +352,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- Reveal on scroll (sections fade-in) ---
+  // --- Stagger child reveals (.reveal-stagger > *) ---
+  // (.reveal itself is handled once, above; this block only staggers children
+  //  and only touches their inline style once they are already in view.)
   if ('IntersectionObserver' in window) {
-    const revealIO = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
-
-    // Stagger child reveals (.reveal-stagger > *)
     document.querySelectorAll('.reveal-stagger').forEach((grid) => {
       const children = grid.children;
       const stagIO = new IntersectionObserver((entries) => {
@@ -365,8 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { threshold: 0.05 });
       stagIO.observe(grid);
     });
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
   // --- Newsletter AJAX submit with status + ?subscribed=1 redirect support ---
