@@ -654,9 +654,16 @@ pre { max-width: 100%; overflow-x: auto; white-space: pre-wrap; word-break: brea
 .result-card .val { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--accent); display: block; margin-top: 6px; }
 .result-card .sub { font-size: 0.78rem; color: var(--text-dim); }
 
-/* ========== REVEAL ANIMATIONS ========== */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
-.reveal.is-visible { opacity: 1; transform: none; }
+/* ========== REVEAL ANIMATIONS (progressive enhancement) ==========
+   By default everything is VISIBLE. opacity:0 is only applied through
+   .pre-anim, which main.js adds to elements that start well below the
+   fold; .in / .is-visible reveal them when they enter the viewport.
+   Same pattern as hogarconectado (fix 2026-05-31): without JS, or when
+   IntersectionObserver never fires, the page is still fully readable.
+   Second definition further down (Utils) kept in sync. */
+.reveal { opacity: 1; transform: none; transition: opacity 0.7s, transform 0.7s; }
+.reveal.pre-anim { opacity: 0; transform: translateY(24px); }
+.reveal.in, .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1254,8 +1261,9 @@ details.faq-item p a:hover { text-decoration-color: var(--accent); }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
-.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1; transform: none; transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.pre-anim { opacity: 0; transform: translateY(30px); }
+.reveal.in, .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
